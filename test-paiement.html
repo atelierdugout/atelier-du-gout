@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test Mollie | L’Atelier du Goût</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f7f4ec;color:#33402c;margin:0}
+main{max-width:720px;margin:10vh auto;padding:32px}.card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+button{background:#33402c;color:#fff;border:0;border-radius:999px;padding:14px 22px;font-size:16px;cursor:pointer}
+small{display:block;margin-top:18px;line-height:1.5}
+</style></head><body><main><div class="card">
+<h1>Test paiement Mollie</h1>
+<p>Ce bouton crée un paiement de test de <strong>1,00 €</strong>. Aucun montant réel ne doit être débité avec une clé <code>test_</code>.</p>
+<button id="pay">Lancer le paiement test à 1 €</button>
+<p id="status"></p>
+<small>Cette page sert uniquement à vérifier la connexion Netlify → Mollie. Le panier réel sera branché après validation de ce test.</small>
+</div></main>
+<script>
+document.getElementById("pay").addEventListener("click", async () => {
+ const b=document.getElementById("pay"), s=document.getElementById("status");
+ b.disabled=true; s.textContent="Création du paiement…";
+ try{
+   const r=await fetch("/.netlify/functions/create-payment",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({amount:1,mode:"test-connexion"})});
+   const d=await r.json();
+   if(!r.ok || !d.checkoutUrl) throw new Error(d.error || "Impossible de créer le paiement.");
+   location.href=d.checkoutUrl;
+ }catch(e){ s.textContent="Erreur : "+e.message; b.disabled=false; }
+});
+</script></body></html>

@@ -1,0 +1,9 @@
+{
+  "name": "L’Atelier du Goût — Boutique",
+  "short_name": "Atelier du Goût",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f6f0e5",
+  "theme_color": "#283728",
+  "description": "Boutique en ligne de L’Atelier du Goût à Aulnay-de-Saintonge."
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confirmation de commande | L’Atelier du Goût</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f7f4ec;color:#33402c;margin:0}
+main{max-width:720px;margin:10vh auto;padding:24px}.card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+h1{font-family:Georgia,serif;margin-top:0}.muted{opacity:.75}.ok{font-weight:700}.warn{font-weight:700}a{color:#33402c;font-weight:700}.details{margin:20px 0;padding:16px;background:#f7f4ec;border-radius:12px;line-height:1.65}
+</style>
+</head>
+<body><main><div class="card">
+<h1 id="title">Vérification du paiement…</h1>
+<p id="message">Nous vérifions la confirmation de votre commande.</p>
+<div id="details" class="details" hidden></div>
+<p class="muted" id="note">Cette vérification peut prendre quelques secondes après votre retour de Mollie.</p>
+<p><a href="/">Retour à la boutique</a></p>
+</div></main>
+<script>
+const qs=new URLSearchParams(location.search), ref=qs.get('ref');
+const title=document.getElementById('title'), message=document.getElementById('message'), details=document.getElementById('details'), note=document.getElementById('note');
+const euro=c=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'}).format(Number(c||0)/100);
+const fmtDate=d=>{if(!d)return ''; const s=String(d).slice(0,10).split('-'); return s.length===3?`${s[2]}/${s[1]}/${s[0]}`:d};
+function show(o){
+  if(o.status==='paid'){
+    title.textContent='Paiement confirmé';
+    message.innerHTML=`Merci. Votre commande <strong>${o.order_ref}</strong> est bien payée et enregistrée.`;
+    const mode=o.mode==='delivery'?'Livraison':'Retrait';
+    details.hidden=false; details.innerHTML=`<strong>${mode}</strong>${o.service_date?` — ${fmtDate(o.service_date)}`:''}${o.service_slot?` — ${o.service_slot}`:''}<br><strong>Total payé :</strong> ${euro(o.total_cents)}`;
+    note.textContent='Un e-mail de confirmation vous a été envoyé.';
+    return true;
+  }
+  if(['failed','canceled','expired','payment_creation_failed'].includes(o.status)){
+    title.textContent='Paiement non confirmé';
+    message.textContent='Le paiement n’a pas été confirmé. Votre commande n’est pas considérée comme payée.';
+    note.textContent='Vous pouvez retourner à la boutique et recommencer le paiement.';
+    return true;
+  }
+  title.textContent='Paiement en cours de confirmation…';
+  message.innerHTML=`Commande <strong>${o.order_ref}</strong> : nous attendons encore la confirmation sécurisée du paiement.`;
+  return false;
+}
+async function check(attempt=0){
+  if(!ref){title.textContent='Référence de commande manquante';message.textContent='Impossible de vérifier cette commande.';note.textContent='';return;}
+  try{
+    const r=await fetch(`/.netlify/functions/order-status?ref=${encodeURIComponent(ref)}`,{cache:'no-store'});
+    const o=await r.json();
+    if(r.ok && show(o)) return;
+  }catch(e){}
+  if(attempt<10) setTimeout(()=>check(attempt+1),1500);
+  else {title.textContent='Confirmation en cours';message.innerHTML=`Votre retour de paiement a bien été reçu pour la commande <strong>${ref}</strong>. La confirmation serveur prend plus de temps que prévu.`;note.textContent='Consultez votre e-mail de confirmation. Si vous avez un doute, contactez L’Atelier du Goût.';}
+}
+check();
+</script></body></html>

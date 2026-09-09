@@ -1,0 +1,58 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartes cadeaux — L'Atelier du Goût</title><link rel="stylesheet" href="/assets/style.css"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#283728"></head><body>
+<div class="promo">Un cadeau gourmand, envoyé quand vous le souhaitez</div>
+<header class="top"><div class="topin">
+<a class="brand" href="/index.html">L'ATELIER DU GOÛT<small>AULNAY-DE-SAINTONGE</small></a>
+<nav class="nav"><a href="/manger.html">À manger</a><a href="/minargent.html">Minargent</a><a href="/boissons.html">Boissons & cave</a><a href="/epicerie.html">Épicerie fine</a><a href="/coffrets.html">Coffrets</a><a href="/cadeaux.html">Cartes cadeaux</a></nav>
+<a class="accountlink" href="/compte.html">Mon compte</a><button class="cartbtn" onclick="openCart()">Panier · <span id="cart-count">0</span></button>
+</div></header>
+<section class="gift-hero"><div class="gift-hero-copy"><div class="kicker">À offrir</div><h1>Offrez L’Atelier du Goût.</h1><p>Choisissez le montant, écrivez votre message et décidez quand le cadeau doit arriver.</p><div class="gift-pills"><span>30 à 100 €</span><span>Envoi immédiat ou programmé</span><span>Code cadeau unique</span></div></div><div class="gift-card-visual"><small>L'ATELIER DU GOÛT</small><div>BON<br>CADEAU</div><b>Pour un moment gourmand</b></div></section>
+<main class="wrap">
+<section class="section"><div class="container"><div class="gift-builder">
+  <div>
+    <p class="eyebrow">1 · Montant</p><h2>Choisissez la valeur</h2>
+    <div class="gift-values" id="giftValues">
+      <button class="gift-value" type="button" data-value="30"><strong>30 €</strong><span>Carte cadeau digitale</span></button>
+      <button class="gift-value selected" type="button" data-value="50"><strong>50 €</strong><span>Carte cadeau digitale</span></button>
+      <button class="gift-value" type="button" data-value="60"><strong>60 €</strong><span>Carte cadeau digitale</span></button>
+      <button class="gift-value" type="button" data-value="80"><strong>80 €</strong><span>Carte cadeau digitale</span></button>
+      <button class="gift-value" type="button" data-value="100"><strong>100 €</strong><span>Carte cadeau digitale</span></button>
+    </div>
+
+    <div style="margin-top:34px"><p class="eyebrow">2 · Acheteur</p><h2>Vos coordonnées</h2>
+      <div class="field"><label for="buyerName">Votre nom</label><input id="buyerName" autocomplete="name" required></div>
+      <div class="field"><label for="buyerEmail">Votre e-mail</label><input id="buyerEmail" type="email" autocomplete="email" required></div>
+    </div>
+
+    <div style="margin-top:34px"><p class="eyebrow">3 · Destinataire</p><h2>Pour qui est la carte ?</h2>
+      <div class="gift-toggle"><button id="giftForOther" class="active" type="button">Pour offrir</button><button id="giftForMe" type="button">Pour moi</button></div>
+      <div id="giftRecipientFields">
+        <div class="field"><label for="giftName">Nom du destinataire</label><input id="giftName" autocomplete="name"></div>
+        <div class="field"><label for="giftEmail">E-mail du destinataire</label><input id="giftEmail" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="giftMessage">Message personnel</label><textarea id="giftMessage" maxlength="1500" placeholder="Votre message…"></textarea></div>
+    </div>
+
+    <div style="margin-top:34px"><p class="eyebrow">4 · Envoi</p><h2>Quand l’envoyer ?</h2>
+      <div class="gift-toggle"><button id="sendNow" class="active" type="button">Dès le paiement</button><button id="sendLater" type="button">À une date précise</button></div>
+      <div class="field hidden" id="giftDateField"><label for="giftDate">Date d’envoi</label><input id="giftDate" type="date"></div>
+    </div>
+  </div>
+
+  <aside class="gift-summary">
+    <div class="gift-card-visual compact"><small>L'ATELIER DU GOÛT</small><div>BON CADEAU</div><strong id="giftPreviewValue">50 €</strong></div>
+    <h3>Votre carte cadeau</h3>
+    <div class="gift-summary-row"><span>Montant</span><strong id="giftSummaryValue">50 €</strong></div>
+    <div class="gift-summary-row"><span>Envoi</span><strong id="giftSummarySend">Dès le paiement</strong></div>
+    <p class="hint">Le paiement est sécurisé par Mollie. Le code cadeau n’est créé qu’après confirmation du paiement.</p>
+    <button class="btn primary" id="giftPayButton" type="button" style="width:100%">Payer 50 €</button>
+    <div id="giftError" class="warning" style="display:none"></div>
+  </aside>
+</div>
+
+<div class="gift-how"><div><b>1</b><h3>Choisissez</h3><p>30 €, 50 €, 60 €, 80 € ou 100 €.</p></div><div><b>2</b><h3>Personnalisez</h3><p>Nom, e-mail et message personnel.</p></div><div><b>3</b><h3>Payez</h3><p>Paiement sécurisé via Mollie.</p></div><div><b>4</b><h3>Le code arrive</h3><p>Immédiatement ou à la date choisie.</p></div></div>
+</div></section>
+</main>
+<footer class="footer"><div class="footerin"><div><div class="brand" style="color:white">L'ATELIER DU GOÛT<small>AULNAY-DE-SAINTONGE</small></div><p>3 place Aristide Briand · 17470 Aulnay-de-Saintonge</p></div><div><b>Cartes cadeaux</b><p>30 € · 50 € · 60 € · 80 € · 100 €</p></div><div class="legal">Code unique · solde conservé · utilisation en plusieurs fois à activer dans l’étape suivante.</div></div></footer>
+<div id="toast" class="toast"></div>
+<script src="/assets/app.js"></script><script src="/assets/gifts.js"></script><script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script></body></html>

@@ -1,0 +1,116 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boutique en ligne — L'Atelier du Goût</title><link rel="stylesheet" href="/assets/style.css"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#283728"></head><body>
+<div class="promo">Commande avant 20h = première disponibilité dès le lendemain · Retrait gratuit · Livraison locale</div>
+<header class="top"><div class="topin">
+<a class="brand" href="/index.html">L'ATELIER DU GOÛT<small>AULNAY-DE-SAINTONGE</small></a>
+<nav class="nav"><a href="/manger.html">À manger</a><a href="/minargent.html">Minargent</a><a href="/boissons.html">Boissons & cave</a><a href="/epicerie.html">Épicerie fine</a><a href="/coffrets.html">Coffrets</a><a href="/cadeaux.html">Cartes cadeaux</a></nav>
+<a class="accountlink" href="/compte.html">Mon compte</a>
+<button class="cartbtn" onclick="openCart()">Panier · <span id="cart-count">0</span></button>
+</div></header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Boutique en ligne · Aulnay-de-Saintonge</div>
+    <h1>Du fait maison et de bons produits, à commander simplement.</h1>
+    <p>Plats cuisinés, épicerie fine, cave et créations Minargent. Retrait à la boutique ou livraison locale.</p>
+    <div class="hero-actions">
+      <a class="cta" href="/manger.html">Voir les plats</a>
+      <a class="cta secondary" href="#univers">Découvrir la boutique</a>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="quick-info">
+    <div><b>Retrait gratuit</b><span>3 place Aristide Briand, Aulnay</span></div>
+    <div><b>Livraison locale</b><span>À partir de 3,50 €</span></div>
+    <div><b>Commande avant 20h</b><span>Première disponibilité dès le lendemain</span></div>
+  </section>
+
+  <section class="shop-section" id="univers">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">La boutique</div>
+        <h2>Qu’est-ce qui vous ferait plaisir ?</h2>
+      </div>
+    </div>
+    <div class="universe-grid">
+      <a class="universe universe-food" href="/manger.html"><span>Fait maison</span><h3>À manger</h3><p>Entrées, plats, desserts et à partager.</p><b>Découvrir →</b></a>
+      <a class="universe universe-grocery" href="/epicerie.html"><span>À découvrir</span><h3>Épicerie fine</h3><p>Antipasti, pâtes, sauces, huiles et biscuits.</p><b>Découvrir →</b></a>
+      <a class="universe universe-drinks" href="/boissons.html"><span>À boire</span><h3>Boissons & cave</h3><p>Bona, bulles, vins blancs, rosés et rouges.</p><b>Découvrir →</b></a>
+      <a class="universe universe-minargent" href="/minargent.html"><span>Créations maison</span><h3>Minargent</h3><p>Valton, Punch Coco et Punch Tropical.</p><b>Découvrir →</b></a>
+      <a class="universe universe-gifts" href="/coffrets.html"><span>À offrir</span><h3>Coffrets & cadeaux</h3><p>Coffrets gourmands et idées à offrir.</p><b>Découvrir →</b></a>
+      <a class="universe universe-card" href="/cadeaux.html"><span>Le choix libre</span><h3>Cartes cadeaux</h3><p>30 €, 50 €, 60 €, 80 € ou 100 €.</p><b>Offrir →</b></a>
+    </div>
+  </section>
+
+  <section class="home-products today" id="today">
+    <div class="sectionhead">
+      <div><div class="kicker">En ce moment</div><h2>Disponible à la commande</h2><p>Une sélection rapide pour commander sans parcourir toute la boutique.</p></div>
+      <a href="/manger.html">Voir tous les plats →</a>
+    </div>
+    <div id="today-list" class="today-list"></div>
+  </section>
+
+  <section class="home-products">
+    <div class="sectionhead">
+      <div><div class="kicker">Les favoris</div><h2>Nos incontournables</h2><p>Quelques produits à retrouver facilement.</p></div>
+      <a href="/manger.html">Voir plus →</a>
+    </div>
+    <div id="best-grid" class="mini-grid"></div>
+  </section>
+
+  <section class="story">
+    <div class="story-photo"></div>
+    <div class="story-copy">
+      <div class="kicker">Minargent</div>
+      <h2>Une collection née à Aulnay.</h2>
+      <p>Valton, Punch Coco et Punch Tropical : des créations artisanales préparées en petites quantités.</p>
+      <a class="cta" href="/minargent.html">Découvrir Minargent</a>
+    </div>
+  </section>
+
+  <section class="gift-home">
+    <div>
+      <div class="kicker">Cartes cadeaux</div>
+      <h2>Offrez L’Atelier du Goût.</h2>
+      <p>Choisissez le montant, ajoutez un message et laissez la personne choisir ce qui lui fait plaisir.</p>
+      <a class="cta" href="/cadeaux.html">Offrir une carte cadeau</a>
+    </div>
+    <div class="gift-card-visual compact"><small>L'ATELIER DU GOÛT</small><div>Carte cadeau</div><strong>50 €</strong><b>Un moment gourmand</b></div>
+  </section>
+
+  <section class="loyalty">
+    <div>
+      <div class="kicker">Fidélité</div>
+      <h2>Vos commandes vous récompensent.</h2>
+      <p>50 points offerts à la création du compte, puis 1 € dépensé = 1 point.</p>
+      <a href="/compte.html"><b>Découvrir mon espace client →</b></a>
+    </div>
+    <div class="loyalty-card">
+      <small>Aperçu de votre espace fidélité</small>
+      <div class="points">186 points</div>
+      <p>Plus que 14 points avant 12 € de récompense.</p>
+      <div class="progress"><span style="width:93%"></span></div>
+    </div>
+  </section>
+
+  <section class="reassurance">
+    <div><b>Une question ?</b><span>Consultez la FAQ ou contactez directement la boutique.</span><a href="/faq.html">Voir la FAQ →</a></div>
+    <div><b>Retrait & livraison</b><span>Consultez les zones, tarifs et créneaux disponibles.</span><a href="/livraison.html">Voir les modalités →</a></div>
+  </section>
+</main><footer class="footer"><div class="footerin">
+<div><div class="brand" style="color:white">L'ATELIER DU GOÛT<small>AULNAY-DE-SAINTONGE</small></div><p>Fait maison, épicerie fine, Minargent, cave et commandes locales.</p><small>3 place Aristide Briand · 17470 Aulnay-de-Saintonge</small></div>
+<div><b>Commander</b><p><a href="/manger.html">À manger</a><br><a href="/coffrets.html">Coffrets</a><br><a href="/compte.html">Fidélité</a></p></div>
+<div class="legal"><b>Informations</b><p>Lundi fermé. Dimanche midi uniquement. Vente d'alcool interdite aux mineurs. Les mentions réglementaires et allergènes doivent être vérifiées avant mise en production.</p></div>
+</div><div style="background:#182319;color:#c9d0c6;text-align:center;padding:0 15px 20px;font-size:11px"><a href="/cgv.html">CGV</a> · <a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a> · <a href="/livraison.html">Livraison</a> · <a href="/faq.html">FAQ</a></div></footer><div id="drawer" class="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel">
+<button class="close" onclick="closeCart()" aria-label="Fermer">×</button><h1 style="font-family:Georgia,serif;color:var(--green)">Votre panier</h1>
+<div id="cart-lines"></div>
+<div class="section"><h2>Retrait ou livraison</h2><div class="choicegrid"><button id="pickup" class="choice active" onclick="setMode('pickup')"><b>Retrait boutique</b><br><small>Gratuit</small></button><button id="delivery" class="choice" onclick="setMode('delivery')"><b>Livraison locale</b><br><small>À partir de 3,50 €</small></button></div>
+<div id="delivery-fields" style="display:none"><div class="field"><label>Zone de livraison</label><select id="zone" onchange="changeZone()"><option value="3.5">Aulnay-de-Saintonge — 3,50 €</option><option value="5">Zone proche — 5,00 €</option><option value="7.5">Zone 10–15 km — 7,50 €</option></select></div><p class="hint">Minimum de commande pour une livraison : 20 €. Au-delà de la zone proposée : sur demande.</p></div></div>
+<div class="section"><h2>Date & créneau</h2><div class="field"><label>Date souhaitée</label><input id="order-date" type="date" onchange="updateSlots()"><div id="date-note" class="hint"></div></div><div class="field"><label>Créneau</label><select id="slot"></select></div><p class="hint">Commande avant 20h : première disponibilité dès le lendemain selon les jours d'ouverture. Après 20h : à partir du surlendemain.</p></div>
+<div class="section"><h2>Vos coordonnées</h2><div class="field"><label>Nom et prénom</label><input id="name" autocomplete="name"></div><div class="field"><label>Téléphone</label><input id="phone" type="tel" autocomplete="tel"></div><div class="field"><label>Email</label><input id="email" type="email" autocomplete="email"></div><div id="address-field" class="field" style="display:none"><label>Adresse complète</label><input id="address" autocomplete="street-address"></div><div class="field"><label>Allergies / intolérances à signaler</label><textarea id="allergies" placeholder="Indiquez ici toute allergie ou intolérance."></textarea></div><div class="field"><label>Commentaires / choix pour les coffrets</label><textarea id="comments" placeholder="Ex. parfums Bona, choix de plats, précisions de livraison…"></textarea></div></div>
+<div id="alcohol-box" class="alcohol" style="display:none"><label><input id="age18" type="checkbox"> <span>Je certifie avoir au moins 18 ans. La vente d'alcool aux mineurs est interdite.</span></label></div>
+<div class="alcohol"><label><input id="cgv" type="checkbox"> <span>J’accepte les conditions générales de vente et confirme avoir vérifié le contenu et le montant de ma commande.</span></label></div>
+<div class="section" id="loyalty-reward-box" style="display:none"><h2>Récompense fidélité</h2><div class="field"><label>Utiliser mes points</label><select id="loyalty-reward" onchange="applyLoyaltyReward()"><option value="">Chargement…</option></select></div><div id="loyalty-message" class="hint"></div></div><div class="section"><h2>Carte cadeau</h2><div class="field"><label>Code cadeau</label><input id="gift-code" placeholder="ADG-…" autocomplete="off"></div><div style="display:flex;gap:8px"><button id="gift-apply-btn" type="button" class="choice" onclick="applyGiftCode()">Appliquer</button><button type="button" class="choice" onclick="removeGiftCode()">Retirer</button></div><div id="gift-message" class="hint" style="margin-top:8px"></div></div><div class="upsell"><h4>Compléter ma commande</h4><div id="upsell"></div></div><div class="summarybox"><div style="display:flex;justify-content:space-between"><span>Sous-total</span><b id="sub-total">0 €</b></div><div style="display:flex;justify-content:space-between"><span>Livraison</span><b id="delivery-fee">0 €</b></div><div id="loyalty-discount-row" style="display:none;justify-content:space-between"><span>Récompense fidélité</span><b id="loyalty-discount">− 0 €</b></div><div id="gift-discount-row" style="display:none;justify-content:space-between"><span>Carte cadeau</span><b id="gift-discount">− 0 €</b></div><hr><div class="totalrow"><span>Total</span><span id="grand-total">0 €</span></div><div class="hint" style="margin-top:8px">Cette commande vous rapporte <b id="points-earned">+0 points</b>.</div></div>
+<div id="payment-info" class="hint">Paiement sécurisé. Vous pouvez utiliser une carte cadeau et régler le complément éventuel par carte bancaire.</div><br><button id="checkout-btn" class="checkout" onclick="validateOrder()">Continuer au paiement</button>
+</aside></div><div id="toast" class="toast"></div><script src="/assets/app.js"></script><script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}</script></body></html>

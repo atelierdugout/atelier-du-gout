@@ -1,0 +1,19 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte cadeau — L'Atelier du Goût</title><link rel="stylesheet" href="/assets/style.css"><meta name="theme-color" content="#283728"></head><body>
+<div class="promo">Carte cadeau L’Atelier du Goût</div><header class="top"><div class="topin"><a class="brand" href="/index.html">L'ATELIER DU GOÛT<small>AULNAY-DE-SAINTONGE</small></a><nav class="nav"><a href="/cadeaux.html">Cartes cadeaux</a></nav></div></header>
+<main class="wrap"><section class="panel" style="max-width:760px;margin:60px auto"><p class="eyebrow">Paiement</p><h1 id="title">Vérification en cours…</h1><div id="content"><p>Nous vérifions votre paiement.</p></div><p style="margin-top:24px"><a class="btn primary" href="/index.html">Retour à la boutique</a></p></section></main>
+<script>
+const ref=new URLSearchParams(location.search).get('ref'); let tries=0;
+async function check(){
+ if(!ref){document.getElementById('title').textContent='Référence manquante';return;}
+ try{const r=await fetch('/.netlify/functions/gift-status?ref='+encodeURIComponent(ref),{cache:'no-store'});const d=await r.json();
+  if(d.status==='paid'){
+   document.getElementById('title').textContent='Paiement confirmé';
+   const later=d.send_mode==='later'&&d.send_date;
+   document.getElementById('content').innerHTML=`<p>Votre carte cadeau <strong>${d.purchase_ref}</strong> est bien payée.</p><p>Montant : <strong>${(d.value_cents/100).toFixed(2).replace('.',',')} €</strong></p><p>${later?`Elle sera envoyée à la date choisie : <strong>${d.send_date}</strong>.`:`Elle est en cours d’envoi par e-mail à <strong>${d.recipient_email}</strong>.`}</p><p>Vous recevrez également une confirmation d’achat.</p>`; return;
+  }
+  if(['failed','canceled','expired'].includes(d.status)){document.getElementById('title').textContent='Paiement non finalisé';document.getElementById('content').innerHTML='<p>Le paiement n’a pas été confirmé.</p>';return;}
+ }catch(e){}
+ tries++; if(tries<12) setTimeout(check,1500); else {document.getElementById('title').textContent='Paiement en cours de confirmation';document.getElementById('content').innerHTML='<p>Le paiement est encore en cours de vérification. Vous pouvez fermer cette page : la confirmation sera envoyée par e-mail.</p>';}
+}
+check();
+</script></body></html>
