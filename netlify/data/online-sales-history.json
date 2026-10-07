@@ -1,0 +1,12 @@
+{
+  "source": "Boutique en ligne",
+  "verified_revenue_cents": 200,
+  "verified_revenue_euros": 2,
+  "classification": "verified_real_revenue",
+  "notes": [
+    "Le chiffre d'affaires réel vérifié de la boutique en ligne est de 2,00 euros.",
+    "Toutes les autres commandes actuellement présentes dans la base de la boutique en ligne sont des commandes de test.",
+    "Les statistiques brutes de la table orders ne doivent pas être utilisées pour calculer le chiffre d'affaires global historique tant que les commandes de test ne sont pas identifiées individuellement.",
+    "Ne pas additionner le chiffre d'affaires brut de orders au chiffre d'affaires global."
+  ]
+}

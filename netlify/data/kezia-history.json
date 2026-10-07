@@ -1,0 +1,114 @@
+{
+  "source": "Kézia Cloud",
+  "period": {
+    "start": "2026-04-01",
+    "end": "2026-09-30"
+  },
+  "monthly": [
+    {
+      "month": "2026-04",
+      "operations": 96,
+      "revenue_cents": 166032,
+      "average_ticket_cents": 1730
+    },
+    {
+      "month": "2026-05",
+      "operations": 398,
+      "revenue_cents": 922304,
+      "average_ticket_cents": 2317
+    },
+    {
+      "month": "2026-06",
+      "operations": 268,
+      "revenue_cents": 510669,
+      "average_ticket_cents": 1905
+    },
+    {
+      "month": "2026-07",
+      "operations": 366,
+      "revenue_cents": 1125168,
+      "average_ticket_cents": 3074
+    },
+    {
+      "month": "2026-08",
+      "operations": 228,
+      "revenue_cents": 820823,
+      "average_ticket_cents": 3600
+    },
+    {
+      "month": "2026-09",
+      "operations": 220,
+      "revenue_cents": 961538,
+      "average_ticket_cents": 4371
+    }
+  ],
+  "september_weeks": [
+    {
+      "week": 36,
+      "year": 2026,
+      "operations": 29,
+      "revenue_cents": 222234,
+      "average_ticket_cents": 7663
+    },
+    {
+      "week": 37,
+      "year": 2026,
+      "operations": 64,
+      "revenue_cents": 217930,
+      "average_ticket_cents": 3405
+    },
+    {
+      "week": 38,
+      "year": 2026,
+      "operations": 70,
+      "revenue_cents": 286689,
+      "average_ticket_cents": 4096
+    },
+    {
+      "week": 39,
+      "year": 2026,
+      "operations": 57,
+      "revenue_cents": 234685,
+      "average_ticket_cents": 4117
+    }
+  ],
+  "payment_methods": [
+    {
+      "method": "CHEQUES",
+      "operations": 5,
+      "amount_cents": 25171
+    },
+    {
+      "method": "ESPECES",
+      "operations": 459,
+      "amount_cents": 939041
+    },
+    {
+      "method": "CHEQUES",
+      "operations": 1,
+      "amount_cents": 42400
+    },
+    {
+      "method": "CARTES",
+      "operations": 1181,
+      "amount_cents": 3548691
+    },
+    {
+      "method": "TICKET RESTAURANT",
+      "operations": 1,
+      "amount_cents": 740
+    },
+    {
+      "method": "REGUL",
+      "operations": 9,
+      "amount_cents": -7109
+    }
+  ],
+  "notes": [
+    "Les données mensuelles constituent la référence CA historique Kézia.",
+    "Les semaines 36 à 39 sont un détail de septembre et ne doivent pas être additionnées au CA mensuel.",
+    "Les moyens de paiement constituent un autre axe de contrôle et ne doivent pas être additionnés au CA mensuel.",
+    "Le total des moyens de paiement diffère du total mensuel exporté ; conserver cet écart comme anomalie à vérifier.",
+    "Ces données Kézia concernent les ventes enregistrées dans la caisse et ne constituent pas à elles seules le bénéfice de l'entreprise."
+  ]
+}

@@ -1,0 +1,2196 @@
+/* =========================================================
+   L'ATELIER DU GOÛT — ADMIN UI 2026
+   Couche visuelle globale
+   Identité historique conservée
+   ========================================================= */
+
+:root{
+    --green:#283728;
+    --green2:#3d513c;
+    --cream:#f6f0e5;
+    --paper:#fffdf8;
+    --gold:#c49a46;
+    --gold2:#e5c988;
+    --ink:#20231d;
+    --muted:#6c7067;
+    --line:#ded6c8;
+
+    --ui-radius:20px;
+    --ui-radius-small:14px;
+    --ui-shadow:0 8px 28px rgba(40,55,40,.07);
+    --ui-shadow-hover:0 14px 34px rgba(40,55,40,.11);
+}
+
+/* ---------- BASE ---------- */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    background:
+        radial-gradient(circle at 95% 0%,rgba(196,154,70,.07),transparent 25rem),
+        var(--cream);
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button,
+a,
+select,
+input[type="checkbox"]{
+    -webkit-tap-highlight-color:transparent;
+}
+
+button,
+.primary-button,
+.secondary-button{
+    touch-action:manipulation;
+}
+
+/* ---------- LARGEUR DES PAGES ---------- */
+
+.dashboard-page,
+.orders-page,
+.products-page,
+.clients-page,
+.loyalty-page,
+.settings-page,
+.statistics-page,
+.appearance-page{
+    width:min(1180px,calc(100% - 40px));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* ---------- RETOUR ACCUEIL ---------- */
+
+.admin-home-link{
+    position:sticky;
+    top:12px;
+    z-index:50;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    margin:14px 0 4px 20px;
+    padding:0 17px;
+    border:1px solid rgba(40,55,40,.12);
+    border-radius:999px;
+    background:rgba(40,55,40,.96);
+    color:#fffdf8;
+    box-shadow:0 7px 20px rgba(40,55,40,.12);
+    text-decoration:none;
+    font-family:Georgia,serif;
+    font-size:15px;
+    font-weight:600;
+    backdrop-filter:blur(10px);
+}
+
+/* ---------- EN-TÊTES ---------- */
+
+.dashboard-header,
+.orders-header,
+.products-header,
+.clients-header,
+.loyalty-header,
+.settings-header,
+.statistics-header,
+.appearance-header{
+    margin-top:26px;
+    margin-bottom:24px;
+}
+
+.orders-header,
+.products-header,
+.clients-header,
+.loyalty-header,
+.statistics-header,
+.appearance-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.dashboard-kicker,
+.orders-kicker,
+.clients-kicker,
+.loyalty-kicker,
+.settings-kicker,
+.statistics-kicker{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.dashboard-header h1,
+.orders-header h1,
+.products-header h1,
+.clients-header h1,
+.loyalty-header h1,
+.settings-header h1,
+.statistics-header h1,
+.appearance-header h1{
+    margin:5px 0 7px;
+    color:var(--green);
+    font-family:Georgia,serif;
+    font-size:clamp(38px,5vw,58px);
+    line-height:.98;
+    font-weight:500;
+    letter-spacing:-.025em;
+}
+
+.dashboard-header p,
+.orders-header p,
+.products-header p,
+.clients-header p,
+.loyalty-header p,
+.settings-header p,
+.statistics-header p,
+.appearance-header p{
+    margin:0;
+    color:var(--muted);
+    line-height:1.45;
+}
+
+/* ---------- BOUTONS ---------- */
+
+.primary-button,
+.secondary-button,
+.appearance-secondary-button,
+.appearance-upload-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:46px;
+    padding:11px 18px;
+    border-radius:999px;
+    font-weight:800;
+    line-height:1.1;
+    cursor:pointer;
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+.primary-button{
+    border:1px solid var(--green);
+    background:var(--green);
+    color:#fff;
+}
+
+.secondary-button,
+.appearance-secondary-button,
+.appearance-upload-button{
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--green);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.appearance-secondary-button:hover,
+.appearance-upload-button:hover{
+    transform:translateY(-1px);
+    box-shadow:var(--ui-shadow);
+}
+
+.primary-button:active,
+.secondary-button:active{
+    transform:translateY(0);
+}
+
+/* ---------- FORMULAIRES ---------- */
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+textarea{
+    min-height:46px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .15s ease,box-shadow .15s ease;
+}
+
+textarea{
+    min-height:100px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(196,154,70,.13);
+}
+
+/* ---------- LOGIN ---------- */
+
+.orders-login,
+.clients-login,
+.loyalty-login,
+.statistics-login,
+.appearance-login,
+.settings-card{
+    border:1px solid var(--line);
+    border-radius:var(--ui-radius);
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.orders-login,
+.clients-login,
+.loyalty-login,
+.statistics-login,
+.appearance-login{
+    padding:24px;
+}
+
+.orders-login-form,
+.clients-login-form,
+.loyalty-login-form,
+.statistics-login-form{
+    gap:10px;
+}
+
+/* ---------- TOOLBARS ---------- */
+
+.orders-toolbar,
+.products-toolbar,
+.clients-toolbar,
+.loyalty-toolbar,
+.appearance-toolbar{
+    margin:0 0 18px;
+    padding:12px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(255,253,248,.82);
+    box-shadow:0 5px 20px rgba(40,55,40,.04);
+}
+
+.orders-tabs{
+    gap:6px;
+}
+
+.order-tab{
+    min-height:42px;
+    padding:9px 16px;
+    border-radius:999px;
+    white-space:nowrap;
+}
+
+.order-tab.active{
+    background:var(--green);
+    color:#fff;
+}
+
+/* ---------- STATS ---------- */
+
+.orders-summary,
+.clients-summary,
+.loyalty-summary,
+.statistics-summary{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+    margin:16px 0 20px;
+}
+
+.order-stat,
+.client-stat,
+.loyalty-stat,
+.statistics-stat{
+    min-height:105px;
+    padding:17px 18px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--paper);
+    box-shadow:0 4px 18px rgba(40,55,40,.04);
+}
+
+.order-stat span,
+.client-stat span,
+.loyalty-stat span,
+.statistics-stat span{
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+}
+
+.order-stat strong,
+.client-stat strong,
+.loyalty-stat strong,
+.statistics-stat strong{
+    display:block;
+    margin-top:6px;
+    color:var(--green);
+    font-family:Georgia,serif;
+    font-size:31px;
+    line-height:1;
+    font-weight:500;
+}
+
+/* ---------- COMMANDES ---------- */
+
+.orders-content{
+    margin-top:12px;
+}
+
+.order-card{
+    overflow:hidden;
+    margin-bottom:12px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.order-card-header{
+    padding:16px 18px;
+}
+
+.order-card-body{
+    padding:16px 18px;
+}
+
+.order-card-footer{
+    padding:13px 18px;
+}
+
+.order-reference{
+    font-family:Georgia,serif;
+    color:var(--green);
+}
+
+.order-status,
+.status-badge{
+    border-radius:999px;
+}
+
+.orders-message{
+    padding:30px 20px;
+    border:1px dashed var(--line);
+    border-radius:18px;
+    background:rgba(255,253,248,.72);
+    color:var(--muted);
+    text-align:center;
+}
+
+/* ---------- RÉSERVATIONS ---------- */
+
+.reservations-header-actions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:8px;
+}
+
+.reservation-modal{
+    padding:18px;
+    backdrop-filter:blur(5px);
+}
+
+.reservation-modal-card{
+    width:min(680px,100%);
+    max-height:calc(100dvh - 36px);
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:0 24px 70px rgba(25,35,25,.20);
+}
+
+.reservation-modal-header{
+    position:sticky;
+    top:0;
+    z-index:2;
+    background:var(--paper);
+}
+
+.reservation-form-grid{
+    gap:13px;
+}
+
+.reservation-form-actions{
+    position:sticky;
+    bottom:0;
+    padding-top:12px;
+    background:var(--paper);
+}
+
+.reservation-weekly-row{
+    border-radius:13px;
+}
+
+/* ---------- PRODUITS ---------- */
+
+.products-toolbar{
+    display:grid;
+    grid-template-columns:minmax(260px,1fr) minmax(190px,280px);
+    gap:10px;
+}
+
+.products-content{
+    gap:16px;
+}
+
+.products-list{
+    overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.products-list-header{
+    padding:16px 18px;
+}
+
+.product-table-row{
+    min-height:100px;
+    padding:14px 18px;
+}
+
+.product-identity{
+    min-width:0;
+}
+
+.product-identity strong{
+    color:var(--green);
+    font-family:Georgia,serif;
+    font-size:18px;
+}
+
+.product-actions{
+    gap:6px;
+}
+
+.product-panel{
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.product-panel-header{
+    position:sticky;
+    top:0;
+    z-index:3;
+    background:var(--paper);
+}
+
+.product-form-actions{
+    position:sticky;
+    bottom:0;
+    background:var(--paper);
+}
+
+/* ---------- CLIENTS ---------- */
+
+.client-card,
+.loyalty-card{
+    margin-bottom:10px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--paper);
+    box-shadow:0 5px 18px rgba(40,55,40,.04);
+}
+
+.client-avatar,
+.loyalty-avatar{
+    flex:0 0 auto;
+}
+
+/* ---------- FIDÉLITÉ ---------- */
+
+.loyalty-card-header{
+    gap:12px;
+}
+
+.loyalty-balance{
+    color:var(--green);
+    font-family:Georgia,serif;
+}
+
+.loyalty-history{
+    border-radius:14px;
+}
+
+/* ---------- PARAMÈTRES / CRÉNEAUX / CADEAUX ---------- */
+
+.settings-grid{
+    gap:14px;
+}
+
+.settings-card,
+.order-settings-panel{
+    padding:22px;
+}
+
+.order-settings-panel{
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.order-settings-section{
+    padding:18px 0;
+}
+
+.schedule-row,
+.closed-date-item{
+    border-radius:13px;
+}
+
+.order-settings-actions{
+    position:sticky;
+    bottom:12px;
+    z-index:10;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:rgba(255,253,248,.94);
+    box-shadow:var(--ui-shadow);
+    backdrop-filter:blur(10px);
+}
+
+/* ---------- STATISTIQUES ---------- */
+
+.statistics-grid{
+    gap:14px;
+}
+
+.statistics-panel{
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.statistics-panel-title{
+    color:var(--green);
+    font-family:Georgia,serif;
+}
+
+.statistics-day-row,
+.statistics-product-row{
+    border-radius:12px;
+}
+
+/* ---------- APPARENCE ---------- */
+
+.appearance-panel{
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.appearance-panel-title{
+    color:var(--green);
+    font-family:Georgia,serif;
+}
+
+.appearance-section-row{
+    border-radius:14px;
+}
+
+.appearance-image-preview{
+    overflow:hidden;
+    border-radius:15px;
+}
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard-page{
+    padding-top:28px;
+    padding-bottom:60px;
+}
+
+.dashboard-main-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.dashboard-shop-link{
+    flex:0 0 auto;
+    text-decoration:none;
+}
+
+.dashboard-notification-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    margin:8px 0 34px;
+    padding:15px 17px;
+    border-radius:18px;
+    background:var(--green);
+    color:#fff;
+    box-shadow:var(--ui-shadow);
+}
+
+.dashboard-notification-copy{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.dashboard-notification-icon{
+    display:grid;
+    place-items:center;
+    width:42px;
+    height:42px;
+    flex:0 0 42px;
+    border-radius:13px;
+    background:rgba(255,255,255,.1);
+}
+
+.dashboard-notification-copy strong{
+    display:block;
+    font-family:Georgia,serif;
+    font-size:17px;
+}
+
+.dashboard-notification-copy #push-status{
+    display:block;
+    margin-top:2px;
+    color:#dfe5dc;
+    font-size:12px;
+}
+
+.dashboard-notification-card .primary-button{
+    border-color:var(--gold);
+    background:var(--gold);
+    color:#211c11;
+}
+
+.dashboard-section{
+    margin-top:30px;
+}
+
+.dashboard-section-heading{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:18px;
+    margin-bottom:12px;
+}
+
+.dashboard-section-heading h2{
+    margin:4px 0 0;
+    color:var(--green);
+    font-family:Georgia,serif;
+    font-size:27px;
+    font-weight:500;
+}
+
+.dashboard-section-heading p{
+    margin:0;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.dashboard-section-label,
+.dashboard-card-label{
+    color:var(--gold);
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.15em;
+}
+
+.dashboard-grid-primary{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.dashboard-grid-secondary{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+}
+
+.dashboard-card{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center;
+    gap:14px;
+    min-height:112px;
+    padding:18px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:var(--paper);
+    color:var(--ink);
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(40,55,40,.04);
+    transition:transform .15s ease,box-shadow .15s ease;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--ui-shadow-hover);
+}
+
+.dashboard-card-featured{
+    min-height:135px;
+}
+
+.dashboard-card h2{
+    margin:3px 0 4px;
+    color:var(--green);
+    font-family:Georgia,serif;
+    font-size:21px;
+    font-weight:500;
+}
+
+.dashboard-card-featured h2{
+    font-size:25px;
+}
+
+.dashboard-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.4;
+}
+
+.dashboard-icon{
+    display:grid;
+    place-items:center;
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    background:#efe5d2;
+    font-size:21px;
+}
+
+.dashboard-arrow{
+    color:var(--gold);
+    font-size:22px;
+}
+
+.dashboard-login-header{
+    max-width:520px;
+    margin:35px auto 18px;
+    text-align:center;
+}
+
+.dashboard-login-card{
+    max-width:520px;
+    margin:0 auto;
+    padding:28px;
+    text-align:center;
+}
+
+.dashboard-login-icon{
+    display:grid;
+    place-items:center;
+    width:50px;
+    height:50px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    background:#efe5d2;
+    color:var(--gold);
+}
+
+.dashboard-login-intro{
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.dashboard-login-primary,
+.dashboard-login-secondary{
+    width:100%;
+}
+
+.dashboard-login-separator{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:18px 0;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.dashboard-login-separator::before,
+.dashboard-login-separator::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+}
+
+.dashboard-pin-form{
+    text-align:left;
+}
+
+.dashboard-pin-form label{
+    display:block;
+    margin-bottom:6px;
+    font-size:11px;
+    font-weight:800;
+}
+
+.dashboard-login-error{
+    min-height:18px;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .orders-summary,
+    .clients-summary,
+    .loyalty-summary,
+    .statistics-summary{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .dashboard-grid-secondary{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .products-toolbar{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   MOBILE — MODE OPÉRATIONNEL
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .dashboard-page,
+    .orders-page,
+    .products-page,
+    .clients-page,
+    .loyalty-page,
+    .settings-page,
+    .statistics-page,
+    .appearance-page{
+        width:calc(100% - 24px);
+    }
+
+    .admin-home-link{
+        position:relative;
+        top:auto;
+        min-height:40px;
+        margin:12px 0 0 12px;
+        padding:0 14px;
+        font-size:14px;
+    }
+
+    /* Headers plus compacts */
+
+    .orders-header,
+    .products-header,
+    .clients-header,
+    .loyalty-header,
+    .statistics-header,
+    .appearance-header,
+    .dashboard-main-header{
+        display:block;
+        margin-top:24px;
+        margin-bottom:18px;
+    }
+
+    .dashboard-header h1,
+    .orders-header h1,
+    .products-header h1,
+    .clients-header h1,
+    .loyalty-header h1,
+    .settings-header h1,
+    .statistics-header h1,
+    .appearance-header h1{
+        font-size:39px;
+    }
+
+    .dashboard-header p,
+    .orders-header p,
+    .products-header p,
+    .clients-header p,
+    .loyalty-header p,
+    .settings-header p,
+    .statistics-header p,
+    .appearance-header p{
+        font-size:14px;
+    }
+
+    .orders-header > .primary-button,
+    .products-header > .primary-button,
+    .clients-header > .primary-button,
+    .loyalty-header > .primary-button{
+        margin-top:14px;
+    }
+
+    /* Réservations */
+
+    .reservations-header-actions{
+        display:grid;
+        grid-template-columns:1fr auto;
+        margin-top:14px;
+    }
+
+    .reservations-header-actions .primary-button{
+        grid-column:1;
+    }
+
+    .reservations-header-actions .secondary-button{
+        padding-left:13px;
+        padding-right:13px;
+    }
+
+    /* Toolbar compacte */
+
+    .orders-toolbar,
+    .products-toolbar,
+    .clients-toolbar,
+    .loyalty-toolbar,
+    .appearance-toolbar{
+        padding:9px;
+        border-radius:16px;
+    }
+
+    .orders-tabs{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        width:100%;
+    }
+
+    .order-tab{
+        min-width:0;
+        min-height:40px;
+        padding:8px 7px;
+        font-size:12px;
+    }
+
+    /* Stats beaucoup plus compactes */
+
+    .orders-summary,
+    .clients-summary,
+    .loyalty-summary,
+    .statistics-summary{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+        margin:12px 0 15px;
+    }
+
+    .order-stat,
+    .client-stat,
+    .loyalty-stat,
+    .statistics-stat{
+        min-height:82px;
+        padding:13px 14px;
+        border-radius:16px;
+    }
+
+    .order-stat span,
+    .client-stat span,
+    .loyalty-stat span,
+    .statistics-stat span{
+        font-size:11px;
+    }
+
+    .order-stat strong,
+    .client-stat strong,
+    .loyalty-stat strong,
+    .statistics-stat strong{
+        margin-top:4px;
+        font-size:27px;
+    }
+
+    /* Commandes */
+
+    .order-card{
+        border-radius:16px;
+    }
+
+    .order-card-header,
+    .order-card-body{
+        padding:13px 14px;
+    }
+
+    .order-card-footer{
+        padding:11px 14px;
+    }
+
+    .orders-message{
+        padding:24px 15px;
+    }
+
+    /* Produits */
+
+    .products-toolbar{
+        gap:8px;
+    }
+
+    .products-list{
+        border-radius:17px;
+    }
+
+    .products-list-header{
+        padding:13px 14px;
+    }
+
+    .product-table-row{
+        min-height:0;
+        padding:13px 14px;
+    }
+
+    .product-identity strong{
+        font-size:17px;
+    }
+
+    .product-actions button{
+        min-height:40px;
+        padding:8px 12px;
+    }
+
+    .product-panel{
+        border-radius:17px;
+    }
+
+    /* Modales */
+
+    .reservation-modal{
+        align-items:flex-end;
+        padding:0;
+    }
+
+    .reservation-modal-card{
+        width:100%;
+        max-height:92dvh;
+        border-radius:22px 22px 0 0;
+    }
+
+    .reservation-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* Dashboard */
+
+    .dashboard-page{
+        padding-top:15px;
+        padding-bottom:40px;
+    }
+
+    .dashboard-shop-link{
+        display:inline-flex;
+        margin-top:12px;
+    }
+
+    .dashboard-notification-card{
+        margin-bottom:26px;
+        padding:13px;
+    }
+
+    .dashboard-notification-copy{
+        align-items:flex-start;
+    }
+
+    .dashboard-notification-copy #push-status{
+        line-height:1.3;
+    }
+
+    .dashboard-notification-card .primary-button{
+        min-height:40px;
+        padding:8px 12px;
+    }
+
+    .dashboard-section{
+        margin-top:27px;
+    }
+
+    .dashboard-section-heading{
+        display:block;
+        margin-bottom:10px;
+    }
+
+    .dashboard-section-heading h2{
+        font-size:25px;
+    }
+
+    .dashboard-section-heading p{
+        margin-top:4px;
+    }
+
+    .dashboard-grid-primary,
+    .dashboard-grid-secondary{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .dashboard-card,
+    .dashboard-card-featured{
+        min-height:0;
+        padding:14px;
+        border-radius:16px;
+    }
+
+    .dashboard-card-featured h2{
+        font-size:21px;
+    }
+
+    .dashboard-icon{
+        width:44px;
+        height:44px;
+        border-radius:13px;
+        font-size:19px;
+    }
+
+    .dashboard-login-card{
+        padding:22px 17px;
+    }
+
+    /* Réglages */
+
+    .settings-card,
+    .order-settings-panel{
+        padding:17px;
+    }
+
+    .order-settings-actions{
+        bottom:8px;
+    }
+}
+
+/* ---------- ACCESSIBILITÉ ---------- */
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important;
+    }
+}
+
+:focus-visible{
+    outline:3px solid rgba(196,154,70,.45);
+    outline-offset:2px;
+}
+
+
+/* =========================================================
+   NAVIGATION ADMINISTRATION COMMUNE
+   ========================================================= */
+
+.admin-global-nav{
+    position:relative;
+    z-index:1000;
+}
+
+.admin-global-nav-bar{
+    min-height:68px;
+    padding:10px clamp(16px, 3vw, 34px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid rgba(40,55,40,.10);
+    box-shadow:0 4px 20px rgba(30,40,30,.05);
+}
+
+.admin-global-brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:inherit;
+    text-decoration:none;
+    min-width:0;
+}
+
+.admin-global-brand-mark{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:#283728;
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+}
+
+.admin-global-brand > span:last-child{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+}
+
+.admin-global-brand strong{
+    font-size:14px;
+    line-height:1.25;
+}
+
+.admin-global-brand small{
+    margin-top:2px;
+    opacity:.58;
+    font-size:11px;
+}
+
+.admin-global-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin-global-shop,
+.admin-global-menu-button{
+    min-height:42px;
+    border-radius:12px;
+    padding:0 14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font:inherit;
+    font-weight:700;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.admin-global-shop{
+    color:#283728;
+    border:1px solid rgba(40,55,40,.14);
+    background:#fff;
+}
+
+.admin-global-menu-button{
+    color:#fff;
+    border:0;
+    background:#283728;
+}
+
+.admin-global-overlay{
+    position:fixed;
+    inset:0;
+    z-index:1090;
+    background:rgba(20,26,20,.38);
+    backdrop-filter:blur(2px);
+}
+
+.admin-global-drawer{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:1100;
+    width:min(360px, 90vw);
+    height:100dvh;
+    background:#fff;
+    box-shadow:-20px 0 60px rgba(20,30,20,.18);
+    transform:translateX(105%);
+    transition:transform .22s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.admin-global-drawer.is-open{
+    transform:translateX(0);
+}
+
+.admin-global-drawer-head{
+    padding:20px;
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    border-bottom:1px solid rgba(40,55,40,.10);
+}
+
+.admin-global-drawer-head > div{
+    display:flex;
+    flex-direction:column;
+}
+
+.admin-global-drawer-head small{
+    margin-top:3px;
+    opacity:.55;
+}
+
+.admin-global-close{
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:12px;
+    background:#f2f3ef;
+    font-size:26px;
+    cursor:pointer;
+}
+
+.admin-global-links{
+    padding:12px;
+    overflow:auto;
+    flex:1;
+}
+
+.admin-global-links a{
+    min-height:48px;
+    padding:8px 12px;
+    margin:2px 0;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#283728;
+    text-decoration:none;
+    font-weight:650;
+}
+
+.admin-global-links a:hover{
+    background:#f3f5f0;
+}
+
+.admin-global-links a.is-active{
+    background:#283728;
+    color:#fff;
+}
+
+.admin-global-link-icon{
+    width:26px;
+    text-align:center;
+    font-size:17px;
+}
+
+.admin-global-drawer-footer{
+    padding:14px 18px max(18px, env(safe-area-inset-bottom));
+    border-top:1px solid rgba(40,55,40,.10);
+}
+
+.admin-global-logout{
+    width:100%;
+    min-height:46px;
+    border:1px solid rgba(120,45,45,.18);
+    border-radius:12px;
+    background:#fff;
+    color:#8a3333;
+    font:inherit;
+    font-weight:700;
+    cursor:pointer;
+}
+
+body.admin-nav-open{
+    overflow:hidden;
+}
+
+@media (max-width: 640px){
+    .admin-global-nav-bar{
+        min-height:62px;
+        padding:9px 12px;
+    }
+
+    .admin-global-brand strong{
+        font-size:13px;
+    }
+
+    .admin-global-brand small{
+        display:none;
+    }
+
+    .admin-global-shop{
+        display:none;
+    }
+
+    .admin-global-menu-button{
+        min-height:42px;
+        padding:0 12px;
+    }
+
+    .admin-global-drawer{
+        width:min(340px, 92vw);
+    }
+}
+
+
+/* Retour contextuel d'une sous-page admin */
+.admin-context-back{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin:18px clamp(16px, 3vw, 34px) 0;
+    color:#536153;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+}
+
+.admin-context-back:hover{
+    color:#283728;
+}
+
+@media (max-width:640px){
+    .admin-context-back{
+        margin:14px 14px 0;
+        min-height:38px;
+    }
+}
+
+
+/* =========================================================
+   ADMIN RESPONSIVE GLOBAL — 2026
+   Couche finale commune desktop / tablette / iPhone
+   ========================================================= */
+
+html{
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    min-width:0;
+    overflow-x:hidden;
+}
+
+body *{
+    min-width:0;
+}
+
+img,
+svg,
+canvas,
+video{
+    max-width:100%;
+}
+
+/* Champs adaptés au tactile et évite le zoom automatique iOS */
+input,
+select,
+textarea,
+button{
+    max-width:100%;
+}
+
+@media (max-width:700px){
+
+    input,
+    select,
+    textarea{
+        font-size:16px;
+    }
+
+    button,
+    .primary-button,
+    .secondary-button{
+        min-height:44px;
+    }
+
+    /* Conteneurs principaux */
+    .orders-page,
+    .products-page,
+    .clients-page,
+    .statistics-page,
+    .settings-page,
+    .appearance-page,
+    .assistant-page,
+    .loyalty-page,
+    .reservations-page{
+        width:100%;
+        max-width:none;
+        margin:0;
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    /* En-têtes */
+    .orders-header,
+    .products-header,
+    .clients-header,
+    .statistics-header,
+    .settings-header,
+    .appearance-header,
+    .assistant-header,
+    .reservations-header{
+        gap:12px;
+    }
+
+    h1{
+        overflow-wrap:anywhere;
+    }
+
+    /* Cartes */
+    .settings-card,
+    .orders-login,
+    .loyalty-login{
+        max-width:100%;
+    }
+
+    /* Formulaires */
+    form,
+    .orders-login-form{
+        max-width:100%;
+    }
+
+    /* Les contrôles juxtaposés peuvent revenir à la ligne */
+    .orders-toolbar,
+    .products-toolbar,
+    .clients-toolbar,
+    .statistics-toolbar{
+        flex-wrap:wrap;
+    }
+
+    /* Modales */
+    [class*="modal"]{
+        max-width:100%;
+    }
+
+    [class*="modal"] > div,
+    [class*="modal-card"],
+    [class*="modal-content"]{
+        max-width:calc(100vw - 28px);
+    }
+
+    /* Les tableaux restent utilisables lorsqu'ils ne peuvent
+       raisonnablement pas devenir des cartes */
+    table{
+        max-width:none;
+    }
+
+    .table-wrapper,
+    .table-scroll,
+    [class*="table-wrap"]{
+        width:100%;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+}
+
+
+/* Très petits écrans */
+@media (max-width:430px){
+
+    .orders-page,
+    .products-page,
+    .clients-page,
+    .statistics-page,
+    .settings-page,
+    .appearance-page,
+    .assistant-page,
+    .loyalty-page,
+    .reservations-page{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    h1{
+        font-size:clamp(26px,8vw,34px);
+        line-height:1.08;
+    }
+
+    h2{
+        overflow-wrap:anywhere;
+    }
+
+    button,
+    .primary-button,
+    .secondary-button{
+        touch-action:manipulation;
+    }
+
+    /* Boutons d'action longs */
+    .orders-login-form,
+    .settings-actions{
+        width:100%;
+    }
+}
+
+
+/* Safe areas iPhone */
+@supports(padding:max(0px)){
+    .admin-global-nav{
+        padding-left:env(safe-area-inset-left);
+        padding-right:env(safe-area-inset-right);
+    }
+
+    .admin-nav-drawer{
+        padding-bottom:max(
+            16px,
+            env(safe-area-inset-bottom)
+        );
+    }
+}
+
+
+/* =========================================================
+   ADMIN VISUAL SYSTEM — CONSOLIDATION
+   ========================================================= */
+
+:root{
+    --admin-page-max:1180px;
+    --admin-page-gap:20px;
+
+    --admin-surface:var(--paper);
+    --admin-surface-soft:rgba(255,253,248,.72);
+    --admin-border:rgba(40,55,40,.11);
+
+    --admin-text:var(--ink);
+    --admin-text-soft:var(--muted);
+
+    --admin-focus:0 0 0 3px rgba(196,154,70,.18);
+
+    --admin-transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+}
+
+
+/* ---------- TYPOGRAPHIE ---------- */
+
+body{
+    color:var(--admin-text);
+    line-height:1.45;
+}
+
+h1,
+h2,
+h3,
+p{
+    text-wrap:pretty;
+}
+
+h2,
+h3{
+    color:var(--green);
+}
+
+p{
+    line-height:1.55;
+}
+
+
+/* ---------- LARGEUR COMMUNE ---------- */
+
+.dashboard-page,
+.orders-page,
+.products-page,
+.clients-page,
+.loyalty-page,
+.settings-page,
+.statistics-page,
+.appearance-page,
+.reservations-page,
+.assistant-page{
+    width:min(
+        var(--admin-page-max),
+        calc(100% - (var(--admin-page-gap) * 2))
+    );
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* ---------- EN-TÊTES COMMUNS ---------- */
+
+.dashboard-header,
+.orders-header,
+.products-header,
+.clients-header,
+.loyalty-header,
+.settings-header,
+.statistics-header,
+.appearance-header,
+.reservations-header,
+.assistant-header{
+    padding-top:6px;
+}
+
+.dashboard-kicker,
+.orders-kicker,
+.products-kicker,
+.clients-kicker,
+.loyalty-kicker,
+.settings-kicker,
+.statistics-kicker,
+.appearance-kicker,
+.reservations-kicker,
+.assistant-kicker{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+
+/* ---------- SURFACES / CARTES ---------- */
+
+.settings-card,
+.orders-login,
+.loyalty-login,
+.dashboard-notification-card,
+[class*="-summary"]{
+    border-color:var(--admin-border);
+}
+
+.settings-card{
+    background:var(--admin-surface);
+    transition:var(--admin-transition);
+}
+
+/* Les liens Paramètres sont clairement interactifs */
+a.settings-card{
+    cursor:pointer;
+}
+
+a.settings-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(196,154,70,.38);
+    box-shadow:var(--ui-shadow-hover);
+}
+
+a.settings-card:focus-visible{
+    outline:none;
+    box-shadow:var(--admin-focus),var(--ui-shadow-hover);
+}
+
+/* Cartes Paramètres non interactives */
+article.settings-card{
+    background:var(--admin-surface-soft);
+}
+
+
+/* ---------- BOUTONS ---------- */
+
+.primary-button,
+.secondary-button,
+.appearance-secondary-button,
+.appearance-upload-button{
+    min-height:46px;
+    transition:var(--admin-transition);
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.appearance-secondary-button:focus-visible,
+.appearance-upload-button:focus-visible{
+    outline:none;
+    box-shadow:var(--admin-focus);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none;
+}
+
+
+/* ---------- CHAMPS ---------- */
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea{
+    border-color:var(--line);
+    background:#fff;
+    color:var(--ink);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+    box-shadow:var(--admin-focus);
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#92958d;
+}
+
+
+/* ---------- LIENS ET ACTIONS ---------- */
+
+a{
+    text-underline-offset:3px;
+}
+
+button,
+a,
+input,
+select,
+textarea{
+    -webkit-tap-highlight-color:transparent;
+}
+
+
+/* ---------- ÉTATS ---------- */
+
+[role="alert"]:empty,
+[role="status"]:empty{
+    display:none;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.admin-global-nav{
+    border-bottom:1px solid rgba(40,55,40,.08);
+}
+
+.admin-nav-drawer{
+    overscroll-behavior:contain;
+}
+
+.admin-nav-drawer a{
+    transition:
+        background .15s ease,
+        color .15s ease,
+        transform .15s ease;
+}
+
+.admin-nav-drawer a:hover{
+    transform:translateX(2px);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px){
+
+    :root{
+        --admin-page-gap:14px;
+    }
+
+    .dashboard-header,
+    .orders-header,
+    .products-header,
+    .clients-header,
+    .loyalty-header,
+    .settings-header,
+    .statistics-header,
+    .appearance-header,
+    .reservations-header,
+    .assistant-header{
+        margin-top:20px;
+        margin-bottom:18px;
+    }
+
+    .dashboard-header h1,
+    .orders-header h1,
+    .products-header h1,
+    .clients-header h1,
+    .loyalty-header h1,
+    .settings-header h1,
+    .statistics-header h1,
+    .appearance-header h1,
+    .reservations-header h1,
+    .assistant-header h1{
+        font-size:clamp(30px,9vw,42px);
+        line-height:1;
+    }
+
+    .settings-card{
+        border-radius:16px;
+    }
+
+    /* Une action importante = pleine largeur sur petit écran */
+    .settings-card .primary-button{
+        width:100%;
+    }
+}
+
+
+@media(max-width:430px){
+
+    :root{
+        --admin-page-gap:12px;
+    }
+
+    .primary-button,
+    .secondary-button{
+        min-height:46px;
+    }
+}
+
+
+/* =========================================================
+   COCKPIT LIVE — AUJOURD'HUI
+   ========================================================= */
+
+.cockpit-today{
+    margin:8px 0 38px;
+}
+
+.cockpit-heading{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:18px;
+    margin-bottom:16px;
+}
+
+.cockpit-heading h2{
+    margin:4px 0 0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:30px;
+    line-height:1;
+}
+
+.cockpit-updated{
+    color:var(--muted);
+    font-size:12px;
+    white-space:nowrap;
+}
+
+.cockpit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+}
+
+.cockpit-card{
+    display:flex;
+    flex-direction:column;
+    min-height:145px;
+    padding:20px;
+    border:1px solid var(--admin-border);
+    border-radius:18px;
+    background:var(--paper);
+    color:var(--ink);
+    text-decoration:none;
+    box-shadow:var(--ui-shadow);
+    transition:var(--admin-transition);
+}
+
+.cockpit-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(196,154,70,.38);
+    box-shadow:var(--ui-shadow-hover);
+}
+
+.cockpit-card:focus-visible{
+    outline:none;
+    box-shadow:var(--admin-focus),var(--ui-shadow-hover);
+}
+
+.cockpit-label{
+    color:var(--muted);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+.cockpit-value{
+    display:block;
+    margin:12px 0 8px;
+    color:var(--green);
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:34px;
+    line-height:1;
+}
+
+.cockpit-detail{
+    margin-top:auto;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.cockpit-card.is-attention{
+    border-color:rgba(196,154,70,.55);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(196,154,70,.08),
+            var(--paper)
+        );
+}
+
+.cockpit-card.is-error{
+    border-color:rgba(160,50,50,.25);
+}
+
+@media(max-width:900px){
+    .cockpit-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:520px){
+    .cockpit-heading{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:6px;
+    }
+
+    .cockpit-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .cockpit-card{
+        min-height:132px;
+        padding:15px;
+        border-radius:15px;
+    }
+
+    .cockpit-value{
+        font-size:28px;
+    }
+
+    .cockpit-label{
+        font-size:10px;
+    }
+
+    .cockpit-detail{
+        font-size:12px;
+    }
+}
+
+
+/* =========================================================
+   COCKPIT — ACTIONS & PRIORITÉS
+   ========================================================= */
+
+.cockpit-actions{
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(280px,1fr);
+    gap:14px;
+    margin-top:14px;
+}
+
+.cockpit-actions-panel,
+.cockpit-priorities-panel{
+    padding:20px;
+    border:1px solid var(--admin-border);
+    border-radius:18px;
+    background:var(--paper);
+    box-shadow:var(--ui-shadow);
+}
+
+.cockpit-actions-heading{
+    margin-bottom:15px;
+}
+
+.cockpit-actions-heading h3{
+    margin:3px 0 0;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:22px;
+}
+
+.cockpit-next-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+}
+
+.cockpit-next-item{
+    display:flex;
+    flex-direction:column;
+    min-height:112px;
+    padding:14px;
+    border:1px solid var(--admin-border);
+    border-radius:14px;
+    background:var(--admin-surface-soft);
+    color:var(--ink);
+    text-decoration:none;
+    transition:var(--admin-transition);
+}
+
+.cockpit-next-item:hover{
+    transform:translateY(-1px);
+    border-color:rgba(196,154,70,.38);
+}
+
+.cockpit-next-type{
+    margin-bottom:8px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.cockpit-next-item strong{
+    color:var(--green);
+    font-size:16px;
+}
+
+.cockpit-next-item strong + span{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.4;
+}
+
+.cockpit-priorities{
+    display:grid;
+    gap:8px;
+}
+
+.cockpit-priority{
+    display:block;
+    padding:11px 12px;
+    border:1px solid var(--admin-border);
+    border-radius:12px;
+    background:var(--admin-surface-soft);
+    color:var(--ink);
+    font-size:13px;
+    line-height:1.4;
+    text-decoration:none;
+}
+
+.cockpit-priority.is-attention{
+    border-color:rgba(196,154,70,.42);
+    background:rgba(196,154,70,.08);
+}
+
+.cockpit-priority.is-ok{
+    color:var(--muted);
+}
+
+@media(max-width:900px){
+    .cockpit-actions{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:620px){
+    .cockpit-next-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cockpit-next-item{
+        min-height:auto;
+    }
+
+    .cockpit-actions-panel,
+    .cockpit-priorities-panel{
+        padding:15px;
+        border-radius:15px;
+    }
+}

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Atelier du Goût">
+    <meta name="theme-color" content="#283728">
+    <title>Administration — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+
+<body>
+
+<div id="admin-login" class="dashboard-page" hidden>
+
+    <header class="dashboard-header dashboard-login-header">
+        <div class="dashboard-kicker">L'Atelier du Goût</div>
+        <h1>Bienvenue</h1>
+        <p>Accédez à votre espace de gestion.</p>
+    </header>
+
+    <section class="settings-card dashboard-login-card">
+
+        <div class="dashboard-login-icon">✦</div>
+
+        <h2>Connexion sécurisée</h2>
+
+        <p class="dashboard-login-intro">
+            Utilisez Face ID, Touch ID ou votre Passkey pour accéder rapidement
+            à l'administration.
+        </p>
+
+        <button
+            id="passkey-login"
+            class="primary-button dashboard-login-primary"
+            type="button">
+            Face ID / Passkey
+        </button>
+
+        <div class="dashboard-login-separator">
+            <span>ou</span>
+        </div>
+
+        <form id="pin-login-form" class="dashboard-pin-form">
+
+            <label for="admin-pin">Code administrateur</label>
+
+            <input
+                id="admin-pin"
+                type="password"
+                inputmode="numeric"
+                placeholder="Votre code"
+                autocomplete="current-password"
+                required
+            >
+
+            <button
+                class="secondary-button dashboard-login-secondary"
+                type="submit">
+                Se connecter avec le code
+            </button>
+
+        </form>
+
+        <p id="login-error"
+           class="dashboard-login-error"
+           role="alert"></p>
+
+    </section>
+
+</div>
+
+
+<div id="admin-dashboard" class="dashboard-page" hidden>
+
+    <header class="dashboard-header dashboard-main-header">
+
+        <div>
+            <div class="dashboard-kicker">L'Atelier du Goût</div>
+            <h1>Bonjour Nicolas.</h1>
+            <p>Tout ce qu'il faut pour piloter la boutique aujourd'hui.</p>
+        </div>
+
+        <a
+            href="/"
+            class="secondary-button dashboard-shop-link"
+            target="_blank"
+            rel="noopener">
+            Voir la boutique ↗
+        </a>
+
+    </header>
+
+
+    <section class="dashboard-notification-card">
+
+        <div class="dashboard-notification-copy">
+            <span class="dashboard-notification-icon">🔔</span>
+            <div>
+                <strong>Notifications iPhone</strong>
+                <span id="push-status">
+                    Recevez immédiatement les nouvelles commandes et réservations.
+                </span>
+            </div>
+        </div>
+
+        <button
+            id="enable-push"
+            class="primary-button"
+            type="button">
+            Activer
+        </button>
+
+    </section>
+
+
+    
+        <section class="cockpit-today" id="cockpit-today">
+            <div class="cockpit-heading">
+                <div>
+                    <span class="dashboard-section-label">EN DIRECT</span>
+                    <h2>Aujourd’hui</h2>
+                </div>
+
+                <span class="cockpit-updated" id="cockpit-updated">
+                    Chargement…
+                </span>
+            </div>
+
+            <div class="cockpit-grid">
+
+                <a href="statistiques.html" class="cockpit-card">
+                    <span class="cockpit-label">CA aujourd’hui</span>
+                    <strong class="cockpit-value" id="cockpit-revenue">—</strong>
+                    <span class="cockpit-detail" id="cockpit-sales-detail">
+                        —
+                    </span>
+                </a>
+
+                <a href="commandes.html" class="cockpit-card">
+                    <span class="cockpit-label">Commandes</span>
+                    <strong class="cockpit-value" id="cockpit-orders">—</strong>
+                    <span class="cockpit-detail" id="cockpit-orders-detail">
+                        —
+                    </span>
+                </a>
+
+                <a href="reservations.html" class="cockpit-card">
+                    <span class="cockpit-label">Réservations</span>
+                    <strong class="cockpit-value" id="cockpit-reservations">—</strong>
+                    <span class="cockpit-detail" id="cockpit-reservations-detail">
+                        —
+                    </span>
+                </a>
+
+                <a href="hygiene.html" class="cockpit-card">
+                    <span class="cockpit-label">HACCP</span>
+                    <strong class="cockpit-value" id="cockpit-haccp">—</strong>
+                    <span class="cockpit-detail" id="cockpit-haccp-detail">
+                        —
+                    </span>
+                </a>
+
+            </div>
+
+            <div class="cockpit-actions">
+
+                <div class="cockpit-actions-panel">
+                    <div class="cockpit-actions-heading">
+                        <span class="dashboard-section-label">PROCHAINEMENT</span>
+                        <h3>À préparer</h3>
+                    </div>
+
+                    <div class="cockpit-next-grid">
+
+                        <a href="commandes.html" class="cockpit-next-item">
+                            <span class="cockpit-next-type">Commande</span>
+                            <strong id="cockpit-next-order">Aucune</strong>
+                            <span id="cockpit-next-order-detail">
+                                Rien à préparer actuellement
+                            </span>
+                        </a>
+
+                        <a href="reservations.html" class="cockpit-next-item">
+                            <span class="cockpit-next-type">Réservation</span>
+                            <strong id="cockpit-next-reservation">Aucune</strong>
+                            <span id="cockpit-next-reservation-detail">
+                                Aucune réservation active
+                            </span>
+                        </a>
+
+                        <a href="hygiene.html" class="cockpit-next-item">
+                            <span class="cockpit-next-type">HACCP</span>
+                            <strong id="cockpit-next-haccp">Aucune</strong>
+                            <span id="cockpit-next-haccp-detail">
+                                Aucune tâche restante
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="cockpit-priorities-panel">
+                    <div class="cockpit-actions-heading">
+                        <span class="dashboard-section-label">BUSINESS BRAIN</span>
+                        <h3>Priorités</h3>
+                    </div>
+
+                    <div id="cockpit-priorities" class="cockpit-priorities">
+                        <div class="cockpit-priority is-ok">
+                            Analyse en cours…
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+<section class="dashboard-section">
+
+        <div class="dashboard-section-heading">
+            <div>
+                <span class="dashboard-section-label">AUJOURD’HUI</span>
+                <h2>Service, ventes & production</h2>
+            </div>
+            <p>Les outils opérationnels pour piloter la journée.</p>
+        </div>
+
+        <div class="dashboard-grid dashboard-grid-primary">
+
+            <a href="assistant.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">✦</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">BUSINESS BRAIN</span>
+                    <h2>Assistant IA</h2>
+                    <p>Analyser l'entreprise et exécuter les tâches opérationnelles.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+            <a href="commandes.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">📦</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">VENTES</span>
+                    <h2>Commandes</h2>
+                    <p>Préparer et suivre les commandes clients.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="reservations.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">🍽️</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">RESTAURANT</span>
+                    <h2>Réservations</h2>
+                    <p>Gérer les tables, les couverts et les réservations.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="produits.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">🍴</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">CATALOGUE</span>
+                    <h2>Produits & stock</h2>
+                    <p>Modifier les produits, prix et quantités disponibles.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="creneaux.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">🕐</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">ORGANISATION</span>
+                    <h2>Créneaux</h2>
+                    <p>Gérer les horaires de retrait et de livraison.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="hygiene.html"
+               class="dashboard-card dashboard-card-featured">
+
+                <div class="dashboard-icon">🛡️</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">HACCP</span>
+                    <h2>Hygiène & HACCP</h2>
+                    <p>Températures, contrôles, étiquettes, matériel et alertes.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+            <a href="labels.html"
+               class="dashboard-card">
+
+                <div class="dashboard-icon">🏷️</div>
+
+                <div class="dashboard-card-copy">
+                    <span class="dashboard-card-label">TRAÇABILITÉ</span>
+                    <h2>Étiquettes</h2>
+                    <p>Préparations frigo, plats à emporter, DLC, lots et impression SII.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="dashboard-section">
+
+        <div class="dashboard-section-heading">
+            <div>
+                <span class="dashboard-section-label">RELATION CLIENT</span>
+                <h2>Clients & fidélisation</h2>
+            </div>
+        </div>
+
+        <div class="dashboard-grid dashboard-grid-secondary">
+
+            <a href="clients.html" class="dashboard-card">
+
+                <div class="dashboard-icon">👥</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Clients</h2>
+                    <p>Historique des clients et de leurs achats.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="fidelite.html" class="dashboard-card">
+
+                <div class="dashboard-icon">🎁</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Fidélité</h2>
+                    <p>Points, récompenses et ajustements.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="cartes-cadeaux.html" class="dashboard-card">
+
+                <div class="dashboard-icon">💳</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Cartes cadeaux</h2>
+                    <p>Soldes et utilisations des cartes.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="dashboard-section dashboard-section-last">
+
+        <div class="dashboard-section-heading">
+            <div>
+                <span class="dashboard-section-label">PILOTAGE</span>
+                <h2>Analyse & configuration</h2>
+            </div>
+        </div>
+
+        <div class="dashboard-grid dashboard-grid-secondary">
+
+            <a href="statistiques.html" class="dashboard-card">
+
+                <div class="dashboard-icon">📊</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Statistiques</h2>
+                    <p>Chiffre d'affaires, commandes et ventes.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="apparence.html" class="dashboard-card">
+
+                <div class="dashboard-icon">🎨</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Apparence</h2>
+                    <p>Photos, textes et présentation de la boutique.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+
+            <a href="parametres.html" class="dashboard-card">
+
+                <div class="dashboard-icon">⚙️</div>
+
+                <div class="dashboard-card-copy">
+                    <h2>Paramètres</h2>
+                    <p>Sécurité et configuration de l'administration.</p>
+                </div>
+
+                <span class="dashboard-arrow">→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/admin/service-worker.js?v=2");
+}
+</script>
+
+<script src="vendor/simplewebauthn-browser.js"></script>
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+<script src="push.js?v=2"></script>
+
+</body>
+</html>

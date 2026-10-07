@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#283728">
+
+    <title>Hygiène & HACCP — L'Atelier du Goût</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+
+    <style>
+        .hygiene-page {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        .hygiene-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hygiene-kicker {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .65;
+            margin-bottom: 8px;
+        }
+
+        .hygiene-header h1 {
+            margin: 0 0 8px;
+        }
+
+        .hygiene-header p {
+            margin: 0;
+            opacity: .7;
+        }
+
+        .hygiene-connection {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            background: white;
+            border: 1px solid rgba(40,55,40,.10);
+            border-radius: 14px;
+        }
+
+        .hygiene-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #aaa;
+            flex: 0 0 auto;
+        }
+
+        .hygiene-dot.connected {
+            background: #3f7d45;
+        }
+
+        .hygiene-dot.error {
+            background: #a63c3c;
+        }
+
+        .hygiene-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .hygiene-panel {
+            background: white;
+            border: 1px solid rgba(40,55,40,.10);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.04);
+        }
+
+        .hygiene-panel-full {
+            grid-column: 1 / -1;
+        }
+
+        .hygiene-panel h2 {
+            margin: 0 0 6px;
+            font-size: 20px;
+        }
+
+        .hygiene-panel > p {
+            margin: 0 0 18px;
+            opacity: .65;
+        }
+
+        .hygiene-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .hygiene-stat {
+            padding: 18px;
+            border-radius: 14px;
+            background: #f7f7f3;
+        }
+
+        .hygiene-stat strong {
+            display: block;
+            font-size: 28px;
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+
+        .hygiene-stat span {
+            font-size: 13px;
+            opacity: .65;
+        }
+
+        .hygiene-items {
+            display: grid;
+            gap: 10px;
+        }
+
+        .hygiene-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 13px 15px;
+            border-radius: 12px;
+            background: #f7f7f3;
+        }
+
+        .hygiene-item strong {
+            display: block;
+        }
+
+        .hygiene-item small {
+            display: block;
+            margin-top: 3px;
+            opacity: .6;
+        }
+
+        .hygiene-status {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #e8eee5;
+            white-space: nowrap;
+        }
+
+        .hygiene-status.zero {
+            background: #efefeb;
+        }
+
+        .hygiene-status.warning {
+            background: #f5e7cf;
+        }
+
+        .hygiene-status.ok {
+            background: #e1eee0;
+        }
+
+        .hygiene-empty {
+            padding: 18px;
+            border: 1px dashed rgba(40,55,40,.18);
+            border-radius: 12px;
+            opacity: .65;
+            text-align: center;
+        }
+
+        .hygiene-error {
+            padding: 16px;
+            border-radius: 12px;
+            background: #f7e7e7;
+        }
+
+        @media (max-width: 700px) {
+            .hygiene-grid,
+            .hygiene-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hygiene-panel-full {
+                grid-column: auto;
+            }
+
+            .hygiene-header {
+                flex-direction: column;
+            }
+        }
+
+        .hygiene-temperature-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .hygiene-temperature-form-grid label {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            font-weight: 600;
+        }
+
+        .hygiene-temperature-form-grid select,
+        .hygiene-temperature-form-grid input {
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 46px;
+            padding: 10px 12px;
+            border: 1px solid #d7d7d7;
+            border-radius: 10px;
+            background: #fff;
+            font: inherit;
+            color: inherit;
+        }
+
+        .hygiene-temperature-form-grid select:focus,
+        .hygiene-temperature-form-grid input:focus {
+            outline: 2px solid currentColor;
+            outline-offset: 1px;
+        }
+
+        .hygiene-temperature-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        #hygiene-temperature-result {
+            min-height: 24px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #hygiene-temperature-result.success {
+            color: #177245;
+        }
+
+        #hygiene-temperature-result.error {
+            color: #b42318;
+        }
+
+        #hygiene-temperature-result.warning {
+            color: #9a6700;
+        }
+
+        #hygiene-temperature-submit:disabled {
+            opacity: .6;
+            cursor: wait;
+        }
+
+        @media (max-width: 700px) {
+            .hygiene-temperature-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hygiene-temperature-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .hygiene-temperature-actions .primary-button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<main class="hygiene-page">
+
+    <header class="hygiene-header">
+        <div>
+            <div class="hygiene-kicker">L'Atelier du Goût</div>
+            <h1>Hygiène & HACCP</h1>
+            <p>Suivi HACCP synchronisé avec Hygiène Expert.</p>
+        </div>
+
+        <button
+            class="primary-button"
+            id="hygiene-refresh"
+            type="button"
+        >
+            Actualiser
+        </button>
+    </header>
+
+    <div class="hygiene-connection">
+        <span class="hygiene-dot" id="hygiene-connection-dot"></span>
+
+        <div>
+            <strong id="hygiene-connection-title">
+                Connexion Hygiène Expert…
+            </strong>
+
+            <div id="hygiene-connection-detail">
+                Chargement des données HACCP.
+            </div>
+        </div>
+    </div>
+
+    <div class="hygiene-grid">
+
+        <section class="hygiene-panel hygiene-panel-full">
+            <h2>📊 Vue d'ensemble</h2>
+            <p id="hygiene-period">
+                Période en cours
+            </p>
+
+            <div class="hygiene-stats">
+                <div class="hygiene-stat">
+                    <strong id="hygiene-total-activity">—</strong>
+                    <span>Actions HACCP</span>
+                </div>
+
+                <div class="hygiene-stat">
+                    <strong id="hygiene-active-modules">—</strong>
+                    <span>Modules actifs</span>
+                </div>
+
+                <div class="hygiene-stat">
+                    <strong id="hygiene-modules-available">—</strong>
+                    <span>Modules suivis</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel hygiene-panel-full" id="hygiene-daily-tasks-panel">
+            <div class="hygiene-section-heading">
+                <div>
+                    <h2>Relevés à faire aujourd’hui</h2>
+                    <p id="hygiene-daily-tasks-summary">
+                        Chargement des tâches…
+                    </p>
+                </div>
+            </div>
+
+            <div id="hygiene-daily-tasks">
+                <p>Chargement…</p>
+            </div>
+        </section>
+
+        <section class="hygiene-panel hygiene-panel-full" id="hygiene-cleaning-tasks-panel">
+            <div class="hygiene-section-heading">
+                <div>
+                    <h2>🧽 Nettoyage à faire</h2>
+                    <p id="hygiene-cleaning-tasks-summary">
+                        Chargement du planning Hygiène Expert…
+                    </p>
+                </div>
+            </div>
+
+            <div class="haccp-cleaning-section">
+                <h3>Aujourd’hui</h3>
+                <div id="hygiene-cleaning-daily">
+                    <p>Chargement…</p>
+                </div>
+            </div>
+
+            <div class="haccp-cleaning-section">
+                <h3>Cette semaine</h3>
+                <div id="hygiene-cleaning-weekly">
+                    <p>Chargement…</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel hygiene-panel-full" id="temperature-entry-panel">
+            <h2>🌡️ Relevé des températures</h2>
+            <p>
+                Saisir une température mesurée et l'enregistrer directement
+                dans Hygiène Expert.
+            </p>
+
+            <form id="hygiene-temperature-form">
+                <div class="hygiene-temperature-form-grid">
+
+                    <label>
+                        <span>Matériel</span>
+                        <select
+                            id="hygiene-temperature-equipment"
+                            name="equipment_id"
+                            required
+                        >
+                            <option value="">Sélectionner un matériel</option>
+                            <option value="145576">Grand réfrigérateur</option>
+                            <option value="145830">Frigo / plan de travail réfrigéré 3 portes</option>
+                            <option value="145831">Grande vitrine réfrigérée comptoir</option>
+                            <option value="145832">Petite vitrine réfrigérée 98L</option>
+                            <option value="145579">Congélateur</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Date et heure du relevé</span>
+                        <input
+                            id="hygiene-temperature-date"
+                            name="recorded_at"
+                            type="datetime-local"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>Température mesurée (°C)</span>
+                        <input
+                            id="hygiene-temperature-value"
+                            name="temperature"
+                            type="number"
+                            step="0.1"
+                            min="-50"
+                            max="50"
+                            inputmode="decimal"
+                            placeholder="Ex. 3.2"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>Photo du matériel (facultatif)</span>
+                        <input
+                            id="hygiene-temperature-photo"
+                            name="image"
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp"
+                            capture="environment"
+                        >
+                        <small>
+                            Sur iPhone : prendre une photo du thermomètre
+                            ou de l'affichage du matériel.
+                        </small>
+                    </label>
+
+                </div>
+
+                <div class="hygiene-temperature-actions">
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="hygiene-temperature-submit"
+                    >
+                        Enregistrer dans Hygiène Expert
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="hygiene-temperature-photo-retry"
+                        hidden
+                    >
+                        Réessayer la photo
+                    </button>
+
+                    <div
+                        id="hygiene-temperature-result"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+                </div>
+            </form>
+        </section>
+
+        <section class="hygiene-panel">
+            <h2>📋 Activité HACCP</h2>
+            <p>Activité enregistrée dans Hygiène Expert.</p>
+
+            <div
+                class="hygiene-items"
+                id="hygiene-modules"
+            >
+                <div class="hygiene-empty">
+                    Chargement…
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel">
+            <h2>✓ Conformité</h2>
+            <p>Conformité des différents modules HACCP.</p>
+
+            <div
+                class="hygiene-items"
+                id="hygiene-conformity"
+            >
+                <div class="hygiene-empty">
+                    Chargement…
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel">
+            <h2>📝 Tâches & contrôles</h2>
+            <p>Suivi des tâches enregistrées dans Hygiène Expert.</p>
+
+            <div
+                class="hygiene-items"
+                id="hygiene-tasks"
+            >
+                <div class="hygiene-empty">
+                    Chargement…
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel">
+            <h2>🌡️ Températures non conformes</h2>
+            <p>Anomalies de température détectées.</p>
+
+            <div
+                class="hygiene-items"
+                id="hygiene-temperatures"
+            >
+                <div class="hygiene-empty">
+                    Chargement…
+                </div>
+            </div>
+        </section>
+
+        <section class="hygiene-panel hygiene-panel-full">
+            <h2>⚠️ Alertes HACCP</h2>
+            <p>
+                Points nécessitant une attention particulière.
+            </p>
+
+            <div
+                class="hygiene-items"
+                id="hygiene-alerts"
+            >
+                <div class="hygiene-empty">
+                    Chargement…
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="hygiene.js"></script>
+
+</body>
+</html>

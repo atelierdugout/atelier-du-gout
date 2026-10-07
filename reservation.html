@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Réserver une table — L'Atelier du Goût Aulnay-de-Saintonge</title>
+
+<meta name="description" content="Réservez votre table à L'Atelier du Goût à Aulnay-de-Saintonge. Choisissez votre date, votre horaire et le nombre de personnes.">
+
+<link rel="canonical" href="https://boutique-atelierdugoutaulnay.netlify.app/reservation.html">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta name="theme-color" content="#283728">
+
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="L'Atelier du Goût">
+<meta property="og:title" content="Réserver une table — L'Atelier du Goût">
+<meta property="og:description" content="Réservez votre table à L'Atelier du Goût à Aulnay-de-Saintonge.">
+<meta property="og:url" content="https://boutique-atelierdugoutaulnay.netlify.app/reservation.html">
+  <link rel="stylesheet" href="/public-ui-2026.css">
+</head>
+
+<body>
+
+<div class="promo">
+Réservation en ligne · Confirmation immédiate par e-mail
+</div>
+
+<header class="top">
+<div class="topin">
+
+<a class="brand" href="/index.html">
+L'ATELIER DU GOÛT
+<small>AULNAY-DE-SAINTONGE</small>
+</a>
+
+<nav class="nav">
+<a href="/manger.html">À manger</a>
+<a href="/minargent.html">Minargent</a>
+<a href="/boissons.html">Boissons & cave</a>
+<a href="/epicerie.html">Épicerie fine</a>
+<a href="/coffrets.html">Coffrets</a>
+<a href="/cadeaux.html">Cartes cadeaux</a>
+</nav>
+
+<a class="accountlink" href="/compte.html">Mon compte</a>
+
+<button class="cartbtn" onclick="openCart()">
+Panier · <span id="cart-count">0</span>
+</button>
+
+</div>
+</header>
+
+<main class="reservation-public-page">
+
+<section class="reservation-public-hero">
+
+<div class="reservation-public-hero-copy">
+<p class="eyebrow">Restaurant · Aulnay-de-Saintonge</p>
+
+<h1>Réservez votre table.</h1>
+
+<p>
+Choisissez votre date, le nombre de personnes et l'heure
+qui vous convient. Votre réservation est confirmée
+immédiatement par e-mail.
+</p>
+</div>
+
+<div class="reservation-public-info">
+<strong>L'Atelier du Goût</strong>
+<span>3 place Aristide Briand</span>
+<span>17470 Aulnay-de-Saintonge</span>
+<span>07 44 93 37 19</span>
+</div>
+
+</section>
+
+<section class="reservation-booking-section">
+
+<div class="reservation-booking-card">
+
+<div id="reservation-step-form">
+
+<div class="reservation-booking-heading">
+<p class="eyebrow">Votre réservation</p>
+<h2>Quand souhaitez-vous venir ?</h2>
+</div>
+
+<form id="public-reservation-form">
+
+<div class="reservation-public-grid">
+
+<label>
+Nombre de personnes
+<select id="public-party-size" required>
+<option value="1">1 personne</option>
+<option value="2" selected>2 personnes</option>
+<option value="3">3 personnes</option>
+<option value="4">4 personnes</option>
+<option value="5">5 personnes</option>
+<option value="6">6 personnes</option>
+<option value="7">7 personnes</option>
+<option value="8">8 personnes</option>
+<option value="9">9 personnes</option>
+<option value="10">10 personnes</option>
+</select>
+</label>
+
+<label>
+Date
+<input
+id="public-reservation-date"
+type="date"
+required>
+</label>
+
+</div>
+
+<div id="reservation-availability-loading" class="reservation-public-message" style="display:none;">
+Recherche des disponibilités…
+</div>
+
+<div id="reservation-availability-error" class="warning" style="display:none;"></div>
+
+<div id="reservation-slots-section" style="display:none;">
+
+<div class="reservation-slot-heading">
+<h3>Choisissez votre heure</h3>
+<p id="reservation-capacity-info">Capacité du service en cours de chargement…</p>
+</div>
+
+<div id="reservation-slots" class="reservation-slot-grid"></div>
+
+</div>
+
+<input id="public-reservation-time" type="hidden">
+
+<div id="reservation-contact-section" style="display:none;">
+
+<div class="reservation-contact-heading">
+<p class="eyebrow">Vos coordonnées</p>
+<h2>À quel nom devons-nous réserver ?</h2>
+</div>
+
+<div class="reservation-public-grid">
+
+<label>
+Nom
+<input
+id="public-reservation-name"
+type="text"
+autocomplete="name"
+maxlength="120"
+required>
+</label>
+
+<label>
+Téléphone
+<input
+id="public-reservation-phone"
+type="tel"
+autocomplete="tel"
+maxlength="40"
+required>
+</label>
+
+<label class="reservation-public-wide">
+E-mail
+<input
+id="public-reservation-email"
+type="email"
+autocomplete="email"
+maxlength="200"
+required>
+</label>
+
+<label class="reservation-public-wide">
+Allergies
+<textarea
+id="public-reservation-allergies"
+rows="3"
+maxlength="1000"
+placeholder="Facultatif"></textarea>
+<small>
+Facultatif — cette information est utilisée uniquement pour préparer votre accueil et votre repas.
+</small>
+</label>
+
+<label class="reservation-public-wide">
+Commentaire
+<textarea
+id="public-reservation-notes"
+rows="3"
+maxlength="1000"
+placeholder="Anniversaire, poussette, demande particulière…"></textarea>
+</label>
+
+<div class="reservation-honeypot" aria-hidden="true">
+<label>
+Site internet
+<input
+id="public-reservation-website"
+type="text"
+tabindex="-1"
+autocomplete="off">
+</label>
+</div>
+
+</div>
+
+<div class="reservation-public-summary" id="reservation-summary"></div>
+
+<div id="public-reservation-error" class="warning" style="display:none;"></div>
+
+<button
+id="public-reservation-submit"
+class="btn primary"
+type="submit">
+Confirmer la réservation
+</button>
+
+<p class="hint">
+En confirmant, vous demandez une réservation ferme.
+En cas d'empêchement, merci de nous prévenir au
+07 44 93 37 19.
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+<div id="reservation-success" class="reservation-success" style="display:none;">
+
+<div class="reservation-success-mark">✓</div>
+
+<p class="eyebrow">Réservation confirmée</p>
+
+<h2>Votre table est réservée.</h2>
+
+<p id="reservation-success-text"></p>
+
+<div id="reservation-success-reference" class="reservation-success-reference"></div>
+
+<p id="reservation-success-email"></p>
+
+<a href="/index.html" class="btn primary">
+Retour à la boutique
+</a>
+
+</div>
+
+</div>
+
+<aside class="reservation-booking-aside">
+
+<p class="eyebrow">Informations</p>
+
+<h2>Avant de réserver</h2>
+
+<div class="reservation-info-item">
+<strong>Réservation en ligne</strong>
+<span id="reservation-party-info">Nombre de personnes en cours de chargement…</span>
+</div>
+
+<div class="reservation-info-item">
+<strong>Délai minimum</strong>
+<span id="reservation-notice-info">Délai en cours de chargement…</span>
+</div>
+
+<div class="reservation-info-item">
+<strong>Groupes</strong>
+<span>
+Pour les groupes ou une demande particulière,
+contactez-nous directement.
+</span>
+</div>
+
+<div class="reservation-info-item">
+<strong>Samedi midi</strong>
+<span>
+Accueil des groupes uniquement sur demande.
+</span>
+</div>
+
+<a href="tel:+33744933719" class="btn">
+Nous appeler
+</a>
+
+</aside>
+
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footerin">
+
+<div>
+<div class="brand" style="color:white">
+L'ATELIER DU GOÛT
+<small>AULNAY-DE-SAINTONGE</small>
+</div>
+<p>
+3 place Aristide Briand ·
+17470 Aulnay-de-Saintonge
+</p>
+</div>
+
+<div>
+<b>Réservations</b>
+<p>07 44 93 37 19</p>
+</div>
+
+<div class="legal">
+Réservation selon disponibilités.
+</div>
+
+</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="/app.js"></script>
+<script src="/reservation.js"></script>
+<script>
+if('serviceWorker' in navigator){
+window.addEventListener('load',()=>{
+navigator.serviceWorker.register('/sw.js').catch(()=>{});
+});
+}
+</script>
+<script src="/mobile-nav.js"></script>
+
+</body>
+</html>

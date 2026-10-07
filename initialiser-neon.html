@@ -1,6 +1,0 @@
-<!doctype html><html lang="fr"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Initialiser Neon</title>
-<style>body{font-family:Arial;background:#f7f4ec;color:#33402c}main{max-width:650px;margin:10vh auto;padding:30px;background:#fff;border-radius:18px}button{padding:14px 20px;border:0;border-radius:99px;background:#33402c;color:white;font-size:16px}pre{white-space:pre-wrap}</style>
-<main><h1>Initialisation Neon</h1><p>Crée les tables commandes, articles et paiements.</p>
-<button id="go">Créer / vérifier les tables</button><pre id="out"></pre></main>
-<script>go.onclick=async()=>{out.textContent="Initialisation…";try{let r=await fetch("/.netlify/functions/init-db",{method:"POST"});out.textContent=JSON.stringify(await r.json(),null,2)}catch(e){out.textContent=e.message}}</script></html>

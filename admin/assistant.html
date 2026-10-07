@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant IA — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+    <link rel="stylesheet" href="assistant.css">
+</head>
+<body>
+<div class="assistant-page">
+
+    <header class="assistant-header">
+        <div>
+            <div class="assistant-kicker">L'Atelier du Goût</div>
+            <h1>Assistant IA</h1>
+            <p>Votre Business Brain pour piloter l'entreprise.</p>
+        </div>
+
+        <button
+            id="clear-conversation"
+            class="secondary-button"
+            type="button">
+            Nouvelle conversation
+        </button>
+    </header>
+
+    
+
+    <main
+        id="assistant-app"
+        class="assistant-app"
+       >
+
+        <aside class="assistant-history">
+            <div class="assistant-history-header">
+                <strong>Conversations</strong>
+            </div>
+
+            <div
+                id="assistant-conversation-list"
+                class="assistant-conversation-list">
+                <p class="assistant-history-empty">
+                    Aucune conversation enregistrée.
+                </p>
+            </div>
+        </aside>
+
+        <section class="assistant-card">
+
+            <div
+                id="assistant-messages"
+                class="assistant-messages">
+
+                <div class="assistant-message assistant-message-ai">
+                    <div class="assistant-avatar">✦</div>
+                    <div class="assistant-bubble">
+                        <strong>Business Brain</strong>
+                        <p>
+                            Bonjour Nicolas. Je suis prêt à travailler avec
+                            les données de L'Atelier du Goût.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                id="assistant-action-area"
+                class="assistant-action-area"
+                hidden>
+            </div>
+
+            <form
+                id="assistant-form"
+                class="assistant-input-area">
+
+                <textarea
+                    id="assistant-input"
+                    rows="2"
+                    placeholder="Ex. : Combien avons-nous fait de chiffre cette semaine ?"
+                    autocomplete="off"
+                    required></textarea>
+
+                <button
+                    id="assistant-send"
+                    class="primary-button"
+                    type="submit">
+                    Envoyer
+                </button>
+
+            </form>
+
+            <div class="assistant-status">
+                <span id="assistant-status-text">
+                    Prêt
+                </span>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="assistant.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "L'Atelier du Goût — Administration",
+  "short_name": "Atelier du Goût",
+  "start_url": "/admin/",
+  "display": "standalone",
+  "background_color": "#f6f0e5",
+  "theme_color": "#283728",
+  "lang": "fr"
+}

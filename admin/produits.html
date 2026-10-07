@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css?v=stock-mobile-20260923">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="products-page">
+
+    
+
+    <div id="products-dashboard">
+    <div class="products-header">
+        <div>
+            <h1>Produits</h1>
+            <p>Gérez les produits de votre boutique</p>
+        </div>
+
+        <button id="new-product" class="primary-button">
+            + Ajouter un produit
+        </button>
+    </div>
+
+    <div class="products-toolbar">
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input
+                id="search"
+                type="text"
+                placeholder="Rechercher un produit..."
+            >
+        </div>
+
+        <select id="category-filter">
+            <option value="">Toutes les catégories</option>
+            <option value="À manger">À manger</option>
+            <option value="Épicerie fine">Épicerie fine</option>
+            <option value="Boissons & cave">Boissons & cave</option>
+            <option value="Minargent">Minargent</option>
+            <option value="Coffrets & cadeaux">Coffrets & cadeaux</option>
+        </select>
+
+    </div>
+
+    <div class="products-content">
+
+        <main class="products-list">
+
+            <div class="products-list-header">
+                <span>Produit</span>
+                <span>Gestion</span>
+            </div>
+
+            <div id="products-table">
+                Chargement...
+            </div>
+
+        </main>
+
+
+        <aside id="product-form" class="product-panel" style="display:none;">
+
+            <div class="product-panel-header">
+                <div>
+                    <span class="panel-label">PRODUIT</span>
+                    <h2>Nouveau produit</h2>
+                </div>
+
+                <button
+                    id="cancel-product"
+                    type="button"
+                    class="close-panel"
+                    title="Fermer"
+                >
+                    ×
+                </button>
+            </div>
+
+
+            <div class="form-section">
+
+                <label for="product-name">Nom du produit</label>
+                <input
+                    id="product-name"
+                    type="text"
+                    placeholder="Ex. Lasagne bolognaise"
+                >
+
+                <label for="product-category">Catégorie</label>
+                <select id="product-category">
+                    <option value="">Choisir une catégorie</option>
+                    <option value="À manger">À manger</option>
+                    <option value="Épicerie fine">Épicerie fine</option>
+                    <option value="Boissons & cave">Boissons & cave</option>
+                    <option value="Minargent">Minargent</option>
+                    <option value="Coffrets & cadeaux">Coffrets & cadeaux</option>
+                </select>
+
+                <label for="product-subcategory">Sous-catégorie</label>
+                <select id="product-subcategory"><option value="">Choisir une sous-catégorie</option></select>
+
+                <label>
+                    <input id="product-alcohol" type="checkbox">
+                    Produit alcoolisé — vente interdite aux mineurs
+                </label>
+
+                <label for="product-description">Description</label>
+                <textarea
+                    id="product-description"
+                    rows="5"
+                    placeholder="Description du produit..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div>
+                    <label for="product-price">Prix</label>
+
+                    <div class="price-input">
+                        <input
+                            id="product-price"
+                            type="number"
+                            step="0.01"
+                            placeholder="0.00"
+                        >
+                        <span>€</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="product-stock">Stock</label>
+
+                    <input
+                        id="product-stock"
+                        type="number"
+                        value="0"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-section">
+
+                <label for="product-image">Photo du produit</label>
+
+                <div id="product-image-preview" style="display:none;"></div>
+                <div class="image-upload">
+                    <span>📷</span>
+
+                    <div>
+                        <strong>Ajouter une photo</strong>
+                        <small>JPG, PNG ou WEBP</small>
+                    </div>
+
+                    <input
+                        id="product-image"
+                        type="file"
+                        accept="image/*"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-section">
+
+                <h3>🏷️ Étiquetage alimentaire</h3>
+
+                <label class="option-row">
+                    <div>
+                        <strong>Disponible pour les étiquettes</strong>
+                        <small>Afficher ce produit dans le module d'impression</small>
+                    </div>
+
+                    <input
+                        id="product-label-enabled"
+                        type="checkbox"
+                    >
+                </label>
+
+                <label for="product-ingredients">Ingrédients</label>
+                <textarea
+                    id="product-ingredients"
+                    rows="4"
+                    placeholder="Ex. viande de bœuf, tomates, pâtes, lait..."
+                ></textarea>
+
+                <label for="product-allergens">Allergènes</label>
+                <textarea
+                    id="product-allergens"
+                    rows="2"
+                    placeholder="Ex. GLUTEN, LAIT, ŒUFS, CÉLERI"
+                ></textarea>
+
+                <div class="form-row">
+
+                    <div>
+                        <label for="product-net-weight">Poids net par défaut</label>
+                        <input
+                            id="product-net-weight"
+                            type="text"
+                            placeholder="Ex. 350 g"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="product-shelf-life">Durée de vie validée</label>
+                        <input
+                            id="product-shelf-life"
+                            type="number"
+                            min="1"
+                            max="365"
+                            step="1"
+                            placeholder="Ex. 3"
+                        >
+                        <small>Nombre de jours après fabrication</small>
+                    </div>
+
+                </div>
+
+                <label for="product-storage">Conditions de conservation</label>
+                <input
+                    id="product-storage"
+                    type="text"
+                    value="À conserver entre 0 °C et +4 °C"
+                    placeholder="Ex. À conserver entre 0 °C et +4 °C"
+                >
+
+                <small>
+                    La durée de vie doit correspondre à une durée définie/validée
+                    pour cette préparation. Ne pas utiliser une valeur arbitraire.
+                </small>
+
+            </div>
+
+
+            <div class="product-options">
+
+                <label class="option-row">
+                    <div>
+                        <strong>Produit actif</strong>
+                        <small>Visible et disponible dans la boutique</small>
+                    </div>
+
+                    <input
+                        id="product-active"
+                        type="checkbox"
+                        checked
+                    >
+                </label>
+
+
+                <label class="option-row">
+                    <div>
+                        <strong>⭐ Mis en avant</strong>
+                        <small>Afficher ce produit en priorité</small>
+                    </div>
+
+                    <input
+                        id="product-featured"
+                        type="checkbox"
+                    >
+                </label>
+
+            </div>
+
+
+            <div class="product-form-actions">
+
+                <button
+                    id="save-product"
+                    class="primary-button"
+                >
+                    Enregistrer
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</div>
+
+</div>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="produits.js?v=stock-20260923"></script>
+
+</body>
+</html>

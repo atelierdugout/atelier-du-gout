@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandes — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="orders-page">
+
+    <div class="orders-header">
+        <div>
+            <div class="orders-kicker">L'Atelier du Goût</div>
+            <h1>Commandes</h1>
+            <p>Suivez et préparez les commandes de la boutique.</p>
+        </div>
+
+        <button id="refresh-orders" class="primary-button">
+            Actualiser
+        </button>
+    </div>
+
+    
+
+    <div id="orders-dashboard">
+
+        <div class="orders-toolbar">
+
+            <div class="orders-tabs">
+                <button class="order-tab active" data-scope="upcoming">
+                    À préparer
+                </button>
+
+                <button class="order-tab" data-scope="today">
+                    Aujourd'hui
+                </button>
+
+                <button class="order-tab" data-scope="all">
+                    Historique
+                </button>
+            </div>
+
+            <select id="order-mode">
+                <option value="all">Retrait + livraison</option>
+                <option value="pickup">Retrait</option>
+                <option value="delivery">Livraison</option>
+            </select>
+
+            <input
+                id="order-search"
+                type="search"
+                placeholder="Rechercher : commande, nom, téléphone, e-mail"
+                autocomplete="off"
+                aria-label="Rechercher une commande"
+            >
+
+        </div>
+
+        <div class="orders-summary">
+            <div class="order-stat">
+                <span>Commandes</span>
+                <strong id="orders-count">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>À préparer</span>
+                <strong id="orders-new-count">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>Prêtes</span>
+                <strong id="orders-ready-count">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>Total affiché</span>
+                <strong id="orders-total">0,00 €</strong>
+            </div>
+        </div>
+
+        <main class="orders-content">
+
+            <div id="orders-loading" class="orders-message">
+                Chargement des commandes…
+            </div>
+
+            <div id="orders-empty" class="orders-message" style="display:none;">
+                Aucune commande dans cette catégorie.
+            </div>
+
+            <div id="orders-list"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="commandes.js"></script>
+</body>
+</html>

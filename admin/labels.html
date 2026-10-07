@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Étiquettes — L'Atelier du Goût</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f4f4f2;
+  color:#1d1d1f
+}
+main{max-width:760px;margin:auto;padding:18px}
+h1{margin:4px 0}
+.sub{color:#666;margin-top:4px}
+.card{
+  background:#fff;
+  padding:18px;
+  border-radius:16px;
+  margin:16px 0;
+  box-shadow:0 2px 12px rgba(0,0,0,.06)
+}
+.mode{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px
+}
+.mode button{
+  background:#eee;
+  color:#222
+}
+.mode button.active{
+  background:#111;
+  color:#fff
+}
+label{
+  display:block;
+  font-weight:650;
+  margin:14px 0 6px
+}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  font-size:16px;
+  background:#fff
+}
+textarea{min-height:72px}
+button{
+  border:0;
+  border-radius:10px;
+  padding:14px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer
+}
+#printBtn{
+  width:100%;
+  background:#111;
+  color:#fff;
+  font-size:18px
+}
+.warning{
+  background:#fff4d6;
+  padding:10px;
+  border-radius:8px;
+  margin-top:12px;
+  font-size:14px
+}
+.preview{
+  width:58mm;
+  min-height:45mm;
+  margin:20px auto;
+  padding:3.5mm;
+  background:white;
+  color:black;
+  border:1px dashed #aaa;
+  font-family:Arial,sans-serif
+}
+.preview h2{
+  margin:0 0 7px;
+  font-size:16px;
+  text-align:center
+}
+.preview p{
+  font-size:10.5px;
+  line-height:1.3;
+  margin:4px 0
+}
+.preview .important{
+  font-size:12px;
+  font-weight:bold
+}
+.preview .brand{
+  border-top:1px solid #000;
+  margin-top:7px;
+  padding-top:5px;
+  text-align:center;
+  font-weight:bold
+}
+.hidden{display:none}
+#status{text-align:center;margin-top:10px;font-weight:600}
+</style>
+</head>
+
+<body>
+<main>
+
+<h1>🏷️ Étiquettes</h1>
+<p class="sub">L'Atelier du Goût — Aulnay</p>
+
+<section class="card">
+
+<label>Type d'étiquette</label>
+
+<div class="mode">
+<button id="internalMode" class="active" type="button">
+🧊 Préparation frigo
+</button>
+
+<button id="saleMode" type="button">
+🛍️ Vente à emporter
+</button>
+</div>
+
+<label for="product">Préparation / produit</label>
+
+<select id="product">
+<option value="">— Choisir —</option>
+<option>Lasagnes bolognaises</option>
+<option>Bœuf braisé</option>
+<option>Porc confit</option>
+<option>Poulet crème moutarde</option>
+<option>Riz crémeux fruits de mer</option>
+<option>Ravioles truffe</option>
+<option>Gnocchi crème parmesan</option>
+<option>Salade de pois chiches</option>
+<option>Salade de lentilles</option>
+<option>Tiramisu</option>
+<option>Mousse au chocolat</option>
+<option>Panna cotta</option>
+</select>
+
+<label for="customProduct">Ou autre préparation</label>
+<input id="customProduct" placeholder="Nom de la préparation">
+
+<label for="production">Date et heure de préparation</label>
+<input id="production" type="datetime-local">
+
+<label for="lifeDays">Durée de conservation validée</label>
+
+<select id="lifeDays">
+<option value="">À définir</option>
+<option value="1">J+1</option>
+<option value="2">J+2</option>
+<option value="3">J+3</option>
+<option value="4">J+4</option>
+<option value="5">J+5</option>
+<option value="6">J+6</option>
+<option value="7">J+7</option>
+</select>
+
+<div id="lifeWarning" class="warning">
+⚠️ Sélectionner uniquement une durée de conservation définie dans ton PMS / procédure de durée de vie.
+</div>
+
+<label for="expiry">DLC calculée</label>
+<input id="expiry" type="date" readonly>
+
+<label for="storage">Conservation</label>
+<input id="storage" value="À conserver entre 0 °C et +4 °C">
+
+<label for="allergens">Allergènes</label>
+<textarea id="allergens" placeholder="Ex. GLUTEN, LAIT, ŒUFS, CÉLERI"></textarea>
+
+<div id="saleFields" class="hidden">
+
+<label for="ingredients">Ingrédients</label>
+<textarea id="ingredients" placeholder="Ingrédients par ordre décroissant..."></textarea>
+
+<label for="weight">Quantité nette</label>
+<input id="weight" placeholder="Ex. 350 g">
+
+</div>
+
+<label for="lot">Lot</label>
+<input id="lot">
+
+<label for="labelQuantity">Nombre d'étiquettes</label>
+<select id="labelQuantity">
+    <option value="1">1 étiquette</option>
+    <option value="2">2 étiquettes</option>
+    <option value="3">3 étiquettes</option>
+    <option value="5">5 étiquettes</option>
+    <option value="10">10 étiquettes</option>
+</select>
+
+</section>
+
+<section class="card">
+
+<div class="preview" id="labelPreview">
+
+<h2 id="pProduct">PRÉPARATION</h2>
+
+<p>
+<strong>Préparé le :</strong>
+<span id="pProduction">—</span>
+</p>
+
+<p class="important">
+À consommer jusqu'au :
+<span id="pExpiry">À DÉFINIR</span>
+</p>
+
+<p>
+<strong>Conservation :</strong>
+<span id="pStorage"></span>
+</p>
+
+<div id="pSaleFields" class="hidden">
+<p>
+<strong>Ingrédients :</strong>
+<span id="pIngredients">—</span>
+</p>
+
+<p>
+<strong>Quantité nette :</strong>
+<span id="pWeight">—</span>
+</p>
+</div>
+
+<p>
+<strong>ALLERGÈNES :</strong>
+<span id="pAllergens">—</span>
+</p>
+
+<p>
+<strong>Lot :</strong>
+<span id="pLot">—</span>
+</p>
+
+<p class="brand">
+L'ATELIER DU GOÛT<br>
+AULNAY-DE-SAINTONGE
+</p>
+
+</div>
+
+<button id="printBtn" type="button">
+🖨️ Imprimer l'étiquette
+</button>
+
+<div id="status"></div>
+
+</section>
+
+<section class="card">
+  <h2 style="margin-top:0">📋 Historique des étiquettes</h2>
+  <p class="sub">100 dernières impressions enregistrées</p>
+
+  <div style="
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+    margin:14px 0 18px;
+  ">
+    <input
+      id="historySearch"
+      type="search"
+      placeholder="🔎 Rechercher un produit ou un lot"
+    >
+
+    <select id="historyType">
+      <option value="">Tous les types</option>
+      <option value="internal">🧊 Préparation frigo</option>
+      <option value="sale">🛍️ Vente à emporter</option>
+    </select>
+
+    <input
+      id="historyDate"
+      type="date"
+      aria-label="Filtrer par date"
+    >
+
+    <button
+      id="historyReset"
+      type="button"
+      style="background:#eee;color:#111"
+    >
+      Effacer les filtres
+    </button>
+  </div>
+
+  <div id="historyCount" style="
+    font-size:13px;
+    color:#666;
+    margin-bottom:8px;
+  "></div>
+
+  <div id="historyLoading">Chargement…</div>
+  <div id="historyEmpty" class="hidden">Aucune étiquette enregistrée.</div>
+
+  <div id="historyList"></div>
+</section>
+
+</main>
+
+<script src="./jspdf.bundle.js"></script>
+<script src="./labels.js"></script>
+<script src="./labels-print.js"></script>
+<script src="./labels-history.js"></script>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+</body>
+</html>

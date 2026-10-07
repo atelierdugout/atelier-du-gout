@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparence de la boutique — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+
+<a href="/admin/parametres.html" class="admin-context-back">← Paramètres</a>
+
+<main class="appearance-page">
+
+    <header class="appearance-header">
+        <div>
+            <div class="settings-kicker">Boutique en ligne</div>
+            <h1>Apparence de la boutique</h1>
+            <p>Modifiez les textes, les images et l'organisation de votre page d'accueil.</p>
+        </div>
+    </header>
+
+    <section id="appearance-auth-message" class="appearance-login">
+        <h2>Vérification de l'accès…</h2>
+        <p>Connexion administrateur en cours.</p>
+    </section>
+
+    <section id="appearance-editor" hidden>
+
+        <div class="appearance-toolbar">
+            <div>
+                <strong>Page d'accueil</strong>
+                <span id="appearance-status">Configuration chargée</span>
+            </div>
+
+            <div class="appearance-toolbar-actions">
+                <a href="/" target="_blank" class="appearance-secondary-button">
+                    Voir la boutique
+                </a>
+
+                <button id="save-appearance" class="primary-button">
+                    Enregistrer
+                </button>
+            </div>
+        </div>
+
+        <section class="appearance-panel">
+            <div class="appearance-panel-title">
+                <span>01</span>
+                <div>
+                    <h2>Bandeau supérieur</h2>
+                    <p>Le message affiché tout en haut de la boutique.</p>
+                </div>
+            </div>
+
+            <label class="appearance-field">
+                <span>Texte du bandeau</span>
+                <input id="promo-text" type="text">
+            </label>
+
+            <label class="appearance-switch">
+                <div>
+                    <strong>Afficher le bandeau</strong>
+                    <small>Masquez temporairement cette information.</small>
+                </div>
+                <input id="promo-visible" type="checkbox" checked>
+            </label>
+        </section>
+
+        <section class="appearance-panel">
+            <div class="appearance-panel-title">
+                <span>02</span>
+                <div>
+                    <h2>Présentation principale</h2>
+                    <p>Le grand bloc visible en arrivant sur la boutique.</p>
+                </div>
+            </div>
+
+            <div class="appearance-form-grid">
+                <label class="appearance-field">
+                    <span>Petit titre</span>
+                    <input id="hero-kicker" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Bouton principal</span>
+                    <input id="hero-button" type="text">
+                </label>
+            </div>
+
+            <label class="appearance-field">
+                <span>Grand titre</span>
+                <textarea id="hero-title" rows="3"></textarea>
+            </label>
+
+            <label class="appearance-field">
+                <span>Texte</span>
+                <textarea id="hero-text" rows="3"></textarea>
+            </label>
+
+            <div class="appearance-image-field">
+                <div>
+                    <strong>Photo principale</strong>
+                    <small>JPG, PNG ou WebP · maximum 5 Mo</small>
+                </div>
+
+                <div id="hero-image-preview" class="appearance-image-preview">
+                    <span>Aucune photo personnalisée</span>
+                </div>
+
+                <label class="appearance-upload-button">
+                    Choisir une photo
+                    <input id="hero-image" type="file" accept="image/jpeg,image/png,image/webp">
+                </label>
+            </div>
+        </section>
+
+        <section class="appearance-panel">
+            <div class="appearance-panel-title">
+                <span>03</span>
+                <div>
+                    <h2>Sections de l'accueil</h2>
+                    <p>Choisissez les éléments visibles et utilisez les flèches pour modifier leur ordre.</p>
+                </div>
+            </div>
+
+            <div class="appearance-sections" id="appearance-section-order">
+
+                <div class="appearance-section-row" data-section="univers">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>Univers de la boutique</strong>
+                            <small>À manger, épicerie, boissons, Minargent, coffrets et cartes cadeaux.</small>
+                        </div>
+                        <input id="section-univers" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter Univers de la boutique">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre Univers de la boutique">↓</button>
+                    </div>
+                </div>
+
+                <div class="appearance-section-row" data-section="today">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>En ce moment</strong>
+                            <small>Sélection des produits actuellement disponibles.</small>
+                        </div>
+                        <input id="section-today" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter En ce moment">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre En ce moment">↓</button>
+                    </div>
+                </div>
+
+                <div class="appearance-section-row" data-section="best">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>Nos incontournables</strong>
+                            <small>Produits mis en avant.</small>
+                        </div>
+                        <input id="section-best" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter Nos incontournables">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre Nos incontournables">↓</button>
+                    </div>
+                </div>
+
+                <div class="appearance-section-row" data-section="story">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>Minargent</strong>
+                            <small>Présentation de la collection Minargent.</small>
+                        </div>
+                        <input id="section-story" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter Minargent">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre Minargent">↓</button>
+                    </div>
+                </div>
+
+                <div class="appearance-section-row" data-section="gift">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>Cartes cadeaux</strong>
+                            <small>Bloc de présentation des cartes cadeaux.</small>
+                        </div>
+                        <input id="section-gift" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter Cartes cadeaux">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre Cartes cadeaux">↓</button>
+                    </div>
+                </div>
+
+                <div class="appearance-section-row" data-section="loyalty">
+                    <label class="appearance-switch">
+                        <div>
+                            <strong>Fidélité</strong>
+                            <small>Présentation du programme fidélité.</small>
+                        </div>
+                        <input id="section-loyalty" type="checkbox" checked>
+                    </label>
+
+                    <div class="appearance-order-buttons">
+                        <button type="button"
+                                class="appearance-move-up"
+                                aria-label="Monter Fidélité">↑</button>
+                        <button type="button"
+                                class="appearance-move-down"
+                                aria-label="Descendre Fidélité">↓</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="appearance-panel" id="section-content-editor">
+            <div class="appearance-panel-title">
+                <span>04</span>
+                <div>
+                    <h2>Contenu des sections</h2>
+                    <p>Modifiez les titres, textes et boutons affichés sur la page d'accueil.</p>
+                </div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Univers de la boutique</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="univers-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="univers-title" type="text">
+                    </label>
+                </div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>En ce moment</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="today-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="today-title" type="text">
+                    </label>
+                </div>
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="today-text" rows="2"></textarea>
+                </label>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Nos incontournables</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="best-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="best-title" type="text">
+                    </label>
+                </div>
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="best-text" rows="2"></textarea>
+                </label>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Minargent</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="story-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="story-title" type="text">
+                    </label>
+                </div>
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="story-text" rows="3"></textarea>
+                </label>
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="story-button" type="text">
+                </label>
+                <div class="appearance-image-field">
+                    <div>
+                        <strong>Photo Minargent</strong>
+                        <small>JPG, PNG ou WebP · maximum 5 Mo</small>
+                    </div>
+                    <div id="story-image-preview" class="appearance-image-preview">
+                        <span>Aucune photo personnalisée</span>
+                    </div>
+                    <label class="appearance-upload-button">
+                        Choisir une photo
+                        <input id="story-image" type="file" accept="image/jpeg,image/png,image/webp">
+                    </label>
+                </div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Cartes cadeaux</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="gift-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="gift-title" type="text">
+                    </label>
+                </div>
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="gift-text" rows="3"></textarea>
+                </label>
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="gift-button" type="text">
+                </label>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Fidélité</h3>
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="loyalty-kicker" type="text">
+                    </label>
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="loyalty-title" type="text">
+                    </label>
+                </div>
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="loyalty-text" rows="3"></textarea>
+                </label>
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="loyalty-button" type="text">
+                </label>
+            </div>
+        </section>
+
+
+        <section class="appearance-panel" id="universe-tiles-editor">
+            <div class="appearance-panel-title">
+    <span>05</span>
+    <div>
+      <h2>Tuiles de la boutique</h2>
+      <p>Modifiez les textes et les photos des six univers de la page d'accueil.</p>
+    </div>
+  </div>
+
+
+            <div class="appearance-content-group">
+                <h3>À manger</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-food-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-food-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-food-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-food-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-food-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-food-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Épicerie fine</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-grocery-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-grocery-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-grocery-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-grocery-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-grocery-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-grocery-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Boissons & cave</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-drinks-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-drinks-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-drinks-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-drinks-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-drinks-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-drinks-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Minargent</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-minargent-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-minargent-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-minargent-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-minargent-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-minargent-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-minargent-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Coffrets & cadeaux</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-gifts-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-gifts-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-gifts-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-gifts-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-gifts-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-gifts-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+
+            <div class="appearance-content-group">
+                <h3>Cartes cadeaux</h3>
+
+                <div class="appearance-form-grid">
+                    <label class="appearance-field">
+                        <span>Petit titre</span>
+                        <input id="universe-card-kicker" type="text">
+                    </label>
+
+                    <label class="appearance-field">
+                        <span>Grand titre</span>
+                        <input id="universe-card-title" type="text">
+                    </label>
+                </div>
+
+                <label class="appearance-field">
+                    <span>Texte</span>
+                    <textarea id="universe-card-text" rows="3"></textarea>
+                </label>
+
+                <label class="appearance-field">
+                    <span>Texte du bouton</span>
+                    <input id="universe-card-button" type="text">
+                </label>
+
+                <label class="appearance-field">
+                    <span>Photo</span>
+                    <input
+                        id="universe-card-image"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                </label>
+
+                <div
+                    id="universe-card-image-preview"
+                    class="appearance-image-preview"
+                >Aucune photo personnalisée</div>
+            </div>
+        </section>
+
+
+        <section class="appearance-panel" id="universe-style-editor">
+          <div class="appearance-panel-title">
+    <span>06</span>
+    <div>
+      <h2>Style des tuiles</h2>
+      <p>Réglez l'affichage des six univers sans modifier leur contenu.</p>
+    </div>
+  </div>
+
+          <label>
+            Disposition
+            <select id="universe-layout">
+              <option value="3">3 colonnes</option>
+              <option value="2">2 colonnes</option>
+              <option value="large">Grandes cartes</option>
+            </select>
+          </label>
+
+          <label>
+            Hauteur des tuiles
+            <select id="universe-height">
+              <option value="compact">Compacte</option>
+              <option value="normal">Normale</option>
+              <option value="large">Grande</option>
+            </select>
+          </label>
+
+          <label>
+            Arrondi des angles
+            <select id="universe-radius">
+              <option value="none">Aucun</option>
+              <option value="small">Petit</option>
+              <option value="normal">Normal</option>
+              <option value="large">Très arrondi</option>
+            </select>
+          </label>
+
+          <label>
+            Intensité du voile sur les photos
+            <select id="universe-overlay">
+              <option value="light">Léger</option>
+              <option value="normal">Normal</option>
+              <option value="dark">Foncé</option>
+            </select>
+          </label>
+
+          <label>
+            Position des photos
+            <select id="universe-position">
+              <option value="center">Centre</option>
+              <option value="top">Haut</option>
+              <option value="bottom">Bas</option>
+            </select>
+          </label>
+        </section>
+
+        <div id="appearance-message"></div>
+
+    </section>
+
+</main>
+
+<script src="vendor/simplewebauthn-browser.js"></script>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="apparence.js"></script>
+</body>
+</html>

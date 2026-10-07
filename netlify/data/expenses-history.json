@@ -1,0 +1,43 @@
+{
+  "source": "Export documents comptables 28-09-2026",
+  "document_count": 120,
+  "period": {
+    "start": "2026-03-01",
+    "end": "2026-09-30"
+  },
+  "total_ht_cents": 3739402,
+  "total_ttc_cents": 4161729,
+  "categories": [
+    {"name":"ACHATS MATIERES PREMIERES ET MARCHANDISES","documents":29,"ht_cents":1452155,"ttc_cents":1599799},
+    {"name":"ITAL GASTRO","documents":16,"ht_cents":653375,"ttc_cents":700737},
+    {"name":"ACHATS INVESTISSEMENTS","documents":1,"ht_cents":566280,"ttc_cents":679536},
+    {"name":"NON CLASSE","documents":3,"ht_cents":177337,"ttc_cents":197017},
+    {"name":"ENTRETIEN ET REPARATION","documents":2,"ht_cents":169100,"ttc_cents":182220},
+    {"name":"AMAZON","documents":49,"ht_cents":144728,"ttc_cents":173673},
+    {"name":"ACHAT DE SERVICES","documents":2,"ht_cents":157250,"ttc_cents":157250},
+    {"name":"COMPTE COURANT","documents":2,"ht_cents":118972,"ttc_cents":141326},
+    {"name":"PETITS MATERIELS ET FOURNITURES","documents":8,"ht_cents":100983,"ttc_cents":113885},
+    {"name":"HEIDI ALDERTON","documents":1,"ht_cents":75900,"ttc_cents":75900},
+    {"name":"HONORAIRES","documents":5,"ht_cents":51157,"ttc_cents":61388},
+    {"name":"AAMI SECURITE","documents":1,"ht_cents":34165,"ttc_cents":40998},
+    {"name":"Nicolas MARCHAND","documents":1,"ht_cents":38000,"ttc_cents":38000}
+  ],
+  "monthly": [
+    {"month":"2026-03","documents":4,"ht_cents":672807,"ttc_cents":795368},
+    {"month":"2026-04","documents":39,"ht_cents":1443934,"ttc_cents":1588689},
+    {"month":"2026-05","documents":26,"ht_cents":416891,"ttc_cents":453264},
+    {"month":"2026-06","documents":24,"ht_cents":603659,"ttc_cents":657303},
+    {"month":"2026-07","documents":21,"ht_cents":495556,"ttc_cents":548727},
+    {"month":"2026-08","documents":4,"ht_cents":90906,"ttc_cents":99599},
+    {"month":"2026-09","documents":2,"ht_cents":15649,"ttc_cents":18779}
+  ],
+  "notes": [
+    "Les montants proviennent des documents comptables importés.",
+    "Ne pas assimiler automatiquement le total TTC des documents à des charges déductibles.",
+    "Les investissements doivent être distingués des charges d'exploitation.",
+    "Les comptes courants ne doivent pas être assimilés automatiquement à une dépense d'exploitation.",
+    "ITAL GASTRO correspond à des achats fournisseur mais reste une catégorie distincte dans l'export source.",
+    "Les montants négatifs présents dans l'export, notamment certains avoirs fournisseurs, sont déjà intégrés aux totaux.",
+    "Ces données ne suffisent pas encore à calculer un résultat comptable définitif."
+  ]
+}

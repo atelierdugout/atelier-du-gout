@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartes cadeaux — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="orders-page">
+
+    <div class="orders-header">
+        <div>
+            <div class="orders-kicker">L'Atelier du Goût</div>
+            <h1>Cartes cadeaux</h1>
+            <p>Consultez le solde d'une carte et enregistrez son utilisation en boutique.</p>
+        </div>
+    </div>
+
+    
+
+    <div id="gift-dashboard">
+
+        <section class="settings-card">
+            <h2>Rechercher une carte cadeau</h2>
+            <p>Saisissez le code reçu par le client.</p>
+
+            <div class="orders-login-form">
+                <input
+                    id="gift-code"
+                    type="text"
+                    placeholder="Ex. ADG-XXXXXXXX-XXXXXXXX"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                >
+                <button id="search-gift" class="primary-button" type="button">
+                    Rechercher
+                </button>
+            </div>
+
+            <div id="gift-error" class="orders-error"></div>
+        </section>
+
+        <section id="gift-result" class="settings-card" style="display:none;">
+            <h2>Carte cadeau</h2>
+
+            <div class="orders-summary">
+                <div class="order-stat">
+                    <span>Montant initial</span>
+                    <strong id="gift-initial">—</strong>
+                </div>
+
+                <div class="order-stat">
+                    <span>Solde restant</span>
+                    <strong id="gift-balance">—</strong>
+                </div>
+
+                <div class="order-stat">
+                    <span>Statut</span>
+                    <strong id="gift-status">—</strong>
+                </div>
+
+                <div class="order-stat">
+                    <span>Émise le</span>
+                    <strong id="gift-issued">—</strong>
+                </div>
+            </div>
+
+            <div id="gift-details" style="margin-top:24px;"></div>
+
+            <hr style="margin:28px 0;border:0;border-top:1px solid #ddd;">
+
+            <h2>Utilisation en boutique</h2>
+            <p>Indiquez le montant à déduire de cette carte.</p>
+
+            <div class="orders-login-form">
+                <input
+                    id="redeem-amount"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="Montant en €"
+                >
+                <button id="redeem-gift" class="primary-button" type="button">
+                    Débiter la carte
+                </button>
+            </div>
+
+            <input
+                id="redeem-note"
+                type="text"
+                maxlength="300"
+                placeholder="Note facultative — ex. achat en boutique"
+                style="width:100%;margin-top:12px;"
+            >
+
+            <div id="redeem-message" style="margin-top:14px;"></div>
+
+            <hr style="margin:28px 0;border:0;border-top:1px solid #ddd;">
+
+            <h2>Historique</h2>
+            <div id="gift-history"></div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="vendor/simplewebauthn-browser.js"></script>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="cartes-cadeaux.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "source": "Export bancaire détaillé 28-09-2026",
+  "transaction_count": 545,
+  "period": {
+    "start": "2026-02-27",
+    "end": "2026-09-28"
+  },
+  "total_receipts_cents": 6948580,
+  "total_payments_cents": 6584351,
+  "net_cashflow_cents": 364229,
+  "monthly": [
+    {"month":"2026-02","transactions":3,"receipts_cents":100000,"payments_cents":43281},
+    {"month":"2026-03","transactions":24,"receipts_cents":1023052,"payments_cents":1078104},
+    {"month":"2026-04","transactions":53,"receipts_cents":995164,"payments_cents":989576},
+    {"month":"2026-05","transactions":96,"receipts_cents":979692,"payments_cents":960571},
+    {"month":"2026-06","transactions":95,"receipts_cents":743715,"payments_cents":749676},
+    {"month":"2026-07","transactions":104,"receipts_cents":1207589,"payments_cents":1175378},
+    {"month":"2026-08","transactions":86,"receipts_cents":904526,"payments_cents":876561},
+    {"month":"2026-09","transactions":84,"receipts_cents":994842,"payments_cents":711204}
+  ],
+  "major_outflows": [
+    {"category":"ACHATS MATIERES PREMIERES ET MARCHANDISES","transactions":43,"amount_cents":1733143},
+    {"category":"Nicolas MARCHAND","transactions":17,"amount_cents":686128},
+    {"category":"ACHATS INVESTISSEMENTS","transactions":1,"amount_cents":679536},
+    {"category":"SALAIRES","transactions":7,"amount_cents":537601},
+    {"category":"ITAL GASTRO","transactions":7,"amount_cents":481067},
+    {"category":"AMAZON","transactions":60,"amount_cents":414560},
+    {"category":"ACHAT DE SERVICES","transactions":3,"amount_cents":258247},
+    {"category":"PETITS MATERIELS ET FOURNITURES","transactions":16,"amount_cents":204352},
+    {"category":"CREDIT BAIL","transactions":6,"amount_cents":195784},
+    {"category":"ENTRETIEN ET REPARATION","transactions":3,"amount_cents":182220},
+    {"category":"COMPTE COURANT","transactions":5,"amount_cents":166328},
+    {"category":"LOYERS ET CHARGES","transactions":4,"amount_cents":152000},
+    {"category":"RESTAURANT","transactions":21,"amount_cents":92632},
+    {"category":"FRAIS BANCAIRES","transactions":26,"amount_cents":79609},
+    {"category":"HEIDI ALDERTON","transactions":1,"amount_cents":75900},
+    {"category":"HONORAIRES","transactions":4,"amount_cents":61388},
+    {"category":"ASSURANCE","transactions":22,"amount_cents":46960},
+    {"category":"AAMI SECURITE","transactions":1,"amount_cents":40998},
+    {"category":"NOTE DE FRAIS","transactions":1,"amount_cents":35000},
+    {"category":"LOCATIONS DIVERSES","transactions":12,"amount_cents":26251}
+  ],
+  "notes": [
+    "Les transactions bancaires servent au rapprochement et à l'analyse de trésorerie.",
+    "Les encaissements bancaires ne doivent jamais être additionnés automatiquement au chiffre d'affaires.",
+    "Les décaissements bancaires peuvent correspondre à des factures déjà présentes dans expenses_history et ne doivent pas être comptés deux fois.",
+    "Les investissements et mouvements de compte courant doivent rester distincts des charges d'exploitation.",
+    "Les mouvements Nicolas MARCHAND nécessitent une analyse de leur nature avant d'être considérés comme charges ou rémunération.",
+    "Le capital et les financements bancaires ne constituent pas du chiffre d'affaires."
+  ]
+}

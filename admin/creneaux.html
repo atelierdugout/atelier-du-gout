@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créneaux de commande — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css?v=creneaux-20260923">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+
+<a href="/admin/parametres.html" class="admin-context-back">← Paramètres</a>
+
+<div class="settings-page">
+
+    <header class="settings-header">
+        <div>
+            <div class="settings-kicker">L'Atelier du Goût</div>
+            <h1>Créneaux de commande</h1>
+            <p>Gérez les jours et horaires proposés aux clients pour le retrait et la livraison.</p>
+        </div>
+    </header>
+
+    <div class="order-settings-panel">
+
+        <section class="order-settings-section">
+            <h2>Modes de commande</h2>
+
+            <label class="order-toggle">
+                <input type="checkbox" id="pickup-enabled">
+                <span>
+                    <strong>Retrait à la boutique</strong>
+                    <small>Autoriser les commandes à retirer sur place.</small>
+                </span>
+            </label>
+
+            <label class="order-toggle">
+                <input type="checkbox" id="delivery-enabled">
+                <span>
+                    <strong>Livraison</strong>
+                    <small>Autoriser les commandes en livraison.</small>
+                </span>
+            </label>
+        </section>
+
+        <section class="order-settings-section">
+            <h2>Capacité des créneaux</h2>
+            <p class="order-settings-help">
+                Nombre maximum de commandes payées acceptées pour un même créneau.
+            </p>
+
+            <label style="display:grid;gap:7px;max-width:260px;font-weight:700;">
+                Commandes maximum
+                <input
+                    type="number"
+                    id="max-orders-per-slot"
+                    min="1"
+                    max="99"
+                    step="1"
+                    value="6"
+                    style="padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;"
+                >
+            </label>
+        </section>
+
+        <section class="order-settings-section">
+            <h2>Horaires habituels</h2>
+            <p class="order-settings-help">
+                Indiquez les créneaux proposés chaque jour. Pour plusieurs créneaux,
+                séparez-les par une virgule.
+            </p>
+
+            <div class="schedule-list">
+
+                <div class="schedule-row" data-day="1">
+                    <strong>Lundi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots" placeholder="Fermé"></label>
+                    <label>Livraison<input type="text" class="delivery-slots" placeholder="Fermé"></label>
+                </div>
+
+                <div class="schedule-row" data-day="2">
+                    <strong>Mardi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+                <div class="schedule-row" data-day="3">
+                    <strong>Mercredi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+                <div class="schedule-row" data-day="4">
+                    <strong>Jeudi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+                <div class="schedule-row" data-day="5">
+                    <strong>Vendredi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+                <div class="schedule-row" data-day="6">
+                    <strong>Samedi</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+                <div class="schedule-row" data-day="0">
+                    <strong>Dimanche</strong>
+                    <label>Retrait<input type="text" class="pickup-slots"></label>
+                    <label>Livraison<input type="text" class="delivery-slots"></label>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="order-settings-section">
+            <h2>Fermetures exceptionnelles</h2>
+            <p class="order-settings-help">
+                Ajoutez une date pour empêcher toute commande en retrait ou livraison ce jour-là.
+            </p>
+
+            <div class="closed-date-add">
+                <input type="date" id="closed-date">
+                <button type="button" id="add-closed-date" class="primary-button">
+                    Ajouter
+                </button>
+            </div>
+
+            <div id="closed-dates-list"></div>
+        </section>
+
+        <div class="order-settings-actions">
+            <button type="button" id="save-order-settings" class="primary-button">
+                Enregistrer les modifications
+            </button>
+
+            <p id="order-settings-status" role="status"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="creneaux.js?v=20260923-2"></script>
+
+</body>
+</html>

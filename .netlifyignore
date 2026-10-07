@@ -1,0 +1,44 @@
+# Secrets
+.env
+.env.*
+
+# Dépôts / outils locaux
+.git
+.git/**
+.netlify
+.netlify/**
+node_modules
+node_modules/**
+supabase
+supabase/**
+
+# Backend Netlify Functions
+netlify
+netlify/**
+
+# Configuration / dépendances
+package.json
+package-lock.json
+deno.lock
+netlify.toml
+official-photo-sources.json
+README.txt
+VERSION.txt
+
+# Fichiers système
+.DS_Store
+*.backup
+
+# Sauvegardes de développement à la racine
+*.before-*
+*.stable
+*.stable-*
+
+# Sauvegardes dans l'admin
+admin/*.before-*
+admin/*.stable
+admin/*.stable-*
+
+# Scripts internes / sauvegardes
+scripts
+scripts/**

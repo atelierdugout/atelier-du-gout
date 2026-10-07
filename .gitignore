@@ -1,0 +1,15 @@
+
+_site/
+!.env.example
+.DS_Store
+.env
+.env.*
+.netlify
+.netlify/
+.vapid-production
+*.before-*
+*.stable
+*.stable-*
+# Local Netlify folder
+# Secrets locaux
+node_modules/

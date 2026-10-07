@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>SII URL Print Agent Sample</title>
+
+<style>
+  html, body{background : #f5f5f5; font-family: 'Open Sans', sans-serif; color: #757575; text-align: center; height: 100%; width: 100%; margin: 10px;}
+
+  #holder{
+    background: #fff;
+    color: #757575;
+    font-size: 120%;
+    padding: 10px 0px 30px;
+    width: 700px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 80px;
+    position: relative;
+    top: 15%;
+    transform: translateY(-65%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.8);
+    border-radius: 3px;
+  }
+
+  h1 {
+    line-height: 3.0;
+    font-size: 48px;
+  }
+
+  input.textbox {
+    width: 75%;
+  }
+
+  .button {
+    background: #d6d7d7;
+    color: #014c86;
+    font-size: 32px;
+    margin : 5px auto;
+    width : 80%;
+    height : 40%;
+    overflow: hidden;
+    transition : .2s;
+    cursor : pointer;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.8);
+  }
+
+  .button:active { /*Clicked and held*/
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
+  }
+
+</style>
+
+<script>
+
+//PDF印刷 JavaScript
+var pdfData = '';
+
+function getPDFFromWebServer(path) {                                    // Get a PDF file from the Web server.
+  return new Promise(resolve => {
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.open("GET", path, true);                                        // Create a request to pass to the Web server.
+    xhr.onreadystatechange = function () {                              // Processing when the status changes after sending a request to the Web server.
+      if (xhr.readyState === 4) {                                       // Connection completed state
+        if (xhr.status === 200) {                                       // When the contents can be obtained
+          let reader = new FileReader();
+          reader.onload = function() {
+            let index = reader.result.indexOf(',') + 1;                 // Read in Base64 format.
+            pdfData = reader.result.slice(index);                       // Remove unnecessary part.
+            resolve();                                                  // Synchronize after reading.
+          }
+          if (xhr.response) {
+            reader.readAsDataURL(xhr.response);
+          }
+        } else if(xhr.status === 0) {
+          alert('error while getting pdf');
+        }
+      }
+    }
+    xhr.send(null);
+  });
+}
+
+async function printData() {
+  let elem = document.getElementById('fileName');
+  let pdfPath = elem.value;                                             // PDF path on the Web server
+  await getPDFFromWebServer(pdfPath);                                   // Wait until PDF file is loaded.
+
+  let thisPage = window.location.href;
+  let url = 'siiprintagent://1.0/print?' +
+            'CallbackSuccess='  + encodeURIComponent(thisPage) + '&' +  // URL for printing success
+            'CallbackFail='     + encodeURIComponent(thisPage) + '&' +  // URL for printing fail
+            'Format='           + 'pdf' + '&' +                         // Format ('pdf' fixed)
+            'Data='             + encodeURIComponent(pdfData) + '&' +   // PDF data encoded with Base64 Encoding
+            'SelectOnError='    + 'yes' + '&' +                         // Printer selection dialog displayed when a failure occurs
+            'CutType='          + 'full' + '&' +                        // Cut type
+            'CutFeed='          + 'yes' + '&' +                         // Cut feed
+            'FitToWidth='       + 'no' + '&' +                          // Fitting printing width to PaperWidth
+            'PaperWidth='       + '58';                                 // Paper width
+  location.href = url;                                                  // Launch URL print agent.
+}
+
+function load() {
+  let query = location.search;                                          // Get query.
+  let code = query.match(/Code=([^&#]*)/);                              // Get 'Code' in query.
+  let message = query.match(/Message=([^&#]*)/);                        // Get 'Message' in query.
+  if (code) {                                                           // Check whether an error occurred.
+    alert(`Error.\n\nCode = ${decodeURIComponent(code[1])}\nMessage = ${decodeURIComponent(message[1])}`);
+    window.open('','_self').close();
+  }
+}
+
+window.onload = load;                                                   // Call an initialize function after loading the page.
+
+</script>
+
+</head>
+
+<body>
+
+<h1>SII URL Print Agent Sample</h1>
+
+<div id="holder">
+  <h5>Place this HTML and PDF file in the same folder on the server.<br>Input the relative path of PDF file into text box below, and tap the [PDF Print].</h5>
+  <input class="textbox" type="text" id="fileName" value="./Sample.pdf">
+  <button class="button">
+    <p onclick="printData()">PDF Print</p>
+  </button>
+</div>
+
+</body>
+
+</html>

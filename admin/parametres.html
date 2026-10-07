@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="settings-page">
+
+    <header class="settings-header">
+        <div>
+            <div class="settings-kicker">L'Atelier du Goût</div>
+            <h1>Paramètres</h1>
+            <p>Configuration de la boutique en ligne et de l'administration.</p>
+        </div>
+    </header>
+
+    <section class="settings-grid">
+
+        <article class="settings-card">
+            <div class="settings-icon">🏪</div>
+            <div>
+                <h2>Boutique</h2>
+                <p>Informations générales, adresse et coordonnées.</p>
+                <small>Configuration détaillée à finaliser avec la boutique en ligne.</small>
+            </div>
+        </article>
+
+        <a href="apparence.html" class="settings-card" style="text-decoration:none;color:inherit;">
+            <div class="settings-icon">🎨</div>
+            <div>
+                <h2>Apparence</h2>
+                <p>Modifier la page d'accueil, les textes, la photo principale et les sections visibles.</p>
+            </div>
+        </a>
+
+        <a href="creneaux.html" class="settings-card" style="text-decoration:none;color:inherit;">
+            <div class="settings-icon">🕐</div>
+            <div>
+                <h2>Commandes</h2>
+                <p>Horaires, retrait, livraison et disponibilité des commandes.</p>
+            </div>
+        </a>
+
+        <a href="fidelite.html" class="settings-card" style="text-decoration:none;color:inherit;">
+            <div class="settings-icon">🎁</div>
+            <div>
+                <h2>Fidélité</h2>
+                <p>Consulter les comptes, points et mouvements du programme fidélité.</p>
+            </div>
+        </a>
+
+        <a href="reservations.html" class="settings-card" style="text-decoration:none;color:inherit;">
+            <div class="settings-icon">📅</div>
+            <div>
+                <h2>Réservations</h2>
+                <p>Capacités, horaires, délais et jours de fermeture du restaurant.</p>
+            </div>
+        </a>
+
+        <article class="settings-card">
+            <div class="settings-icon">✉️</div>
+            <div>
+                <h2>Notifications</h2>
+                <p>Les emails de commande et les notifications administrateur sont actuellement gérés automatiquement.</p>
+            </div>
+        </article>
+
+        <article class="settings-card">
+            <div class="settings-icon">🔒</div>
+            <div>
+                <h2>Sécurité</h2>
+                <p>Accès administrateur et sécurité de la boutique.</p>
+
+                <div class="security-passkey">
+                    <button
+                        id="register-passkey"
+                        class="primary-button"
+                        type="button">
+                        Enregistrer Face ID / Passkey
+                    </button>
+
+                    <p id="passkey-status"
+                       role="status"
+                       style="margin-top:12px;"></p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+</div>
+
+<script src="vendor/simplewebauthn-browser.js"></script>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="parametres.js"></script>
+</body>
+</html>

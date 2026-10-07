@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservations — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="orders-page reservations-page">
+
+    <div class="orders-header">
+        <div>
+            <div class="orders-kicker">L'Atelier du Goût</div>
+            <h1>Réservations</h1>
+            <p>Gérez les réservations du restaurant.</p>
+        </div>
+
+        <div class="reservations-header-actions">
+            <button
+                id="new-reservation"
+                class="primary-button"
+                type="button">
+                + Nouvelle réservation
+            </button>
+
+            <button
+                id="reservation-settings-button"
+                class="secondary-button"
+                type="button">
+                ⚙ Réglages
+            </button>
+
+            <button
+                id="refresh-reservations"
+                class="secondary-button"
+                type="button">
+                Actualiser
+            </button>
+        </div>
+    </div>
+
+    
+
+    <div id="reservations-dashboard">
+
+        <div class="orders-toolbar">
+
+            <div class="orders-tabs">
+                <button
+                    class="order-tab active"
+                    data-scope="upcoming"
+                    type="button">
+                    À venir
+                </button>
+
+                <button
+                    class="order-tab"
+                    data-scope="today"
+                    type="button">
+                    Aujourd'hui
+                </button>
+
+                <button
+                    class="order-tab"
+                    data-scope="all"
+                    type="button">
+                    Historique
+                </button>
+            </div>
+
+            <input
+                id="reservation-search"
+                type="search"
+                placeholder="Nom, téléphone, e-mail ou référence"
+                autocomplete="off"
+                aria-label="Rechercher une réservation"
+            >
+
+        </div>
+
+        <div class="orders-summary">
+
+            <div class="order-stat">
+                <span>Réservations</span>
+                <strong id="reservations-count">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>Couverts</span>
+                <strong id="reservations-guests">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>Confirmées</span>
+                <strong id="reservations-confirmed">0</strong>
+            </div>
+
+            <div class="order-stat">
+                <span>Allergies signalées</span>
+                <strong id="reservations-allergies">0</strong>
+            </div>
+
+        </div>
+
+        <main class="orders-content">
+
+            <div
+                id="reservations-loading"
+                class="orders-message">
+                Chargement des réservations…
+            </div>
+
+            <div
+                id="reservations-empty"
+                class="orders-message"
+                style="display:none;">
+                Aucune réservation dans cette catégorie.
+            </div>
+
+            <div id="reservations-list"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<div
+    id="reservation-settings-modal"
+    class="reservation-modal"
+    style="display:none;">
+
+    <div class="reservation-modal-card reservation-settings-card">
+
+        <div class="reservation-modal-header">
+            <div>
+                <div class="orders-kicker">
+                    Restaurant
+                </div>
+                <h2>Réglages des réservations</h2>
+            </div>
+
+            <button
+                id="close-reservation-settings"
+                class="reservation-modal-close"
+                type="button"
+                aria-label="Fermer">
+                ×
+            </button>
+        </div>
+
+        <form id="reservation-settings-form">
+
+            <label class="reservation-settings-enabled">
+                <input
+                    id="settings-enabled"
+                    type="checkbox">
+                <span>
+                    Accepter les réservations en ligne
+                </span>
+            </label>
+
+            <h3>Capacité et délais</h3>
+
+            <div class="reservation-form-grid">
+
+                <label>
+                    Capacité midi
+                    <input
+                        id="settings-capacity-lunch"
+                        type="number"
+                        min="1"
+                        max="200"
+                        required>
+                </label>
+
+                <label>
+                    Capacité soir
+                    <input
+                        id="settings-capacity-dinner"
+                        type="number"
+                        min="1"
+                        max="200"
+                        required>
+                </label>
+
+                <label>
+                    Minimum de personnes
+                    <input
+                        id="settings-min-party"
+                        type="number"
+                        min="1"
+                        max="50"
+                        required>
+                </label>
+
+                <label>
+                    Maximum de personnes
+                    <input
+                        id="settings-max-party"
+                        type="number"
+                        min="1"
+                        max="50"
+                        required>
+                </label>
+
+                <label>
+                    Réservation jusqu'à
+                    <input
+                        id="settings-advance-days"
+                        type="number"
+                        min="1"
+                        max="365"
+                        required>
+                    <small>Nombre de jours à l'avance</small>
+                </label>
+
+                <label>
+                    Délai minimum
+                    <input
+                        id="settings-minimum-notice"
+                        type="number"
+                        min="0"
+                        max="10080"
+                        step="15"
+                        required>
+                    <small>En minutes — 60 = 1 heure</small>
+                </label>
+
+            </div>
+
+            <h3>Horaires proposés</h3>
+
+            <div class="reservation-form-grid">
+
+                <label>
+                    Midi
+                    <input
+                        id="settings-slots-lunch"
+                        type="text"
+                        placeholder="12:00, 12:30, 13:00, 13:30"
+                        required>
+                    <small>Séparer les horaires par des virgules</small>
+                </label>
+
+                <label>
+                    Soir
+                    <input
+                        id="settings-slots-dinner"
+                        type="text"
+                        placeholder="18:30, 19:00, 19:30, 20:00, 20:30"
+                        required>
+                    <small>Séparer les horaires par des virgules</small>
+                </label>
+
+            </div>
+
+            <h3>Jours d'ouverture</h3>
+
+            <div class="reservation-weekly-settings">
+
+                <div class="reservation-weekly-row" data-day="monday">
+                    <strong>Lundi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="tuesday">
+                    <strong>Mardi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="wednesday">
+                    <strong>Mercredi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="thursday">
+                    <strong>Jeudi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="friday">
+                    <strong>Vendredi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="saturday">
+                    <strong>Samedi</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+                <div class="reservation-weekly-row" data-day="sunday">
+                    <strong>Dimanche</strong>
+                    <label><input type="checkbox" data-service="lunch"> Midi</label>
+                    <label><input type="checkbox" data-service="dinner"> Soir</label>
+                </div>
+
+            </div>
+
+            <h3>Fermetures exceptionnelles</h3>
+
+            <label class="reservation-form-wide">
+                Dates fermées
+                <textarea
+                    id="settings-closed-dates"
+                    rows="4"
+                    placeholder="2026-12-25&#10;2027-01-01"></textarea>
+                <small>Une date par ligne au format AAAA-MM-JJ</small>
+            </label>
+
+            <div
+                id="reservation-settings-error"
+                class="orders-error"></div>
+
+            <div
+                id="reservation-settings-success"
+                class="orders-message"
+                style="display:none;">
+                Réglages enregistrés.
+            </div>
+
+            <div class="reservation-form-actions">
+
+                <button
+                    id="cancel-reservation-settings"
+                    class="secondary-button"
+                    type="button">
+                    Annuler
+                </button>
+
+                <button
+                    id="save-reservation-settings"
+                    class="primary-button"
+                    type="submit">
+                    Enregistrer les réglages
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div
+    id="reservation-modal"
+    class="reservation-modal"
+    style="display:none;">
+
+    <div class="reservation-modal-card">
+
+        <div class="reservation-modal-header">
+            <div>
+                <div class="orders-kicker">
+                    Réservation manuelle
+                </div>
+                <h2 id="reservation-modal-title">
+                    Nouvelle réservation
+                </h2>
+            </div>
+
+            <button
+                id="close-reservation-modal"
+                class="reservation-modal-close"
+                type="button"
+                aria-label="Fermer">
+                ×
+            </button>
+        </div>
+
+        <form id="reservation-form">
+
+            <input
+                id="reservation-id"
+                type="hidden">
+
+            <div class="reservation-form-grid">
+
+                <label>
+                    Date
+                    <input
+                        id="reservation-date"
+                        type="date"
+                        required>
+                </label>
+
+                <label>
+                    Heure
+                    <input
+                        id="reservation-time"
+                        type="time"
+                        required>
+                </label>
+
+                <label>
+                    Nombre de personnes
+                    <input
+                        id="reservation-party-size"
+                        type="number"
+                        min="1"
+                        step="1"
+                        required>
+                </label>
+
+                <label>
+                    Origine
+                    <select id="reservation-source">
+                        <option value="phone">
+                            Téléphone
+                        </option>
+                        <option value="walk_in">
+                            Sur place
+                        </option>
+                        <option value="admin">
+                            Ajout manuel
+                        </option>
+                    </select>
+                </label>
+
+                <label class="reservation-form-wide">
+                    Nom du client
+                    <input
+                        id="reservation-name"
+                        type="text"
+                        maxlength="120"
+                        required>
+                </label>
+
+                <label>
+                    Téléphone
+                    <input
+                        id="reservation-phone"
+                        type="tel"
+                        maxlength="40"
+                        required>
+                </label>
+
+                <label>
+                    E-mail
+                    <input
+                        id="reservation-email"
+                        type="email"
+                        maxlength="200">
+                </label>
+
+                <label class="reservation-form-wide">
+                    Allergies
+                    <textarea
+                        id="reservation-allergies"
+                        rows="3"
+                        maxlength="1000"></textarea>
+                </label>
+
+                <label class="reservation-form-wide">
+                    Commentaire
+                    <textarea
+                        id="reservation-notes"
+                        rows="4"
+                        maxlength="1000"></textarea>
+                </label>
+
+            </div>
+
+            <div
+                id="reservation-form-error"
+                class="orders-error"></div>
+
+            <div class="reservation-form-actions">
+
+                <button
+                    id="cancel-reservation-form"
+                    class="secondary-button"
+                    type="button">
+                    Annuler
+                </button>
+
+                <button
+                    id="save-reservation"
+                    class="primary-button"
+                    type="submit">
+                    Enregistrer
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="reservations.js"></script>
+
+</body>
+</html>

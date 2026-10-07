@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidélité — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="loyalty-page">
+
+    <div class="loyalty-header">
+        <div>
+            <div class="loyalty-kicker">L'Atelier du Goût</div>
+            <h1>Fidélité</h1>
+            <p>Suivez les comptes fidélité, les points et les récompenses utilisées.</p>
+        </div>
+
+        <button id="refresh-loyalty" class="primary-button">
+            Actualiser
+        </button>
+    </div>
+
+    
+
+    <div id="loyalty-dashboard">
+
+        <div class="loyalty-summary">
+
+            <div class="loyalty-stat">
+                <span>Comptes fidélité</span>
+                <strong id="loyalty-count">0</strong>
+            </div>
+
+            <div class="loyalty-stat">
+                <span>Points en circulation</span>
+                <strong id="loyalty-points">0</strong>
+            </div>
+
+            <div class="loyalty-stat">
+                <span>Points gagnés</span>
+                <strong id="loyalty-earned">0</strong>
+            </div>
+
+            <div class="loyalty-stat">
+                <span>Récompenses utilisées</span>
+                <strong id="loyalty-rewards">0</strong>
+            </div>
+
+        </div>
+
+        <div class="loyalty-toolbar">
+            <div class="loyalty-search">
+                <span>⌕</span>
+                <input
+                    id="loyalty-search"
+                    type="search"
+                    placeholder="Rechercher un client..."
+                >
+            </div>
+        </div>
+
+        <main class="loyalty-content">
+
+            <div id="loyalty-loading" class="loyalty-message">
+                Chargement des comptes fidélité…
+            </div>
+
+            <div id="loyalty-empty" class="loyalty-message" style="display:none;">
+                Aucun compte fidélité trouvé.
+            </div>
+
+            <div id="loyalty-list"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="fidelite.js"></script>
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+</body>
+</html>

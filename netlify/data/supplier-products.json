@@ -1,0 +1,1995 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-28",
+  "products": [
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "10005",
+      "name": "JAMBON ITALIEN DE FARNESE",
+      "packaging": "env. 7 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "11001",
+      "name": "JAMBON BLANC CUIT AUX HERBES type Rostello",
+      "packaging": "env. 7,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "12045",
+      "name": "PORCHETTA ROTI DE PORC",
+      "packaging": "env. 5,2 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "12089",
+      "name": "COPPA ENTIERE DI PARMA IGP",
+      "packaging": "env. 2 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "12150",
+      "name": "MORTADELLE BOLOGNE IGP PISTACHE",
+      "packaging": "env. 3,3 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "12074",
+      "name": "SPECK DEMI",
+      "packaging": "env. 2,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "12095",
+      "name": "FINOCCHIONA",
+      "packaging": "env. 3 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20181",
+      "name": "PROVOLONE CACIOCAVALLO AFFUMICATO",
+      "packaging": "env. 1,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20396",
+      "name": "MOZZARELLA BUFFLONNE DOP",
+      "packaging": "125 g",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20436",
+      "name": "MOZZA PETITE TRESSE BUFFLONNE DOP",
+      "packaging": "250 g",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20572",
+      "name": "STRACCIATELLA",
+      "packaging": "250 g",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20611",
+      "name": "BURRATA 5X50G",
+      "packaging": "250 g",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20204",
+      "name": "PARMIGIANO REGGIANO DOP RAPE",
+      "packaging": "500 g",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "20429",
+      "name": "ASIAGO PRESSAO DOP",
+      "packaging": "1/4",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30002",
+      "name": "GRISSINI POCHE DE 22 SACHETS",
+      "packaging": "22 sachets",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30017",
+      "name": "GRISSINI ROMARIN",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30336",
+      "name": "ANTIPASTO RUSTICO",
+      "packaging": "314 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30342",
+      "name": "POIVRON GRILLE",
+      "packaging": "314 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30354",
+      "name": "TOMATE SECHEE LBDC",
+      "packaging": "314 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30554",
+      "name": "AIL CONFIT",
+      "packaging": "314 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30383",
+      "name": "PESTO ALLA GENOVESE DOP",
+      "packaging": "180 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "34009",
+      "name": "SAUCE AMATRICIANA",
+      "packaging": "180 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "34045",
+      "name": "PESTO TOMATES SECHEES DOP",
+      "packaging": "180 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "34050",
+      "name": "CREME AUX OLIVES VERTES",
+      "packaging": "180 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30540",
+      "name": "TARALLI SESAME",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "30552",
+      "name": "PESTO A LA GENOVESE MONTI",
+      "packaging": "900 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "31112",
+      "name": "POLENTA DE CECCO",
+      "packaging": "375 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "32211",
+      "name": "GNOCCHI POMME DE TERRE",
+      "packaging": "2 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "GRPF03",
+      "name": "PAPPARDELLE",
+      "packaging": "1 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "GRPF09",
+      "name": "LASAGNE FEUILLE",
+      "packaging": "2 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "GRRI07",
+      "name": "DELIZIA ASPERGES",
+      "packaging": "1 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "32273",
+      "name": "SACCOTTINO JAMBON CRU",
+      "packaging": "1 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "35429",
+      "name": "CANNOLI SICILIEN PISTACHE",
+      "packaging": "1,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "35443",
+      "name": "CANNOLI SICILIEN CITRON",
+      "packaging": "1,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "35444",
+      "name": "CANNOLI SICILIEN GIANDUJA",
+      "packaging": "1,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "35456",
+      "name": "TROTTOLE FRUTTI DI BOSCO",
+      "packaging": "1,5 kg",
+      "unit": "KG"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53101",
+      "name": "GASSOSA BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53103",
+      "name": "MANDARINATA BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53104",
+      "name": "COLA BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53114",
+      "name": "ROSE & LEMON BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53123",
+      "name": "THE CITRON BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53124",
+      "name": "THE PECHE BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "53125",
+      "name": "THE FLEUR DE SUREAU BONA",
+      "packaging": "275 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "42009",
+      "name": "BIERE PORETTI 4 LUPPOLI 5°",
+      "packaging": "33 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "42013",
+      "name": "BIERE BLONDE MARECHIARO 5,2°",
+      "packaging": "33 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "40028",
+      "name": "REGOLO ROSSO VALPOLICELLA RIPASSO",
+      "packaging": "75 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "44379",
+      "name": "CHIANTI PONTORMO DOCG",
+      "packaging": "75 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "ITAL GASTRONOMIE",
+      "reference": "44412",
+      "name": "BARBERA D'ALBA DOC",
+      "packaging": "75 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "74017",
+      "name": "EAU PETILLANTE CRISTALINE",
+      "packaging": "1,5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "370006",
+      "name": "FILET MERLU",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "387879",
+      "name": "FILET POULET SOUS VIDE HALAL UE",
+      "packaging": "2,5 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "345045",
+      "name": "FEVES PELEES",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "629931",
+      "name": "KIWI",
+      "packaging": "pièce",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "645549",
+      "name": "SALADE ROQUETTE JEUNES POUSSES",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "370968",
+      "name": "MINI BLINIS AU BEURRE",
+      "packaging": "120 x 5 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "645937",
+      "name": "SALADE FEUILLE DE CHENE ROUGE",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "635972",
+      "name": "CITRON JAUNE",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "640016",
+      "name": "TOMATE",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "74015",
+      "name": "EAU SOURCE CRISTALINE",
+      "packaging": "1,5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "648150",
+      "name": "HUILE OLIVE VIERGE EXTRA SANTOLIVA",
+      "packaging": "5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "136115",
+      "name": "JAMBON CRU PETALES",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "642088",
+      "name": "CONCOMBRE",
+      "packaging": "pièce",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "91397",
+      "name": "KRONENBOURG 1664",
+      "packaging": "6 x 25 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "638295",
+      "name": "CITRON VERT",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "24504",
+      "name": "VIN ROSE GABARE BLEUE",
+      "packaging": "3 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "24505",
+      "name": "VIN MERLOT GABARE BLEUE",
+      "packaging": "3 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "24503",
+      "name": "VIN SAUVIGNON GABARE BLEUE",
+      "packaging": "3 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "371731",
+      "name": "GLACE NOIX DE COCO RAPEE",
+      "packaging": "1,237 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "302089",
+      "name": "COCKTAIL FRUITS ROUGES",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "399173",
+      "name": "OEUFS TOUS CALIBRES",
+      "packaging": "30 œufs",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "341226",
+      "name": "SAUMON FUME TRANCHETTES",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "663495",
+      "name": "BASILIC",
+      "packaging": "100 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "369100",
+      "name": "AIL EN CUBES",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424747",
+      "name": "POITRINE FUMEE TRANCHEE",
+      "packaging": "800 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "422260",
+      "name": "SAUCISSE DE TOULOUSE",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "646153",
+      "name": "TOMATE SECHEE HUILE OLIVE",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "646162",
+      "name": "TOMATE ENTIERE PELEE AU JUS",
+      "packaging": "4/4",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "399168",
+      "name": "CREME FRAICHE EPAISSE 30%",
+      "packaging": "50 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "164116",
+      "name": "PAIN DE MIE NATURE",
+      "packaging": "550 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "341254",
+      "name": "OEUFS DE LOMPE NOIRS",
+      "packaging": "100 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "624406",
+      "name": "MAYONNAISE SAXO",
+      "packaging": "875 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "348144",
+      "name": "MAIS SANS SUCRE AJOUTE",
+      "packaging": "4/4",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "348058",
+      "name": "POIS CHICHES",
+      "packaging": "4/4",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "198007",
+      "name": "COUSCOUS MOYEN REGIA",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "82314",
+      "name": "JUS ANANAS",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "79088",
+      "name": "JUS DE POMME SAXO",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "79158",
+      "name": "CRANBERRY GRANINI",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "79090",
+      "name": "PUR JUS ORANGE SAXO",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "384052",
+      "name": "GROS SEL ILE DE RE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "626500",
+      "name": "BAIES DE GENIEVRE",
+      "packaging": "300 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "382005",
+      "name": "SEL FIN IODE CEREBOS",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "6246",
+      "name": "GIN BARMONS 37,5°",
+      "packaging": "70 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "79177",
+      "name": "SIROP GRENADINE SAXO",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "380096",
+      "name": "ASSAISONNEMENT BEURRE AIL",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "629660",
+      "name": "MENTHE",
+      "packaging": "100 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "640265",
+      "name": "CHOU-FLEUR",
+      "packaging": "pièce",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "641830",
+      "name": "PERSIL FRISE",
+      "packaging": "botte",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "638982",
+      "name": "CIBOULETTE",
+      "packaging": "100 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "396519",
+      "name": "FROMAGE FRAIS LAIT DE CHEVRE",
+      "packaging": "200 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "414058",
+      "name": "MOZZARELLA",
+      "packaging": "125 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "662273",
+      "name": "OIGNON JAUNE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "369194",
+      "name": "GUACAMOLE SANTA FE",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "657465",
+      "name": "PATATE DOUCE",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "419221",
+      "name": "FROMAGE A TARTINER AIL ET FINES HERBES",
+      "packaging": "150 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "825713",
+      "name": "MANGUE KENT",
+      "packaging": "pièce",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "328036",
+      "name": "CONFIT DE CANARD 12 CUISSES ROUGIE",
+      "packaging": "5/1",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "342246",
+      "name": "TRUITE FUMEE",
+      "packaging": "120 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "334147",
+      "name": "THON EN MORCEAUX AU NATUREL",
+      "packaging": "600 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "344164",
+      "name": "CHAIR DE CRABE",
+      "packaging": "454 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "342305",
+      "name": "MIETTES DE SURIMI",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "414073",
+      "name": "PARMIGIANO REGGIANO",
+      "packaging": "450 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "408338",
+      "name": "EMMENTAL RAPE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "396484",
+      "name": "CREME FRAICHE EPAISSE 15%",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "395106",
+      "name": "LAIT UHT ENTIER ECHIRE",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "395118",
+      "name": "LAIT UHT DEMI-ECREME ECHIRE",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "408311",
+      "name": "MASCARPONE",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "402139",
+      "name": "BEURRE DOUX SAVENAY",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "396166",
+      "name": "YAOURT GREC HOTOS",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "604261",
+      "name": "TOMATE PELEE CONCASSEE",
+      "packaging": "5/1",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "366214",
+      "name": "CONCENTRE DE TOMATE 28/30",
+      "packaging": "4/4",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "624386",
+      "name": "POIVRE NOIR MOULU",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "648079",
+      "name": "HUILE OLIVE VIERGE EXTRA",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "202026",
+      "name": "CHOCOLAT NOIR DESSERT",
+      "packaging": "200 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "194039",
+      "name": "RIZ SPECIAL DESSERT",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "612099",
+      "name": "CAFE MOULU SAXO",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "338048",
+      "name": "FILETS D'ANCHOIS A L'HUILE",
+      "packaging": "340 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "419040",
+      "name": "COMTE BLOC AOP",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "408116",
+      "name": "CHEDDAR ROUGE BLOC",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "416173",
+      "name": "CAMEMBERT LE RUSTIQUE",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "626389",
+      "name": "KETCHUP",
+      "packaging": "5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "624113",
+      "name": "MOUTARDE JAUNE EN GRAINES",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "185194",
+      "name": "MAYONNAISE DIJON PAUWELS",
+      "packaging": "5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "628268",
+      "name": "CORNICHONS",
+      "packaging": "5/1",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "394019",
+      "name": "CASSONADE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "300089",
+      "name": "MIEL DE FLEURS LIQUIDE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "616181",
+      "name": "AROME VANILLE",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "194105",
+      "name": "RIZ SPECIAL RISOTTO IGP CAMARGUE",
+      "packaging": "2,5 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "616032",
+      "name": "PUREE DE SESAME TAHINI",
+      "packaging": "350 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "372404",
+      "name": "ECHALOTE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "638985",
+      "name": "ANETH",
+      "packaging": "100 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "154059",
+      "name": "PAIN D'EPICES",
+      "packaging": "470 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "371269",
+      "name": "PUREE DE MANGUE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "371656",
+      "name": "PUREE DE FRUIT DE LA PASSION",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "339512",
+      "name": "OEUFS MOYENS",
+      "packaging": "90 œufs",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "178125",
+      "name": "FARINE T55",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "406061",
+      "name": "LEVURE HIRONDELLE",
+      "packaging": "12 x 42 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "419279",
+      "name": "MOZZARELLA COSSETTE",
+      "packaging": "2,5 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424242",
+      "name": "JAMBON BLANC SUPERIEUR",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "648058",
+      "name": "HUILE CUISINOR",
+      "packaging": "20 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "398283",
+      "name": "FROMAGE BLANC 20%",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "632282",
+      "name": "SAUCE WORCESTERSHIRE",
+      "packaging": "290 ml",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "76018",
+      "name": "EVIAN",
+      "packaging": "6 x 50 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "100167",
+      "name": "BADOIT",
+      "packaging": "6 x 50 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "18030",
+      "name": "RHUM BLANC ST JAMES 40°",
+      "packaging": "3 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "425119",
+      "name": "POULET JAUNE PAC",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "380092",
+      "name": "CREVETTES DECORTIQUEES",
+      "packaging": "500 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "96093",
+      "name": "LEFFE BRUNE 6,5°",
+      "packaging": "6 x 25 cl",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "204297",
+      "name": "POUDRE DE CACAO 100%",
+      "packaging": "250 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "88074",
+      "name": "LAIT DE COCO MAKLI",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "616046",
+      "name": "PISTACHES ENTIERES DECORTIQUEES",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "240001",
+      "name": "LAIT CONCENTRE SUCRE NESTLE",
+      "packaging": "397 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "646152",
+      "name": "TOMATE SECHEE HUILE OLIVE",
+      "packaging": "200 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "388707",
+      "name": "PALERON DE BOEUF SOUS VIDE",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "190188",
+      "name": "TORTILLAS DE BLE 30 CM",
+      "packaging": "1,8 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424984",
+      "name": "PATE FEUILLETEE",
+      "packaging": "230 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424985",
+      "name": "CHAIR A SAUCISSE PORC",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "408193",
+      "name": "FETA GRECQUE AOP",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "396116",
+      "name": "CREME EPAISSE 15%",
+      "packaging": "5 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "372420",
+      "name": "PATE BRISEE",
+      "packaging": "230 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "79135",
+      "name": "CITRON / CITRON VERT SAXO",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "420033",
+      "name": "CREME LIQUIDE UHT 35%",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "608016",
+      "name": "LASAGNE GRANDE PANZANI",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "371374",
+      "name": "AIL HACHE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "397160",
+      "name": "PREPARATION PANNA COTTA",
+      "packaging": "1 L",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424745",
+      "name": "LARDONS NATURE",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424948",
+      "name": "TAGLIATELLE PASTA DI LUIGI",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "369082",
+      "name": "PETITS POIS TRES FINS",
+      "packaging": "2,5 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "370536",
+      "name": "COCKTAIL FRUITS DE MER",
+      "packaging": "1 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "340092",
+      "name": "DELICE DE TOMATES SECHEES",
+      "packaging": "400 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "206075",
+      "name": "CHOCOLAT DESSERT 52%",
+      "packaging": "200 g",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "423228",
+      "name": "FILET DE POULET UE",
+      "packaging": "2,5 kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "PMC SAINTES / PROMOCASH",
+      "reference": "424163",
+      "name": "CARRE DE PORC AVEC OS",
+      "packaging": "kg",
+      "unit": "UNITE"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "CEPRESIST-SOUVIGNIER-BLANC",
+      "name": "CEP'RESIST SOUVIGNIER GRIS BLANC",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911049882",
+      "carton_ean": "3412911049899"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "CEPRESIST-VIDOC-ROUGE",
+      "name": "CEP'RESIST VIDOC ROUGE",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911047383",
+      "carton_ean": "3412911047390"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "CEPRESIST-SORELI-BLANC",
+      "name": "CEP'RESIST SORELI BLANC",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911050000",
+      "carton_ean": "3412911050017"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "18-BIZUTS-ROUGE",
+      "name": "LES 18 BIZUTS ROUGE",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911048366",
+      "carton_ean": "3412911048373"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "PERLE-TUTIAC",
+      "name": "PERLE DE TUTIAC CREMANT BLANC",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911035786",
+      "carton_ean": "3412911035793"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "ODAIGA-ROSE",
+      "name": "ODAÏGA ROSE",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911049844",
+      "carton_ean": "3412911047482"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "ODAIGA-BLANC",
+      "name": "ODAÏGA BLANC",
+      "packaging": "Carton 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911047451",
+      "carton_ean": "3412911047468"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "ORIGINES-PONT-AULAN",
+      "name": "ORIGINES PONT D'AULAN SAUTERNES",
+      "packaging": "Caisse bois 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911041862",
+      "carton_ean": "3412911041879"
+    },
+    {
+      "supplier": "VIGNERONS DE TUTIAC",
+      "reference": "ORIGINES-AU-PIN",
+      "name": "ORIGINES AU PIN BLAYE COTES DE BORDEAUX ROUGE",
+      "packaging": "Caisse bois 6 x 75 cl",
+      "unit": "BOUTEILLE",
+      "ean": "3412911046683",
+      "carton_ean": "3412911046706"
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CHAIR-A-SAUCISSES-PORC",
+      "name": "Chair à saucisses porc",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FARCE-A-LEGUMES",
+      "name": "Farce à légumes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FILET-DE-POULET-BLANC",
+      "name": "Filet de poulet blanc",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-VIANDE-HACHEE",
+      "name": "Viande hachée",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FILETS-DE-CANARD",
+      "name": "Filets de canard",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CREVETTE-CUITE-60-80",
+      "name": "Crevette cuite 60/80",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ANNEAUX-DE-CALAMARS",
+      "name": "Anneaux de calamars",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ANNEAUX-D-ENCORNETS",
+      "name": "Anneaux d'encornets",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-GESIERS-DE-CANARD-CONFITS",
+      "name": "Gésiers de canard confits",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-JEUNES-POUSSES",
+      "name": "Jeunes pousses",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ROQUETTE",
+      "name": "Roquette",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MACHE-ET-ROQUETTE",
+      "name": "Mâche et roquette",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MACHE-ET-BETTERAVE",
+      "name": "Mâche et betterave",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MELANGE-DE-SAISON",
+      "name": "Mélange de saison",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-LAITUE-ROMAINE",
+      "name": "Laitue romaine",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ANETH",
+      "name": "Aneth",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MENTHE",
+      "name": "Menthe",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-PERSIL",
+      "name": "Persil",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-BASILIC",
+      "name": "Basilic",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-PASTEQUE",
+      "name": "Pastèque",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-TOMATES",
+      "name": "Tomates",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-TOMATES-CERISES",
+      "name": "Tomates cerises",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CONCOMBRE",
+      "name": "Concombre",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-POIVRONS-TRICOLORES",
+      "name": "Poivrons tricolores",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-POIVRON-ROUGE",
+      "name": "Poivron rouge",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-OIGNONS-JAUNES",
+      "name": "Oignons jaunes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CAROTTES",
+      "name": "Carottes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-PATATE-DOUCE",
+      "name": "Patate douce",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-AUBERGINE",
+      "name": "Aubergine",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MELON-CHARENTAIS",
+      "name": "Melon Charentais",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-KIWI",
+      "name": "Kiwi",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-BANANES",
+      "name": "Bananes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-POMMES",
+      "name": "Pommes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ABRICOTS",
+      "name": "Abricots",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-PRUNES",
+      "name": "Prunes",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CHAMPIGNONS-DE-PARIS",
+      "name": "Champignons de Paris",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-POMMES-DE-TERRE",
+      "name": "Pommes de terre",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-AVOCAT",
+      "name": "Avocat",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-COURGETTE",
+      "name": "Courgette",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CITRON-JAUNE",
+      "name": "Citron jaune",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MOZZARELLA",
+      "name": "Mozzarella",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MOZZARELLA-DI-BUFFALA",
+      "name": "Mozzarella di Buffala",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-BURRATA",
+      "name": "Burrata",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FETA-GRECQUE-AOP",
+      "name": "Feta grecque AOP",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-SAINT-MARCELLIN",
+      "name": "Saint-Marcellin",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-ROCAMADOUR",
+      "name": "Rocamadour",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-COTTAGE-CHEESE",
+      "name": "Cottage cheese",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CREME-FRAICHE-ENTIERE",
+      "name": "Crème fraîche entière",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CREME-LIQUIDE",
+      "name": "Crème liquide",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MASCARPONE",
+      "name": "Mascarpone",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-YAOURT-GREC",
+      "name": "Yaourt grec",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FROMAGE-DE-CHEVRE",
+      "name": "Fromage de chèvre",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-HALLOUMI",
+      "name": "Halloumi",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-BEURRE-DEMI-SEL",
+      "name": "Beurre demi-sel",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-UFS-FRAIS",
+      "name": "Œufs frais",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CHORIZO-DOUX",
+      "name": "Chorizo doux",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CHORIZO-FORT",
+      "name": "Chorizo fort",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-PATE-BRISEE",
+      "name": "Pâte brisée",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-FEUILLES-DE-LASAGNES-FRAICHES",
+      "name": "Feuilles de lasagnes fraîches",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-BAGUETTE",
+      "name": "Baguette",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-POIS-CHICHES",
+      "name": "Pois chiches",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-OLIVES-NOIRES",
+      "name": "Olives noires",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-CREME-BALSAMIQUE",
+      "name": "Crème balsamique",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-RIZ-ROND",
+      "name": "Riz rond",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-MELANGE-POUR-PAELLA",
+      "name": "Mélange pour paella",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-SUCRE-EN-POUDRE",
+      "name": "Sucre en poudre",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "E.LECLERC SAINT-JEAN-D'ANGELY",
+      "reference": "LECLERC-JUS-D-ORANGE",
+      "name": "Jus d'orange",
+      "packaging": "",
+      "unit": "UNITE",
+      "source": "factures_2026",
+      "needs_hygiene_configuration": true
+    },
+    {
+      "supplier": "SARL BBL",
+      "reference": "ART00000299",
+      "name": "BIB 3 LITRES RHUM DAMOISEAU",
+      "packaging": "BIB 3 litres",
+      "unit": "BIB",
+      "price_ht": 58.75,
+      "price_ttc": 70.5,
+      "price_per_litre_ht": 19.5833,
+      "vat_rate": 20,
+      "source": "facture FAC00000665 du 28/04/2026",
+      "reference_status": "verified",
+      "import_ready": true
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "SAS MARCHE",
+      "category": "Fruits et légumes frais",
+      "source": "releves_bancaires_2026",
+      "product_detail_available": false,
+      "notes": "Achats réguliers de fruits et légumes. Détail des articles, quantités, lots et prix unitaires non disponible dans les données actuelles."
+    },
+    {
+      "name": "SARL BBL",
+      "category": "Boissons et alcools",
+      "address": "45 Avenue de Poitiers, 79170 Brioux-sur-Boutonne",
+      "siret": "94054164200010",
+      "phone": "06 81 85 59 09",
+      "source": "facture FAC00000665 du 28/04/2026"
+    }
+  ]
+}

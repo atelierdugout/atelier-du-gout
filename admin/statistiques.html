@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="statistics-page">
+
+    <header class="statistics-header">
+        <div>
+            <div class="statistics-kicker">L'Atelier du Goût</div>
+            <h1>Statistiques</h1>
+            <p>Suivez les ventes et les performances de la boutique en ligne.</p>
+        </div>
+
+        <button id="refresh-statistics" class="primary-button">
+            Actualiser
+        </button>
+    </header>
+
+    
+
+    <div id="statistics-dashboard">
+
+        <section class="statistics-periods" aria-label="Période des statistiques">
+    <button type="button" class="statistics-period" data-period="today">Aujourd’hui</button>
+    <button type="button" class="statistics-period" data-period="7d">7 jours</button>
+    <button type="button" class="statistics-period active" data-period="month">Ce mois</button>
+    <button type="button" class="statistics-period" data-period="last_month">Mois dernier</button>
+    <button type="button" class="statistics-period" data-period="year">Cette année</button>
+  </section>
+
+  <p id="statistics-period-label" class="statistics-period-label">
+    Ventes en ligne — ce mois
+  </p>
+
+  <section class="statistics-summary">
+
+            <div class="statistics-stat">
+                <span>Chiffre d'affaires</span>
+                <strong id="stat-revenue">0,00 €</strong>
+  <small id="stat-revenue-change" class="statistics-change"></small>
+            </div>
+
+            <div class="statistics-stat">
+                <span>Commandes</span>
+                <strong id="stat-orders">0</strong>
+  <small id="stat-orders-change" class="statistics-change"></small>
+            </div>
+
+            <div class="statistics-stat">
+                <span>Panier moyen</span>
+                <strong id="stat-average">0,00 €</strong>
+  <small id="stat-average-change" class="statistics-change"></small>
+            </div>
+
+            <div class="statistics-stat">
+                <span>Clients</span>
+                <strong id="stat-customers">0</strong>
+  <small id="stat-customers-change" class="statistics-change"></small>
+            </div>
+
+        </section>
+
+        <div id="statistics-loading" class="statistics-message">
+            Chargement des statistiques…
+        </div>
+
+        <div id="statistics-content" style="display:none;">
+
+
+            <section class="statistics-panel">
+                <div class="statistics-panel-title">
+                    <div>
+                        <span class="statistics-label">Audience</span>
+                        <h2>Visiteurs du site</h2>
+                    </div>
+                </div>
+
+                <section class="statistics-summary">
+                    <div class="statistics-stat">
+                        <span>Visiteurs uniques</span>
+                        <strong id="stat-visitors">0</strong>
+                        <small id="stat-visitors-change" class="statistics-change"></small>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Visites</span>
+                        <strong id="stat-sessions">0</strong>
+                        <small id="stat-sessions-change" class="statistics-change"></small>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Pages vues</span>
+                        <strong id="stat-pageviews">0</strong>
+                        <small id="stat-pageviews-change" class="statistics-change"></small>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Visiteurs boutique</span>
+                        <strong id="stat-boutique-visitors">0</strong>
+                        <small id="stat-boutique-visitors-change" class="statistics-change"></small>
+                    </div>
+                </section>
+            </section>
+
+
+
+
+            <section class="statistics-panel">
+                <div class="statistics-panel-title">
+                    <div>
+                        <span class="statistics-label">Conversion</span>
+                        <h2>Parcours vers l'achat</h2>
+                    </div>
+                </div>
+
+                <section class="statistics-summary">
+                    <div class="statistics-stat">
+                        <span>Visiteurs site</span>
+                        <strong id="funnel-visitors">0</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Visiteurs boutique</span>
+                        <strong id="funnel-shop">0</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Commandes</span>
+                        <strong id="funnel-orders">0</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Ratio commandes / boutique</span>
+                        <strong id="funnel-conversion">0 %</strong>
+                    </div>
+                </section>
+
+                <p class="statistics-period-label">
+                    Ratio indicatif : les commandes ne sont pas encore
+                    reliées individuellement aux visiteurs.
+                </p>
+            </section>
+
+            <section class="statistics-panel">
+                <div class="statistics-panel-title">
+                    <div>
+                        <span class="statistics-label">Fidélisation</span>
+                        <h2>Nouveaux et récurrents</h2>
+                    </div>
+                </div>
+
+                <section class="statistics-summary">
+                    <div class="statistics-stat">
+                        <span>Nouveaux visiteurs</span>
+                        <strong id="new-visitors">0</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Visiteurs récurrents</span>
+                        <strong id="returning-visitors">0</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Part de nouveaux</span>
+                        <strong id="new-visitors-rate">0 %</strong>
+                    </div>
+
+                    <div class="statistics-stat">
+                        <span>Part de récurrents</span>
+                        <strong id="returning-visitors-rate">0 %</strong>
+                    </div>
+                </section>
+            </section>
+
+            <section class="statistics-panel">
+                <div class="statistics-panel-title">
+                    <div>
+                        <span class="statistics-label">Évolution</span>
+                        <h2>Audience du site</h2>
+                    </div>
+                </div>
+
+                <div id="audience-chart" class="statistics-days"></div>
+            </section>
+
+            <div class="statistics-grid">
+
+                <section class="statistics-panel">
+                    <div class="statistics-panel-title">
+                        <div>
+                            <span class="statistics-label">Acquisition</span>
+                            <h2>Provenance des visiteurs</h2>
+                        </div>
+                    </div>
+
+                    <div id="traffic-sources"></div>
+                </section>
+
+                <section class="statistics-panel">
+                    <div class="statistics-panel-title">
+                        <div>
+                            <span class="statistics-label">Navigation</span>
+                            <h2>Pages les plus consultées</h2>
+                        </div>
+                    </div>
+
+                    <div id="top-pages"></div>
+                </section>
+
+            </div>
+
+            <section class="statistics-panel">
+                <div class="statistics-panel-title">
+                    <div>
+                        <span class="statistics-label">Évolution</span>
+                        <h2 id="statistics-sales-title">Ventes par jour</h2>
+                    </div>
+                </div>
+
+                <div id="sales-by-day" class="statistics-days"></div>
+            </section>
+
+            <div class="statistics-grid">
+
+                <section class="statistics-panel">
+                    <div class="statistics-panel-title">
+                        <div>
+                            <span class="statistics-label">Classement</span>
+                            <h2>Produits les plus vendus</h2>
+                        </div>
+                    </div>
+
+                    <div id="top-products"></div>
+                </section>
+
+                <section class="statistics-panel">
+                    <div class="statistics-panel-title">
+                        <div>
+                            <span class="statistics-label">Commandes</span>
+                            <h2>Modes de retrait</h2>
+                        </div>
+                    </div>
+
+                    <div id="sales-by-mode"></div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="statistiques.js"></script>
+</body>
+</html>

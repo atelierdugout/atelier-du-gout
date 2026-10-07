@@ -1,0 +1,876 @@
+/* =========================================================
+   L'ATELIER DU GOÛT — PUBLIC UI 2026
+   Couche visuelle globale
+   Palette et identité historiques conservées
+   ========================================================= */
+
+:root{
+    --green:#283728;
+    --green2:#3d513c;
+    --cream:#f6f0e5;
+    --paper:#fffdf8;
+    --gold:#c49a46;
+    --gold2:#e5c988;
+    --ink:#20231d;
+    --muted:#6c7067;
+    --line:#ded6c8;
+
+    --ui-radius:20px;
+    --ui-radius-small:14px;
+    --ui-shadow:0 10px 32px rgba(34,43,31,.07);
+    --ui-shadow-hover:0 16px 40px rgba(34,43,31,.11);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    background:
+        radial-gradient(circle at 90% 0%,rgba(196,154,70,.055),transparent 28rem),
+        var(--cream);
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.promo{
+    padding:7px 14px;
+}
+
+.top{
+    box-shadow:0 4px 18px rgba(40,55,40,.035);
+}
+
+.topin{
+    min-height:68px;
+}
+
+.brand{
+    white-space:nowrap;
+}
+
+.nav a{
+    position:relative;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:100%;
+    bottom:-6px;
+    height:1px;
+    background:var(--gold);
+    transition:right .18s ease;
+}
+
+.nav a:hover::after{
+    right:0;
+}
+
+.accountlink,
+.cartbtn{
+    min-height:42px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.cta,
+.add,
+.checkout,
+.cartbtn,
+.btn{
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+.cta:hover,
+.add:hover,
+.checkout:hover,
+.cartbtn:hover,
+.btn:hover{
+    transform:translateY(-1px);
+}
+
+.cta:active,
+.add:active,
+.checkout:active,
+.cartbtn:active,
+.btn:active{
+    transform:translateY(0);
+}
+
+/* =========================================================
+   ACCUEIL
+   ========================================================= */
+
+.hero{
+    box-shadow:0 18px 55px rgba(34,43,31,.12);
+}
+
+.hero-inner{
+    padding-bottom:48px;
+}
+
+.hero-actions .cta{
+    min-height:48px;
+}
+
+.benefit,
+.cat,
+.mini-card,
+.today-item,
+.universe-card,
+.quick-info,
+.reassurance{
+    box-shadow:0 5px 20px rgba(34,43,31,.04);
+}
+
+.cat,
+.mini-card,
+.universe-card{
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+.cat:hover,
+.mini-card:hover,
+.universe-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--ui-shadow-hover);
+}
+
+.sectionhead{
+    margin-top:52px;
+}
+
+.sectionhead h2{
+    letter-spacing:-.02em;
+}
+
+.story,
+.loyalty,
+.today,
+.newsletter{
+    box-shadow:0 8px 28px rgba(34,43,31,.05);
+}
+
+/* =========================================================
+   EN-TÊTES DE PAGES
+   ========================================================= */
+
+.pagehead{
+    max-width:900px;
+    margin:auto;
+    padding:48px 20px 24px;
+    text-align:center;
+}
+
+.pagehead h1{
+    line-height:1.02;
+    letter-spacing:-.025em;
+}
+
+.pagehead p{
+    max-width:650px;
+    margin:8px auto 0;
+    line-height:1.55;
+}
+
+/* =========================================================
+   RECHERCHE & FILTRES
+   ========================================================= */
+
+.searchbar{
+    margin-bottom:16px;
+}
+
+.searchbar input{
+    min-height:48px;
+    padding:12px 18px;
+    outline:none;
+    transition:border-color .15s ease,box-shadow .15s ease;
+}
+
+.searchbar input:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(196,154,70,.13);
+}
+
+.filters{
+    margin-bottom:28px;
+}
+
+.filter{
+    min-height:40px;
+    padding:8px 14px;
+    font-size:12px;
+    font-weight:700;
+    transition:.15s ease;
+}
+
+.filter:hover{
+    border-color:var(--gold);
+}
+
+.filter.active{
+    box-shadow:0 5px 14px rgba(40,55,40,.12);
+}
+
+/* =========================================================
+   PRODUITS
+   ========================================================= */
+
+.productgrid{
+    gap:18px;
+}
+
+.product{
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(34,43,31,.045);
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.product:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--ui-shadow-hover);
+}
+
+.product .photo{
+    overflow:hidden;
+}
+
+.product .content{
+    padding:16px;
+}
+
+.product h3{
+    letter-spacing:-.01em;
+}
+
+.product .foot{
+    margin-top:auto;
+    padding-top:6px;
+}
+
+.product .price{
+    color:var(--green);
+}
+
+.add{
+    flex:0 0 40px;
+    width:40px;
+    height:40px;
+}
+
+/* =========================================================
+   PANIER
+   ========================================================= */
+
+.drawer{
+    backdrop-filter:blur(3px);
+}
+
+.drawer .panel{
+    box-shadow:-20px 0 60px rgba(0,0,0,.15);
+}
+
+.cartline{
+    padding:14px 0;
+}
+
+.choice{
+    min-height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.15s ease;
+}
+
+.choice.active{
+    box-shadow:0 0 0 1px var(--green);
+}
+
+.field input,
+.field select,
+.field textarea{
+    min-height:46px;
+    outline:none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(196,154,70,.12);
+}
+
+.summarybox,
+.warning,
+.alcohol,
+.upsell{
+    border-radius:16px;
+}
+
+.checkout{
+    min-height:50px;
+    font-size:15px;
+}
+
+/* =========================================================
+   CARTES CADEAUX
+   ========================================================= */
+
+.gift-hero{
+    box-shadow:0 18px 55px rgba(34,43,31,.12);
+}
+
+.gift-value{
+    transition:.15s ease;
+}
+
+.gift-value:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--ui-shadow);
+}
+
+.gift-summary{
+    box-shadow:var(--ui-shadow);
+}
+
+.gift-how > div{
+    box-shadow:0 5px 20px rgba(34,43,31,.04);
+}
+
+/* =========================================================
+   COMPTE
+   ========================================================= */
+
+.accountnav,
+.accountmain{
+    box-shadow:0 6px 24px rgba(34,43,31,.045);
+}
+
+.accountnav button{
+    min-height:48px;
+    border-radius:10px;
+}
+
+.accountnav button:hover{
+    background:#f2ecdf;
+}
+
+/* =========================================================
+   PAGES LÉGALES / FAQ / LIVRAISON
+   ========================================================= */
+
+.legal-page{
+    line-height:1.7;
+    box-shadow:0 6px 24px rgba(34,43,31,.04);
+}
+
+.legal-page h2,
+.legal-page h3{
+    color:var(--green);
+    font-family:Georgia,serif;
+}
+
+/* =========================================================
+   RÉSERVATIONS
+   ========================================================= */
+
+.reservation-public-page{
+    padding-bottom:90px;
+}
+
+.reservation-public-hero{
+    box-shadow:0 16px 48px rgba(34,43,31,.09);
+}
+
+.reservation-booking-card,
+.reservation-public-info{
+    box-shadow:0 6px 24px rgba(34,43,31,.045);
+}
+
+.reservation-slot{
+    min-height:46px;
+    transition:.15s ease;
+}
+
+.reservation-slot:hover{
+    transform:translateY(-1px);
+}
+
+.reservation-public-page input,
+.reservation-public-page select,
+.reservation-public-page textarea{
+    min-height:46px;
+    outline:none;
+}
+
+.reservation-public-page input:focus,
+.reservation-public-page select:focus,
+.reservation-public-page textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(196,154,70,.12);
+}
+
+/* =========================================================
+   PAGES RETOUR PAIEMENT / CARTE CADEAU
+   ========================================================= */
+
+body > .card{
+    border-radius:22px;
+    box-shadow:var(--ui-shadow);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+    margin-top:20px;
+}
+
+.footerin{
+    row-gap:24px;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media(max-width:980px){
+
+    .productgrid{
+        gap:14px;
+    }
+
+    .pagehead{
+        padding-top:38px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+    /* Navigation */
+
+    .promo{
+        padding:6px 10px;
+        font-size:11px;
+    }
+
+    .topin{
+        min-height:60px;
+        padding:9px 12px;
+        gap:9px;
+    }
+
+    .brand{
+        font-size:14px;
+        letter-spacing:.07em;
+    }
+
+    .brand small{
+        margin-top:3px;
+        font-size:7px;
+    }
+
+    .cartbtn{
+        min-height:40px;
+        padding:9px 12px;
+        font-size:12px;
+    }
+
+    /* En-têtes */
+
+    .pagehead{
+        padding:30px 16px 17px;
+    }
+
+    .pagehead h1{
+        margin:5px 0;
+        font-size:40px;
+    }
+
+    .pagehead p{
+        font-size:14px;
+    }
+
+    .wrap{
+        padding:16px 12px 80px;
+    }
+
+    /* Accueil */
+
+    .hero{
+        min-height:455px;
+        margin:8px;
+        border-radius:20px;
+    }
+
+    .hero-inner{
+        padding:24px 20px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:16px;
+        line-height:1.45;
+    }
+
+    .hero-actions{
+        gap:7px;
+    }
+
+    .hero-actions .cta{
+        min-height:44px;
+        padding:11px 15px;
+        font-size:13px;
+    }
+
+    .benefits{
+        gap:8px;
+        margin:15px 0 28px;
+    }
+
+    .benefit{
+        padding:12px;
+        border-radius:15px;
+    }
+
+    .benefit b{
+        font-size:13px;
+    }
+
+    .benefit span{
+        font-size:11px;
+    }
+
+    .sectionhead{
+        display:block;
+        margin:36px 0 13px;
+    }
+
+    .sectionhead h2{
+        font-size:29px;
+    }
+
+    .sectionhead p{
+        font-size:13px;
+    }
+
+    /* Recherche */
+
+    .searchbar{
+        margin-bottom:12px;
+    }
+
+    .searchbar input{
+        min-height:46px;
+    }
+
+    .filters{
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        overflow-x:auto;
+        margin-left:-12px;
+        margin-right:-12px;
+        padding:0 12px 5px;
+        scrollbar-width:none;
+    }
+
+    .filters::-webkit-scrollbar{
+        display:none;
+    }
+
+    .filter{
+        flex:0 0 auto;
+        white-space:nowrap;
+    }
+
+    /* Produits */
+
+    .productgrid{
+        gap:10px;
+    }
+
+    .product{
+        display:grid;
+        grid-template-columns:112px minmax(0,1fr);
+        min-height:128px;
+        border-radius:16px;
+    }
+
+    .product .photo{
+        width:112px;
+        height:100%;
+        min-height:128px;
+        aspect-ratio:auto;
+    }
+
+    .product .content{
+        min-width:0;
+        padding:12px;
+        gap:4px;
+    }
+
+    .product h3{
+        font-size:18px;
+    }
+
+    .product .desc{
+        display:-webkit-box;
+        overflow:hidden;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+        font-size:11px;
+        line-height:1.35;
+    }
+
+    .product .meta{
+        font-size:9px;
+    }
+
+    .product .foot{
+        margin-top:auto;
+    }
+
+    .product .price{
+        font-size:17px;
+    }
+
+    .add{
+        width:38px;
+        height:38px;
+        flex-basis:38px;
+    }
+
+    /* Panier plein écran plus pratique */
+
+    .drawer .panel{
+        width:100%;
+        padding:17px;
+    }
+
+    .choicegrid{
+        grid-template-columns:1fr;
+    }
+
+    /* Cadeaux */
+
+    .gift-hero{
+        min-height:0;
+        margin:8px;
+        padding:26px 20px;
+        border-radius:20px;
+    }
+
+    .gift-hero h1{
+        font-size:42px;
+    }
+
+    .gift-hero p{
+        font-size:15px;
+    }
+
+    .gift-card-visual{
+        padding:22px;
+        border-radius:19px;
+    }
+
+    .gift-card-visual div{
+        font-size:34px;
+    }
+
+    .gift-values{
+        gap:8px;
+    }
+
+    .gift-value{
+        min-height:100px;
+        padding:14px 10px;
+        border-radius:15px;
+    }
+
+    .gift-value strong{
+        font-size:26px;
+    }
+
+    /* Compte */
+
+    .accountnav,
+    .accountmain{
+        padding:16px;
+        border-radius:17px;
+    }
+
+    .pointsbig{
+        font-size:46px;
+    }
+
+    /* Légal */
+
+    .legal-page{
+        padding:19px 17px;
+        border-radius:17px;
+        font-size:14px;
+    }
+
+    /* Réservation */
+
+    .reservation-public-page{
+        padding-bottom:65px;
+    }
+
+    .reservation-public-hero{
+        border-radius:20px;
+    }
+
+    .reservation-slot-grid{
+        gap:7px;
+    }
+
+    .reservation-slot{
+        min-height:44px;
+    }
+
+    /* Footer */
+
+    .footer{
+        padding:32px 18px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
+
+:focus-visible{
+    outline:3px solid rgba(196,154,70,.45);
+    outline-offset:2px;
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+}
+
+/* Consentement mesure d'audience */
+#adg-consent-banner{
+  position:fixed;
+  z-index:10000;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  max-width:920px;
+  margin:auto;
+  background:#fff;
+  color:#283728;
+  border:1px solid rgba(40,55,40,.16);
+  border-radius:18px;
+  box-shadow:0 14px 45px rgba(0,0,0,.18);
+  padding:18px;
+}
+.adg-consent-inner{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  justify-content:space-between;
+}
+.adg-consent-copy{
+  max-width:620px;
+}
+.adg-consent-copy strong{
+  font-size:17px;
+}
+.adg-consent-copy p{
+  margin:6px 0 0;
+  line-height:1.45;
+  font-size:14px;
+}
+.adg-consent-copy a{
+  color:inherit;
+  text-decoration:underline;
+}
+.adg-consent-actions{
+  display:flex;
+  gap:10px;
+  flex-shrink:0;
+}
+.adg-consent-actions button{
+  min-height:44px;
+  padding:10px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+}
+#adg-consent-refuse{
+  background:#fff;
+  color:#283728;
+  border:1px solid #283728;
+}
+#adg-consent-accept{
+  background:#283728;
+  color:#fff;
+  border:1px solid #283728;
+}
+@media(max-width:650px){
+  #adg-consent-banner{
+    left:10px;
+    right:10px;
+    bottom:10px;
+    padding:16px;
+  }
+  .adg-consent-inner{
+    display:block;
+  }
+  .adg-consent-actions{
+    margin-top:14px;
+  }
+  .adg-consent-actions button{
+    flex:1;
+  }
+}

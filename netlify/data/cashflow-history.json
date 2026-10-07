@@ -1,0 +1,22 @@
+{
+  "source": "Export trésorerie comptabilité",
+  "period": {
+    "start": "2026-03-01",
+    "end": "2026-09-30"
+  },
+  "monthly": [
+    {"month":"2026-03","opening_balance_cents":56719,"receipts_cents":1023052,"payments_cents":1078104,"closing_balance_cents":1667},
+    {"month":"2026-04","opening_balance_cents":1667,"receipts_cents":995164,"payments_cents":989576,"closing_balance_cents":2566},
+    {"month":"2026-05","opening_balance_cents":2566,"receipts_cents":979692,"payments_cents":960571,"closing_balance_cents":26376},
+    {"month":"2026-06","opening_balance_cents":26376,"receipts_cents":743715,"payments_cents":749676,"closing_balance_cents":20415},
+    {"month":"2026-07","opening_balance_cents":20415,"receipts_cents":1207589,"payments_cents":1175378,"closing_balance_cents":52626},
+    {"month":"2026-08","opening_balance_cents":52626,"receipts_cents":904526,"payments_cents":876561,"closing_balance_cents":171097},
+    {"month":"2026-09","opening_balance_cents":171097,"receipts_cents":994842,"payments_cents":711204,"closing_balance_cents":364229}
+  ],
+  "notes": [
+    "Les encaissements de trésorerie ne constituent pas automatiquement du chiffre d'affaires.",
+    "Les décaissements de trésorerie ne constituent pas automatiquement des charges comptables.",
+    "Ne jamais additionner les encaissements de trésorerie au chiffre d'affaires Kézia, aux factures ou aux ventes en ligne.",
+    "Utiliser ces données pour analyser les flux de trésorerie et l'évolution du solde bancaire."
+  ]
+}

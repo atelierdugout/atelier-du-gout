@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients — L'Atelier du Goût</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-ui-2026.css">
+</head>
+<body>
+<div class="clients-page">
+
+    <div class="clients-header">
+        <div>
+            <div class="clients-kicker">L'Atelier du Goût</div>
+            <h1>Clients</h1>
+            <p>Consultez vos clients, leurs commandes et leur fidélité.</p>
+        </div>
+
+        <button id="refresh-clients" class="primary-button">
+            Actualiser
+        </button>
+    </div>
+
+    
+
+    <div id="clients-dashboard">
+
+        <div class="clients-summary">
+            <div class="client-stat">
+                <span>Clients</span>
+                <strong id="clients-count">0</strong>
+            </div>
+
+            <div class="client-stat">
+                <span>Commandes</span>
+                <strong id="clients-orders">0</strong>
+            </div>
+
+            <div class="client-stat">
+                <span>Chiffre d'affaires</span>
+                <strong id="clients-revenue">0,00 €</strong>
+            </div>
+
+            <div class="client-stat">
+                <span>Comptes fidélité</span>
+                <strong id="clients-loyalty">0</strong>
+            </div>
+        </div>
+
+        <div class="clients-toolbar">
+            <div class="clients-search">
+                <span>⌕</span>
+                <input
+                    id="client-search"
+                    type="search"
+                    placeholder="Rechercher un client..."
+                >
+            </div>
+
+            <select id="client-filter">
+                <option value="all">Tous les clients</option>
+                <option value="loyalty">Avec fidélité</option>
+                <option value="no-loyalty">Sans fidélité</option>
+            </select>
+        </div>
+
+        <main class="clients-content">
+
+            <div id="clients-loading" class="clients-message">
+                Chargement des clients…
+            </div>
+
+            <div id="clients-empty" class="clients-message" style="display:none;">
+                Aucun client trouvé.
+            </div>
+
+            <div id="clients-list"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="admin-guard.js"></script>
+<script src="admin-nav.js"></script>
+<script src="clients.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "supplier": "SAS MARCHE",
+  "category": "Fruits et légumes frais",
+  "source": "export bancaire Crédit Agricole",
+  "period": {
+    "from": "2026-05-11",
+    "to": "2026-09-25"
+  },
+  "transaction_count": 23,
+  "total_ttc": 1107.34,
+  "accounting_rule": "Ces opérations sont déjà incluses dans bank-history.json. Ne jamais les additionner une seconde fois aux dépenses ou aux décaissements globaux.",
+  "product_detail_available": false,
+  "transactions": [
+    {"date":"2026-05-11","amount_ttc":48.47},
+    {"date":"2026-05-15","amount_ttc":85.73},
+    {"date":"2026-05-28","amount_ttc":70.62},
+    {"date":"2026-06-01","amount_ttc":24.28},
+    {"date":"2026-06-04","amount_ttc":112.23},
+    {"date":"2026-06-04","amount_ttc":57.38},
+    {"date":"2026-06-08","amount_ttc":31.11},
+    {"date":"2026-06-11","amount_ttc":57.69},
+    {"date":"2026-06-12","amount_ttc":9.27},
+    {"date":"2026-06-15","amount_ttc":29.30},
+    {"date":"2026-06-19","amount_ttc":25.17},
+    {"date":"2026-06-22","amount_ttc":85.00},
+    {"date":"2026-07-02","amount_ttc":71.41},
+    {"date":"2026-07-10","amount_ttc":34.78},
+    {"date":"2026-07-13","amount_ttc":29.77},
+    {"date":"2026-07-17","amount_ttc":38.82},
+    {"date":"2026-07-24","amount_ttc":18.84},
+    {"date":"2026-07-27","amount_ttc":51.58},
+    {"date":"2026-07-31","amount_ttc":35.58},
+    {"date":"2026-08-06","amount_ttc":47.46},
+    {"date":"2026-08-10","amount_ttc":45.74},
+    {"date":"2026-09-17","amount_ttc":59.71},
+    {"date":"2026-09-25","amount_ttc":37.40}
+  ]
+}
