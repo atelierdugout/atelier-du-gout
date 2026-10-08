@@ -1,5 +1,9 @@
 import { db } from "./db.mjs";
 import { hasAdminAccess } from "./admin-session.mjs";
+import {
+  getHygieneExpertMphSession,
+  API_BASE
+} from "./hygiene-expert-session.mjs";
 
 const reply = (data, status = 200) =>
   Response.json(data, {
@@ -28,6 +32,59 @@ function parisParts(date = new Date()) {
   );
 }
 
+
+async function getExpertTemperatureLogs(today) {
+  const [year, month, day] = today.split("-");
+  const date = `${month}/${day}/${year}`;
+
+  const params = new URLSearchParams({
+    startdate: `${date} 00:00:00`,
+    enddate: `${date} 23:59:59`,
+    equipment_id: "null",
+    signatory_id: "null",
+    anomalies_designations_id: "null",
+    fridges: "true",
+    ovens: "true",
+    freezers: "true",
+    coolers: "true",
+    hot_dist: "true",
+    cold_dist: "true",
+    page: "1",
+    all_logs: "true",
+    day: "false",
+    week: "false",
+    month: "false",
+    deleted_materials: "true"
+  });
+
+  const session = await getHygieneExpertMphSession();
+
+  const response = await fetch(
+    `${API_BASE}/MPH/equipments-temperatures-logs?${params}`,
+    {
+      headers: {
+        Accept: "application/json",
+        Authorization: session
+      }
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Lecture Hygiène Expert HTTP ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data?.l_equipment_temp_logs)) {
+    throw new Error("Format des relevés Hygiène Expert inattendu.");
+  }
+
+  return data.l_equipment_temp_logs.filter(
+    log => !log.deleted &&
+      String(log.recording_date || "").startsWith(today)
+  );
+}
+
 export default async req => {
   if (!hasAdminAccess(req)) {
     return reply({ error: "Non autorisé." }, 401);
@@ -47,6 +104,55 @@ export default async req => {
 
     const currentTime =
       `${now.hour}:${now.minute}:00`;
+
+    // Synchroniser les relevés déjà enregistrés dans Hygiène Expert.
+    // Une même combinaison équipement/période ne valide qu'une tâche.
+    try {
+      const expertLogs = await getExpertTemperatureLogs(today);
+      const uniqueLogs = new Map();
+
+      for (const log of expertLogs) {
+        const equipmentId = Number(log.equipment_id);
+        const periodId = Number(log.period_planning_info);
+
+        if (!Number.isInteger(equipmentId)) continue;
+        if (periodId !== 1 && periodId !== 3) continue;
+
+        const scheduledTime = periodId === 1 ? "10:00" : "21:00";
+        const key = `${equipmentId}:${scheduledTime}`;
+
+        if (!uniqueLogs.has(key)) {
+          uniqueLogs.set(key, log);
+        }
+      }
+
+      for (const [key, log] of uniqueLogs) {
+        const separator = key.indexOf(":");
+        const equipmentId = key.slice(0, separator);
+        const scheduledTime = key.slice(separator + 1);
+
+        await sql`
+          UPDATE haccp_tasks
+          SET
+            status = 'done',
+            completed_at = COALESCE(
+              ${log.validation_date || null}::timestamp,
+              now()
+            ),
+            temperature = ${log.temperature ?? null}
+          WHERE task_type = 'temperature'
+            AND scheduled_date = ${today}::date
+            AND scheduled_time = ${scheduledTime}::time
+            AND hygiene_expert_equipment_id = ${Number(equipmentId)}
+            AND status = 'pending'
+        `;
+      }
+    } catch (syncError) {
+      console.error(
+        "Synchronisation Hygiène Expert :",
+        syncError?.message || syncError
+      );
+    }
 
     const rows = await sql`
       SELECT

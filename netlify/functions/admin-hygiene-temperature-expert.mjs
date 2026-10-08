@@ -318,7 +318,33 @@ export default async req => {
         ? Number(log.id)
         : null;
 
-    if (taskId !== null) {
+    let completionTaskId = taskId;
+
+    if (completionTaskId === null) {
+      const hour = Number(recordedAt.slice(11, 13));
+      const scheduledTime =
+        hour < 12 ? "10:00" :
+        hour >= 18 ? "21:00" :
+        null;
+
+      if (scheduledTime) {
+        const sql = db();
+        const rows = await sql`
+          SELECT id
+          FROM haccp_tasks
+          WHERE task_type = 'temperature'
+            AND hygiene_expert_equipment_id = ${equipmentId}
+            AND scheduled_date = ${localDate.slice(0, 10)}::date
+            AND scheduled_time = ${scheduledTime}::time
+            AND status = 'pending'
+          LIMIT 1
+        `;
+
+        completionTaskId = rows[0]?.id ?? null;
+      }
+    }
+
+    if (completionTaskId !== null) {
       const sql = db();
 
       const updated = await sql`
@@ -328,7 +354,7 @@ export default async req => {
           completed_at = now(),
           temperature = ${temperature},
           hygiene_expert_record_id = ${recordId}
-        WHERE id = ${taskId}
+        WHERE id = ${completionTaskId}
           AND task_type = 'temperature'
           AND hygiene_expert_equipment_id = ${equipmentId}
           AND status = 'pending'
