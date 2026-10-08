@@ -143,7 +143,7 @@ export default async req => {
           id,
           task_type,
           hygiene_expert_equipment_id,
-          scheduled_date,
+          scheduled_date::text AS scheduled_date,
           scheduled_time,
           status
         FROM haccp_tasks
