@@ -209,6 +209,12 @@ export default async req => {
       task &&
       String(task.scheduled_date).slice(0, 10) !== localDate.slice(0, 10)
     ) {
+      console.error("HACCP DATE MISMATCH", {
+        taskId,
+        scheduledDate: String(task.scheduled_date),
+        recordedDate: localDate,
+        recordedAt
+      });
       return reply(
         {
           error:
