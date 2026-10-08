@@ -207,7 +207,7 @@ export default async req => {
 
     if (
       task &&
-      String(task.scheduled_date).slice(0, 10) !== localDate
+      String(task.scheduled_date).slice(0, 10) !== localDate.slice(0, 10)
     ) {
       return reply(
         {
