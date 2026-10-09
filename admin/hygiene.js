@@ -862,6 +862,35 @@
             .join("");
     }
 
+    function renderOverdueTasks(tasks) {
+        const container = document.getElementById("hygiene-overdue-tasks");
+        const summary = document.getElementById("hygiene-overdue-tasks-summary");
+
+        if (!container || !summary) return;
+
+        if (!tasks.length) {
+            summary.textContent = "Aucun relevé ancien non validé.";
+            container.innerHTML = "<p>Aucun relevé en attente de vérification.</p>";
+            return;
+        }
+
+        summary.textContent =
+            `${tasks.length} relevé${tasks.length > 1 ? "s" : ""} ancien${tasks.length > 1 ? "s" : ""} à vérifier`;
+
+        container.innerHTML = tasks.map(task => `
+            <div class="haccp-task haccp-task-late">
+                <span class="haccp-task-title">
+                    ${escapeHtml(task.scheduled_date)}
+                    · ${escapeHtml(formatTime(task.scheduled_time))}
+                    · ${escapeHtml(task.title)}
+                </span>
+                <span class="haccp-task-status">
+                    À vérifier dans Hygiène Expert
+                </span>
+            </div>
+        `).join("");
+    }
+
     async function loadTasks() {
         try {
             const response = await fetch(
@@ -881,11 +910,27 @@
             }
 
             render(Array.isArray(data.tasks) ? data.tasks : []);
+            renderOverdueTasks(
+                Array.isArray(data.overdue_tasks) ? data.overdue_tasks : []
+            );
 
         } catch (error) {
             summary.textContent = "Tâches indisponibles.";
             container.innerHTML =
                 `<p>${escapeHtml(error?.message || "Erreur de chargement.")}</p>`;
+
+            const overdueSummary =
+                document.getElementById("hygiene-overdue-tasks-summary");
+            const overdueContainer =
+                document.getElementById("hygiene-overdue-tasks");
+
+            if (overdueSummary) {
+                overdueSummary.textContent = "Vérification indisponible.";
+            }
+            if (overdueContainer) {
+                overdueContainer.textContent =
+                    "Impossible de charger les relevés précédents.";
+            }
         }
     }
 

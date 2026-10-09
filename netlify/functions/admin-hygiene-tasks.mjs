@@ -175,6 +175,30 @@ export default async req => {
       ORDER BY scheduled_time, equipment_id
     `;
 
+    const overdueRows = await sql`
+      SELECT
+        id,
+        task_type,
+        title,
+        equipment_id,
+        hygiene_expert_equipment_id,
+        scheduled_date::text AS scheduled_date,
+        scheduled_time::text AS scheduled_time,
+        status,
+        completed_at,
+        temperature,
+        hygiene_expert_record_id,
+        evidence_bucket,
+        evidence_path,
+        note
+      FROM haccp_tasks
+      WHERE task_type = 'temperature'
+        AND status = 'pending'
+        AND scheduled_date < ${today}::date
+        AND scheduled_date >= (${today}::date - INTERVAL '30 days')
+      ORDER BY scheduled_date DESC, scheduled_time DESC, equipment_id
+    `;
+
     const tasks = rows.map(row => {
       let displayStatus = row.status;
 
@@ -195,7 +219,11 @@ export default async req => {
       ok: true,
       date: today,
       current_time: currentTime,
-      tasks
+      tasks,
+      overdue_tasks: overdueRows.map(row => ({
+        ...row,
+        display_status: "late"
+      }))
     });
 
   } catch (error) {
